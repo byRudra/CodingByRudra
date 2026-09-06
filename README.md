@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**277 problems solved**
+**278 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 150  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 116  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 11
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 150  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 116  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 12
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -64,6 +64,7 @@ _Synced by AILeetHub._
 | 110 | [Balanced Binary Tree](Binary%20Tree/0110-balanced-binary-tree/) | Easy | Binary Tree | java |
 | 111 | [Minimum Depth of Binary Tree](Binary%20Tree/0111-minimum-depth-of-binary-tree/) | Easy | Binary Tree | java |
 | 112 | [Path Sum](Binary%20Tree/0112-path-sum/) | Easy | Binary Tree | java |
+| 115 | [Distinct Subsequences](Dynamic%20Programming/0115-distinct-subsequences/) | Hard | Dynamic Programming | Java |
 | 118 | [Pascal's Triangle](Dynamic%20Programming/0118-pascals-triangle/) | Easy | Dynamic Programming | java |
 | 119 | [Pascal's Triangle II](Dynamic%20Programming/0119-pascals-triangle-ii/) | Easy | Dynamic Programming | java |
 | 121 | [Best Time to Buy and Sell Stock](Dynamic%20Programming/0121-best-time-to-buy-and-sell-stock/) | Easy | Dynamic Programming | java |
