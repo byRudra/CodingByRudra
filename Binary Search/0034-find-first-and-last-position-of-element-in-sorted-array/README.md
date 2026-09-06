@@ -5,43 +5,42 @@
 `Array` · `Binary Search`
 
 ## Intuition  
-When the array is sorted, any occurrence of the target partitions the array into three contiguous blocks: values < target, the block of target values, and values > target. If we can locate the leftmost index of that middle block, the rightmost index follows symmetrically. A naïve linear scan would cost O(n), and a single binary search only tells us whether the target exists. The key observation is that binary search can be steered after a hit: by continuing the search on the left half we pin down the first position, and by continuing on the right half we pin down the last. This yields two independent O(log n) passes, a classic **two‑phase binary search** pattern.
+The key observation is that in a sorted array the leftmost (rightmost) occurrence of a target can be found by a binary search that, once it lands on the target, continues to shrink the right (left) side of the search interval. This eliminates the need for a second linear scan or a hash map. By running the same binary‑search skeleton twice—once biasing left, once biasing right—we obtain both boundaries in O(log n) time. The pattern used is **binary search with a directional bias**.
 
 ## Approach  
 1. **Initialize** `left = 0`, `right = nums.length‑1`, `first = -1`.  
-2. **First binary search** (find leftmost):  
+2. **First binary search (leftmost index)**  
    - Loop while `left <= right`.  
    - Compute `mid = left + (right‑left)/2`.  
-   - If `nums[mid] == target`, record `first = mid` **and** shrink the right side with `right = mid‑1` to keep looking left.  
-   - Else if `target > nums[mid]`, move left bound: `left = mid + 1`.  
-   - Else (`target < nums[mid]`), move right bound: `right = mid ‑ 1`.  
-   - Invariant: the target, if present, lies in `[left, right]`; after each iteration the interval halves.  
+   - **Invariant:** the target, if present, lies in `[left, right]`.  
+   - If `nums[mid] == target`, record `first = mid` and move `right = mid‑1` to keep looking leftward.  
+   - Else if `target > nums[mid]`, discard left half with `left = mid + 1`.  
+   - Else (`target < nums[mid]`), discard right half with `right = mid‑1`.  
+   - The loop ends when the interval is empty; `first` holds the smallest index or stays `-1`.  
 3. **Reset** `left = 0`, `right = nums.length‑1`, `last = -1`.  
-4. **Second binary search** (find rightmost):  
-   - Same loop condition and mid computation.  
-   - On a hit, set `last = mid` **and** advance left side with `left = mid + 1` to keep searching right.  
-   - The other two branches are identical to step 2.  
-   - Invariant mirrors step 2 but now the interval contracts toward the rightmost occurrence.  
-5. **Return** `new int[]{first, last}`.  
-   - Edge cases: empty array (`right = -1` makes the loop skip, leaving `first`/`last` as ‑1); single‑element array works because the same hit logic updates both indices correctly. The code deliberately uses `<=` for the loop guard to ensure the final candidate index is examined.
+4. **Second binary search (rightmost index)** – identical structure, but when `nums[mid] == target` we set `last = mid` and advance `left = mid + 1` to keep searching rightward.  
+5. **Return** `{first, last}`.  
+   - Edge cases: empty array (`right = -1` makes the loop skip), single‑element array (both searches handle `left == right` correctly), and absent target (both `first` and `last` remain `-1`).  
+   - The code uses `<=` in the loop condition to ensure the final candidate index is examined; using `<` would miss the case where `left == right` holds the target.
 
 ## Dry Run  
-Input: `nums = [5,7,7,8,8,10]`, `target = 8`
 
-| Iter | left | right | mid | first | last | note |
+**Input:** `nums = [5,7,7,8,8,10]`, `target = 8`
+
+| Phase | left | right | mid | first | last | Note |
 |------|------|-------|-----|-------|------|------|
-| 1 (first) | 0 | 5 | 2 | -1 | - | `nums[2]=7 < 8` → `left=3` |
-| 2 (first) | 3 | 5 | 4 | -1 | - | `nums[4]=8` → `first=4`, `right=3` |
-| 3 (first) | 3 | 3 | 3 | 3 | - | `nums[3]=8` → `first=3`, `right=2` (loop ends) |
-| 1 (last) | 0 | 5 | 2 | - | -1 | `nums[2]=7 < 8` → `left=3` |
-| 2 (last) | 3 | 5 | 4 | - | 4 | `nums[4]=8` → `last=4`, `left=5` |
-| 3 (last) | 5 | 5 | 5 | - | 4 | `nums[5]=10 > 8` → `right=4` (loop ends) |
+| 1st search | 0 | 5 | 2 | -1 | – | `nums[2]=7 < 8` → `left=3` |
+| 1st search | 3 | 5 | 4 | -1 | – | `nums[4]=8` → `first=4`, `right=3` |
+| 1st search | 3 | 3 | 3 | 3 | – | `nums[3]=8` → `first=3`, `right=2` (loop ends) |
+| 2nd search | 0 | 5 | 2 | 3 | -1 | `nums[2]=7 < 8` → `left=3` |
+| 2nd search | 3 | 5 | 4 | 3 | -1 | `nums[4]=8` → `last=4`, `left=5` |
+| 2nd search | 5 | 5 | 5 | 3 | 5 | `nums[5]=10 > 8` → `right=4` (loop ends) |
 
-After both passes `first = 3`, `last = 4`, which are exactly the required boundaries.
+After both phases, `first = 3` and `last = 4`, which are exactly the required boundaries.
 
 ## Complexity  
-- **Time:** O(log n) + O(log n) = O(log n) – each binary search halves the search interval, running at most ⌈log₂ n⌉ iterations.  
-- **Space:** O(1) – only a handful of integer variables are used; the output array does not count toward auxiliary space.
+- **Time:** `O(log n)` – each binary search halves the interval, running at most ⌈log₂ n⌉ iterations; two independent searches keep the same asymptotic bound.  
+- **Space:** `O(1)` – only a constant number of integer variables (`left`, `right`, `mid`, `first`, `last`) are used; the output array does not count toward auxiliary space.
 
 ## Solution (Java)
 
@@ -92,6 +91,6 @@ class Solution {
 
 ---
 
-**Runtime** 83 ms (beats 0.4%) · **Memory** 48 MB (beats 71.6%)
+**Runtime** 0 ms (beats 100.0%) · **Memory** 48 MB (beats 71.6%)
 
 <sub>Synced by AILeetHub on 2026-09-06.</sub>
