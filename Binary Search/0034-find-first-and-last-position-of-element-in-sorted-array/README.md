@@ -5,47 +5,43 @@
 `Array` · `Binary Search`
 
 ## Intuition  
-When the array is sorted, any occurrence of the target splits the array into three monotonic parts: left of the first occurrence, the block of equal values, and right of the last occurrence. A standard binary search can locate *some* target index in O(log n), but we need the exact boundaries of that block. The key observation is that after finding a target at index mid, we can continue the search on the left side to see whether an earlier occurrence exists, and similarly on the right side for a later one. By performing two independent binary searches—one that always discards the right half after a hit, the other that always discards the left half—we obtain the smallest and largest indices without any extra passes, hash maps, or sorting.
+When the array is sorted, any occurrence of the target partitions the array into three contiguous blocks: values < target, the block of target values, and values > target. If we can locate the leftmost index of that middle block, the rightmost index follows symmetrically. A naïve linear scan would cost O(n), and a single binary search only tells us whether the target exists. The key observation is that binary search can be steered after a hit: by continuing the search on the left half we pin down the first position, and by continuing on the right half we pin down the last. This yields two independent O(log n) passes, a classic **two‑phase binary search** pattern.
 
 ## Approach  
 1. **Initialize** `left = 0`, `right = nums.length‑1`, `first = -1`.  
-2. **First‑position loop** (`while left <= right`):  
+2. **First binary search** (find leftmost):  
+   - Loop while `left <= right`.  
    - Compute `mid = left + (right‑left)/2`.  
-   - *Invariant*: the target, if present, lies within `[left, right]`.  
-   - If `nums[mid] == target`, record `first = mid` and move **leftward** by setting `right = mid‑1` (searches earlier indices).  
-   - Else if `target > nums[mid]`, discard left half: `left = mid + 1`.  
-   - Else (`target < nums[mid]`), discard right half: `right = mid ‑ 1`.  
-   - Loop exits when the search window collapses, leaving `first` as the leftmost hit or `‑1` if none.  
+   - If `nums[mid] == target`, record `first = mid` **and** shrink the right side with `right = mid‑1` to keep looking left.  
+   - Else if `target > nums[mid]`, move left bound: `left = mid + 1`.  
+   - Else (`target < nums[mid]`), move right bound: `right = mid ‑ 1`.  
+   - Invariant: the target, if present, lies in `[left, right]`; after each iteration the interval halves.  
 3. **Reset** `left = 0`, `right = nums.length‑1`, `last = -1`.  
-4. **Last‑position loop** (`while left <= right`):  
-   - Same `mid` computation and invariant.  
-   - If `nums[mid] == target`, record `last = mid` and move **rightward** by setting `left = mid + 1` (searches later indices).  
-   - The two `else‑if` branches are identical to step 2, preserving the binary‑search invariant.  
-5. **Return** `[first, last]`. The code uses `new int[]{first, last}` directly, so no extra container is allocated beyond the constant‑size result array.
-
-*Edge handling*:  
-- Empty array ⇒ `right = -1`, loop condition fails immediately, both indices stay `‑1`.  
-- Single‑element array works because `mid` equals `left` equals `right`.  
-- The `<=` comparison ensures the window containing a single candidate is still examined; using `<` would skip that final check.  
+4. **Second binary search** (find rightmost):  
+   - Same loop condition and mid computation.  
+   - On a hit, set `last = mid` **and** advance left side with `left = mid + 1` to keep searching right.  
+   - The other two branches are identical to step 2.  
+   - Invariant mirrors step 2 but now the interval contracts toward the rightmost occurrence.  
+5. **Return** `new int[]{first, last}`.  
+   - Edge cases: empty array (`right = -1` makes the loop skip, leaving `first`/`last` as ‑1); single‑element array works because the same hit logic updates both indices correctly. The code deliberately uses `<=` for the loop guard to ensure the final candidate index is examined.
 
 ## Dry Run  
-
-**Input**: `nums = [5,7,7,8,8,10]`, `target = 8`
+Input: `nums = [5,7,7,8,8,10]`, `target = 8`
 
 | Iter | left | right | mid | first | last | note |
 |------|------|-------|-----|-------|------|------|
-| 1 (first) | 0 | 5 | 2 | -1 | – | `nums[2]=7 < 8` → `left=3` |
-| 2 (first) | 3 | 5 | 4 | -1 | – | `nums[4]=8` → `first=4`, `right=3` |
-| 3 (first) | 3 | 3 | 3 | 3 | – | `nums[3]=8` → `first=3`, `right=2` (loop ends) |
-| 1 (last) | 0 | 5 | 2 | 3 | -1 | `nums[2]=7 < 8` → `left=3` |
-| 2 (last) | 3 | 5 | 4 | 3 | 4 | `nums[4]=8` → `last=4`, `left=5` |
-| 3 (last) | 5 | 5 | 5 | 3 | 4 | `nums[5]=10 > 8` → `right=4` (loop ends) |
+| 1 (first) | 0 | 5 | 2 | -1 | - | `nums[2]=7 < 8` → `left=3` |
+| 2 (first) | 3 | 5 | 4 | -1 | - | `nums[4]=8` → `first=4`, `right=3` |
+| 3 (first) | 3 | 3 | 3 | 3 | - | `nums[3]=8` → `first=3`, `right=2` (loop ends) |
+| 1 (last) | 0 | 5 | 2 | - | -1 | `nums[2]=7 < 8` → `left=3` |
+| 2 (last) | 3 | 5 | 4 | - | 4 | `nums[4]=8` → `last=4`, `left=5` |
+| 3 (last) | 5 | 5 | 5 | - | 4 | `nums[5]=10 > 8` → `right=4` (loop ends) |
 
-Final state: `first = 3`, `last = 4`, which correctly describes the range of `8`.
+After both passes `first = 3`, `last = 4`, which are exactly the required boundaries.
 
 ## Complexity  
-- **Time:** O(log n) + O(log n) = O(log n) because each binary search halves the interval, running at most ⌈log₂ n⌉ iterations.  
-- **Space:** O(1) extra space (the two pointers and result array are constant‑size, independent of n).
+- **Time:** O(log n) + O(log n) = O(log n) – each binary search halves the search interval, running at most ⌈log₂ n⌉ iterations.  
+- **Space:** O(1) – only a handful of integer variables are used; the output array does not count toward auxiliary space.
 
 ## Solution (Java)
 
@@ -57,35 +53,38 @@ class Solution {
         int result[] = new int[2];
 
         int first = -1;
+
         while(left <= right){
             int mid = left + (right - left) / 2;
+            
             if(nums[mid] == target){
                 first = mid;
                 right = mid - 1;
-            }
-            else if(target > nums[mid]){
+            } else if(target > nums[mid]){
                 left = mid + 1;
-            }
-            else{
+            } else{
                 right = mid - 1; 
             }
         }
-        int last = -1;
+
         left = 0;
         right = nums.length - 1;
+
+        int last = -1;
+        
         while(left <= right){
             int mid = left + (right - left) / 2;
+        
             if(nums[mid] == target){
                 last = mid;
                 left = mid + 1;
-            }
-            else if(target > nums[mid]){
+            } else if(target > nums[mid]){
                 left = mid + 1;
-            }
-            else{
+            } else{
                 right = mid - 1; 
             }
         }
+        
         return new int[]{first, last};
     }
 }
@@ -93,6 +92,6 @@ class Solution {
 
 ---
 
-**Runtime** 0 ms (beats 100.0%) · **Memory** 48.1 MB (beats 71.6%)
+**Runtime** 83 ms (beats 0.4%) · **Memory** 48 MB (beats 71.6%)
 
 <sub>Synced by AILeetHub on 2026-09-06.</sub>
