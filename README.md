@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**279 problems solved**
+**280 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 150  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 117  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 12
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 150  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 118  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 12
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -176,6 +176,7 @@ _Synced by AILeetHub._
 | 930 | [Binary Subarrays With Sum](Sliding%20Window/0930-binary-subarrays-with-sum/) | Medium | Sliding Window | java |
 | 989 | [Add to Array-Form of Integer](Math/0989-add-to-array-form-of-integer/) | Easy | Math | java |
 | 1004 | [Max Consecutive Ones III](Sliding%20Window/1004-max-consecutive-ones-iii/) | Medium | Sliding Window | java |
+| 1011 | [Capacity To Ship Packages Within D Days](Binary%20Search/1011-capacity-to-ship-packages-within-d-days/) | Medium | Binary Search | Java |
 | 1021 | [Remove Outermost Parentheses](Stack/1021-remove-outermost-parentheses/) | Easy | Stack | java |
 | 1051 | [Height Checker](Sorting/1051-height-checker/) | Easy | Sorting | java |
 | 1068 | [Product Sales Analysis I](Database/1068-product-sales-analysis-i/) | Easy | Database | pythondata |
