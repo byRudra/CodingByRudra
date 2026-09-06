@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**278 problems solved**
+**279 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 150  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 116  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 12
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 150  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 117  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 12
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -32,6 +32,7 @@ _Synced by AILeetHub._
 | 28 | [Find the Index of the First Occurrence in a String](Two%20Pointers/0028-find-the-index-of-the-first-occurrence-in-a-string/) | Easy | Two Pointers | cpp |
 | 32 | [Longest Valid Parentheses](Dynamic%20Programming/0032-longest-valid-parentheses/) | Hard | Dynamic Programming | java |
 | 33 | [Search in Rotated Sorted Array](Binary%20Search/0033-search-in-rotated-sorted-array/) | Medium | Binary Search | java |
+| 34 | [Find First and Last Position of Element in Sorted Array](Binary%20Search/0034-find-first-and-last-position-of-element-in-sorted-array/) | Medium | Binary Search | Java |
 | 35 | [Search Insert Position](Binary%20Search/0035-search-insert-position/) | Easy | Binary Search | java |
 | 38 | [Count and Say](String/0038-count-and-say/) | Medium | String | Java |
 | 42 | [Trapping Rain Water](Dynamic%20Programming/0042-trapping-rain-water/) | Hard | Dynamic Programming | java |
