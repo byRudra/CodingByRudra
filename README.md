@@ -31,7 +31,7 @@ _Synced by AILeetHub._
 | 27 | [Remove Element](Two%20Pointers/0027-remove-element/) | Easy | Two Pointers | java |
 | 28 | [Find the Index of the First Occurrence in a String](Two%20Pointers/0028-find-the-index-of-the-first-occurrence-in-a-string/) | Easy | Two Pointers | cpp |
 | 32 | [Longest Valid Parentheses](Dynamic%20Programming/0032-longest-valid-parentheses/) | Hard | Dynamic Programming | java |
-| 33 | [Search in Rotated Sorted Array](Binary%20Search/0033-search-in-rotated-sorted-array/) | Medium | Binary Search | java |
+| 33 | [Search in Rotated Sorted Array](Binary%20Search/0033-search-in-rotated-sorted-array/) | Medium | Binary Search | Java |
 | 34 | [Find First and Last Position of Element in Sorted Array](Binary%20Search/0034-find-first-and-last-position-of-element-in-sorted-array/) | Medium | Binary Search | Java |
 | 35 | [Search Insert Position](Binary%20Search/0035-search-insert-position/) | Easy | Binary Search | java |
 | 38 | [Count and Say](String/0038-count-and-say/) | Medium | String | Java |
