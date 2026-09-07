@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**284 problems solved**
+**285 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 152  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 119  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 13
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 152  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 120  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 13
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -54,6 +54,7 @@ _Synced by AILeetHub._
 | 74 | [Search a 2D Matrix](Binary%20Search/0074-search-a-2d-matrix/) | Medium | Binary Search | java |
 | 75 | [Sort Colors](Two%20Pointers/0075-sort-colors/) | Medium | Two Pointers | java |
 | 78 | [Subsets](Backtracking/0078-subsets/) | Medium | Backtracking | Java |
+| 81 | [Search in Rotated Sorted Array II](Binary%20Search/0081-search-in-rotated-sorted-array-ii/) | Medium | Binary Search | Java |
 | 82 | [Remove Duplicates from Sorted List II](Two%20Pointers/0082-remove-duplicates-from-sorted-list-ii/) | Medium | Two Pointers | java |
 | 83 | [Remove Duplicates from Sorted List](Linked%20List/0083-remove-duplicates-from-sorted-list/) | Easy | Linked List | java |
 | 88 | [Merge Sorted Array](Two%20Pointers/0088-merge-sorted-array/) | Easy | Two Pointers | java |
