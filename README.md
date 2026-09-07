@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**282 problems solved**
+**283 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 151  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 118  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 13
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 151  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 119  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 13
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -57,6 +57,7 @@ _Synced by AILeetHub._
 | 82 | [Remove Duplicates from Sorted List II](Two%20Pointers/0082-remove-duplicates-from-sorted-list-ii/) | Medium | Two Pointers | java |
 | 83 | [Remove Duplicates from Sorted List](Linked%20List/0083-remove-duplicates-from-sorted-list/) | Easy | Linked List | java |
 | 88 | [Merge Sorted Array](Two%20Pointers/0088-merge-sorted-array/) | Easy | Two Pointers | java |
+| 92 | [Reverse Linked List II](Linked%20List/0092-reverse-linked-list-ii/) | Medium | Linked List | Java |
 | 94 | [Binary Tree Inorder Traversal](Binary%20Tree/0094-binary-tree-inorder-traversal/) | Easy | Binary Tree | java |
 | 100 | [Same Tree](Binary%20Tree/0100-same-tree/) | Easy | Binary Tree | java |
 | 101 | [Symmetric Tree](Binary%20Tree/0101-symmetric-tree/) | Easy | Binary Tree | java |
