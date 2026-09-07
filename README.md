@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**280 problems solved**
+**281 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 150  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 118  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 12
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 151  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 118  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 12
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -106,6 +106,7 @@ _Synced by AILeetHub._
 | 196 | [Delete Duplicate Emails](Database/0196-delete-duplicate-emails/) | Easy | Database | mysql |
 | 197 | [Rising Temperature](Database/0197-rising-temperature/) | Easy | Database | mysql |
 | 198 | [House Robber](Dynamic%20Programming/0198-house-robber/) | Medium | Dynamic Programming | java |
+| 202 | [Happy Number](Two%20Pointers/0202-happy-number/) | Easy | Two Pointers | Java |
 | 203 | [Remove Linked List Elements](Recursion/0203-remove-linked-list-elements/) | Easy | Recursion | java |
 | 204 | [Count Primes](Number%20Theory/0204-count-primes/) | Medium | Number Theory | java |
 | 206 | [Reverse Linked List](Recursion/0206-reverse-linked-list/) | Easy | Recursion | python3 |
