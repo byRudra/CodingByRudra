@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**281 problems solved**
+**282 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 151  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 118  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 12
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 151  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 118  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 13
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -175,6 +175,7 @@ _Synced by AILeetHub._
 | 907 | [Sum of Subarray Minimums](Dynamic%20Programming/0907-sum-of-subarray-minimums/) | Medium | Dynamic Programming | java |
 | 921 | [Minimum Add to Make Parentheses Valid](Greedy/0921-minimum-add-to-make-parentheses-valid/) | Medium | Greedy | java |
 | 930 | [Binary Subarrays With Sum](Sliding%20Window/0930-binary-subarrays-with-sum/) | Medium | Sliding Window | java |
+| 940 | [Distinct Subsequences II](Dynamic%20Programming/0940-distinct-subsequences-ii/) | Hard | Dynamic Programming | Java |
 | 989 | [Add to Array-Form of Integer](Math/0989-add-to-array-form-of-integer/) | Easy | Math | java |
 | 1004 | [Max Consecutive Ones III](Sliding%20Window/1004-max-consecutive-ones-iii/) | Medium | Sliding Window | java |
 | 1011 | [Capacity To Ship Packages Within D Days](Binary%20Search/1011-capacity-to-ship-packages-within-d-days/) | Medium | Binary Search | Java |
