@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**283 problems solved**
+**284 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 151  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 119  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 13
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 152  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 119  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 13
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -125,6 +125,7 @@ _Synced by AILeetHub._
 | 278 | [First Bad Version](Binary%20Search/0278-first-bad-version/) | Easy | Binary Search | java |
 | 283 | [Move Zeroes](Two%20Pointers/0283-move-zeroes/) | Easy | Two Pointers | java |
 | 287 | [Find the Duplicate Number](Two%20Pointers/0287-find-the-duplicate-number/) | Medium | Two Pointers | java |
+| 290 | [Word Pattern](Hash%20Table/0290-word-pattern/) | Easy | Hash Table | Java |
 | 292 | [Nim Game](Math/0292-nim-game/) | Easy | Math | java |
 | 303 | [Range Sum Query - Immutable](Design/0303-range-sum-query-immutable/) | Easy | Design | java |
 | 319 | [Bulb Switcher](Math/0319-bulb-switcher/) | Medium | Math | java |
