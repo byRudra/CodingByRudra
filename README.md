@@ -23,7 +23,7 @@ _Synced by AILeetHub._
 | 15 | [3Sum](Two%20Pointers/0015-3sum/) | Medium | Two Pointers | Java |
 | 19 | [Remove Nth Node From End of List](Two%20Pointers/0019-remove-nth-node-from-end-of-list/) | Medium | Two Pointers | java |
 | 20 | [Valid Parentheses](Stack/0020-valid-parentheses/) | Easy | Stack | java |
-| 21 | [Merge Two Sorted Lists](Recursion/0021-merge-two-sorted-lists/) | Easy | Recursion | C++ |
+| 21 | [Merge Two Sorted Lists](Recursion/0021-merge-two-sorted-lists/) | Easy | Recursion | Java |
 | 22 | [Generate Parentheses](Dynamic%20Programming/0022-generate-parentheses/) | Medium | Dynamic Programming | java |
 | 23 | [Merge k Sorted Lists](Divide%20and%20Conquer/0023-merge-k-sorted-lists/) | Hard | Divide and Conquer | java |
 | 24 | [Swap Nodes in Pairs](Recursion/0024-swap-nodes-in-pairs/) | Medium | Recursion | java |
