@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**291 problems solved**
+**292 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 156  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 122  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 13
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 157  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 122  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 13
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -187,6 +187,7 @@ _Synced by AILeetHub._
 | 1004 | [Max Consecutive Ones III](Sliding%20Window/1004-max-consecutive-ones-iii/) | Medium | Sliding Window | java |
 | 1011 | [Capacity To Ship Packages Within D Days](Binary%20Search/1011-capacity-to-ship-packages-within-d-days/) | Medium | Binary Search | Java |
 | 1021 | [Remove Outermost Parentheses](Stack/1021-remove-outermost-parentheses/) | Easy | Stack | java |
+| 1046 | [Last Stone Weight](Heap%20(Priority%20Queue)/1046-last-stone-weight/) | Easy | Heap (Priority Queue) | Java |
 | 1051 | [Height Checker](Sorting/1051-height-checker/) | Easy | Sorting | java |
 | 1068 | [Product Sales Analysis I](Database/1068-product-sales-analysis-i/) | Easy | Database | pythondata |
 | 1070 | [Product Sales Analysis III](Database/1070-product-sales-analysis-iii/) | Medium | Database | mysql |
