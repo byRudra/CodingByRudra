@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**290 problems solved**
+**291 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 155  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 122  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 13
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 156  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 122  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 13
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -162,6 +162,7 @@ _Synced by AILeetHub._
 | 627 | [Swap Sex of Employees](Database/0627-swap-sex-of-employees/) | Easy | Database | mysql |
 | 643 | [Maximum Average Subarray I](Sliding%20Window/0643-maximum-average-subarray-i/) | Easy | Sliding Window | java |
 | 657 | [Robot Return to Origin](Simulation/0657-robot-return-to-origin/) | Easy | Simulation | python |
+| 680 | [Valid Palindrome II](Two%20Pointers/0680-valid-palindrome-ii/) | Easy | Two Pointers | Java |
 | 704 | [Binary Search](Binary%20Search/0704-binary-search/) | Easy | Binary Search | java |
 | 713 | [Subarray Product Less Than K](Sliding%20Window/0713-subarray-product-less-than-k/) | Medium | Sliding Window | java |
 | 724 | [Find Pivot Index](Prefix%20Sum/0724-find-pivot-index/) | Easy | Prefix Sum | java |
