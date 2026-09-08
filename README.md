@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**285 problems solved**
+**286 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 152  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 120  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 13
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 153  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 120  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 13
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -289,6 +289,7 @@ _Synced by AILeetHub._
 | 3783 | [Mirror Distance of an Integer](Math/3783-mirror-distance-of-an-integer/) | Easy | Math | java |
 | 3838 | [Weighted Word Mapping](Simulation/3838-weighted-word-mapping/) | Easy | Simulation | java |
 | 3867 | [Sum of GCD of Formed Pairs](Two%20Pointers/3867-sum-of-gcd-of-formed-pairs/) | Medium | Two Pointers | java |
+| 3870 | [Count Commas in Range](Math/3870-count-commas-in-range/) | Easy | Math | Java |
 | 3875 | [Construct Uniform Parity Array I](Math/3875-construct-uniform-parity-array-i/) | Easy | Math | java |
 | 3876 | [Construct Uniform Parity Array II](Math/3876-construct-uniform-parity-array-ii/) | Medium | Math | java |
 | 3903 | [Smallest Stable Index I](Prefix%20Sum/3903-smallest-stable-index-i/) | Easy | Prefix Sum | java |
