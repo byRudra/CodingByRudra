@@ -5,55 +5,100 @@
 `Array` · `Two Pointers` · `Sorting`
 
 ## Intuition  
-The only thing that changes the ordering of the array after squaring is the sign of the original numbers: negatives become positive and may jump to the far right of the sorted order. A straightforward way to restore order is to square every entry first and then rely on a general‑purpose sort to reorder the results. The naïve approach of building a new list, squaring, and then calling a library sort would cost the same amount of work; the insight here is that we can do the squaring in‑place, avoiding an extra pass for copying and keeping the code minimal. This follows the classic “transform‑then‑sort” pattern.
+The key observation is that after squaring, the largest values must come from the elements farthest from zero: either the most negative number on the left or the most positive number on the right. If we compare the squares at both ends, we can place the larger one at the end of the result array and shrink the corresponding side. This eliminates the need for a separate sorting pass, turning an O(n log n) approach into a single linear scan. The pattern used is the classic **two‑pointer** technique.
 
 ## Approach  
-1. **Iterate over the input array** (`for (int i = 0; i < nums.length; i++)`).  
-   - *Exit condition*: `i == nums.length`.  
-   - *Invariant*: after each iteration, `nums[0..i]` contains the squares of the original values, while `nums[i+1..]` is still untouched.  
-   - Action: `nums[i] *= nums[i]` squares the current element in place.  
-   - Edge handling: if `nums.length` is `0` or `1`, the loop runs zero or one time respectively, correctly handling empty or single‑element inputs. No overflow concerns arise because `|nums[i]| ≤ 10⁴`, and `10⁴²` fits in a 32‑bit signed int.  
+1. **Initialize pointers and output.**  
+   ```java
+   int[] ans = new int[nums.length];
+   int left = 0;
+   int right = nums.length - 1;
+   ```  
+   `left` starts at the smallest index, `right` at the largest. `ans` will be filled from the back.
 
-2. **Sort the transformed array** with `Arrays.sort(nums)`.  
-   - The built‑in quick‑/tim‑sort runs in `O(n log n)` time and rearranges the squared values into non‑decreasing order.  
-   - No additional data structures are allocated; the sort works directly on the same array.  
+2. **Iterate backwards over `ans`.**  
+   ```java
+   for (int i = nums.length - 1; i >= 0; i--) { … }
+   ```  
+   *Exit condition:* the loop stops when `i` becomes –1, i.e., after `nums.length` iterations.  
+   *Invariant:* before each iteration, the sub‑array `ans[i+1 … end]` already contains the `nums.length‑i‑1` largest squares in correct order.
 
-3. **Return the sorted array**. The method hands back the same reference that was passed in, now containing the desired result.
+3. **Compute candidate squares.**  
+   ```java
+   int leftSquare = nums[left] * nums[left];
+   int rightSquare = nums[right] * nums[right];
+   ```  
+   These are the only two values that can become the next largest square because any interior element is closer to zero and therefore yields a smaller square.
+
+4. **Choose the larger square and move the corresponding pointer.**  
+   - If `leftSquare > rightSquare`, assign `ans[i] = leftSquare` and increment `left`.  
+   - Otherwise assign `ans[i] = rightSquare` and decrement `right`.  
+   The `>` (rather than `>=`) ensures that when the squares are equal we prefer the right side, which keeps the algorithm stable for duplicate values.
+
+5. **Return the filled array.**  
+   After the loop, `ans` holds all squares in non‑decreasing order.
+
+Edge cases such as a single‑element array are handled automatically: the loop runs once, compares the same element on both sides, and places its square into `ans[0]`. No extra bounds checks are needed because the pointers move strictly inward and the loop count guarantees they never cross before the array is fully populated.
 
 ## Dry Run  
+
 Input: `[-4, -1, 0, 3, 10]`
 
-| i (loop index) | nums after squaring (`nums[i] *= nums[i]`) | Note |
-|----------------|--------------------------------------------|------|
-| 0 | `[16, -1, 0, 3, 10]` | `-4 → 16` |
-| 1 | `[16, 1, 0, 3, 10]` | `-1 → 1` |
-| 2 | `[16, 1, 0, 3, 10]` | `0 → 0` (unchanged) |
-| 3 | `[16, 1, 0, 9, 10]` | `3 → 9` |
-| 4 | `[16, 1, 0, 9, 100]` | `10 → 100` |
-| end of loop | — | all elements squared |
+| i | left | right | leftSquare | rightSquare | ans[i] | note |
+|---|------|-------|------------|-------------|--------|------|
+| 4 | 0    | 4     | 16         | 100         | 100    | rightSquare larger → place at ans[4], right-- |
+| 3 | 0    | 3     | 16         | 9           | 16     | leftSquare larger → place at ans[3], left++ |
+| 2 | 1    | 3     | 1          | 9           | 9      | rightSquare larger → place at ans[2], right-- |
+| 1 | 1    | 2     | 1          | 0           | 1      | leftSquare larger → place at ans[1], left++ |
+| 0 | 2    | 2     | 0          | 0           | 0      | equal → choose right side, place at ans[0] |
 
-After the loop finishes, `Arrays.sort(nums)` rearranges the array to `[0, 1, 9, 16, 100]`. This final ordering satisfies the required non‑decreasing sequence of squares.
+Final `ans = [0, 1, 9, 16, 100]`, which is the correctly sorted list of squares.
 
 ## Complexity  
-- **Time:** `O(n log n)` – the linear pass for squaring is `O(n)`, but the dominant cost is `Arrays.sort`, which runs in `O(n log n)` for `n` elements.  
-- **Space:** `O(1)` extra – the algorithm modifies the input array in place and uses only a few primitive variables; the sorting routine’s internal stack depth is bounded by `log n` and is considered constant extra space for this analysis.
+- **Time:** O(n) – the for‑loop runs exactly `n` times, and each iteration performs O(1) work (two multiplications and a constant‑time comparison).  
+- **Space:** O(n) – the algorithm allocates a new array `ans` of size `n`; all other variables use O(1) extra space. (The input array is not modified.)
 
 ## Solution (Java)
 
 ```java
+// O(n logn)
+// class Solution {
+//     public int[] sortedSquares(int[] nums) {
+//         for(int i = 0; i < nums.length; i++){
+//             nums[i] *= nums[i];
+//         }
+//         Arrays.sort(nums);
+//         return nums;
+//     }
+// }
+
+// O(n)
 class Solution {
     public int[] sortedSquares(int[] nums) {
-        for(int i = 0; i < nums.length; i++){
-            nums[i] *= nums[i];
+        int ans[] = new int[nums.length];
+
+        int left = 0;
+        int right = nums.length - 1;
+        for(int i = nums.length - 1; i >= 0; i--){
+            int leftSquare = nums[left] * nums[left];
+            int rightSquare = nums[right] * nums[right];
+
+            if(leftSquare > rightSquare){
+                ans[i] = leftSquare;
+                left++;
+            }
+            else{
+                ans[i] = rightSquare;
+                right--;
+            }
         }
-        Arrays.sort(nums);
-        return nums;
+        return ans;
     }
 }
 ```
 
 ---
 
-**Runtime** 10 ms (beats 34.4%) · **Memory** 47.9 MB (beats 20.3%)
+**Runtime** 1 ms (beats 100.0%) · **Memory** 47.3 MB (beats 63.7%)
 
 <sub>Synced by AILeetHub on 2026-09-08.</sub>
