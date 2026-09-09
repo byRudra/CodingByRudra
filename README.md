@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**300 problems solved**
+**301 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 161  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 126  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 13
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 161  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 126  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 14
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -88,6 +88,7 @@ _Synced by AILeetHub._
 | 150 | [Evaluate Reverse Polish Notation](Math/0150-evaluate-reverse-polish-notation/) | Medium | Math | java |
 | 151 | [Reverse Words in a String](Two%20Pointers/0151-reverse-words-in-a-string/) | Medium | Two Pointers | java |
 | 153 | [Find Minimum in Rotated Sorted Array](Binary%20Search/0153-find-minimum-in-rotated-sorted-array/) | Medium | Binary Search | java |
+| 154 | [Find Minimum in Rotated Sorted Array II](Binary%20Search/0154-find-minimum-in-rotated-sorted-array-ii/) | Hard | Binary Search | Java |
 | 155 | [Min Stack](Design/0155-min-stack/) | Medium | Design | java |
 | 160 | [Intersection of Two Linked Lists](Two%20Pointers/0160-intersection-of-two-linked-lists/) | Easy | Two Pointers | java |
 | 162 | [Find Peak Element](Binary%20Search/0162-find-peak-element/) | Medium | Binary Search | java |
