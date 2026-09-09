@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**299 problems solved**
+**300 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 161  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 125  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 13
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 161  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 126  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 13
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -153,6 +153,7 @@ _Synced by AILeetHub._
 | 560 | [Subarray Sum Equals K](Prefix%20Sum/0560-subarray-sum-equals-k/) | Medium | Prefix Sum | java |
 | 561 | [Array Partition](Greedy/0561-array-partition/) | Easy | Greedy | java |
 | 566 | [Reshape the Matrix](Simulation/0566-reshape-the-matrix/) | Easy | Simulation | java |
+| 570 | [Managers with at Least 5 Direct Reports](Database/0570-managers-with-at-least-5-direct-reports/) | Medium | Database | MySQL |
 | 577 | [Employee Bonus](Database/0577-employee-bonus/) | Easy | Database | pythondata |
 | 595 | [Big Countries](Database/0595-big-countries/) | Easy | Database | mysql |
 | 596 | [Classes With at Least 5 Students](Database/0596-classes-with-at-least-5-students/) | Easy | Database | pythondata |
