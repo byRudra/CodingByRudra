@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**301 problems solved**
+**302 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 161  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 126  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 14
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 162  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 126  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 14
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -214,6 +214,7 @@ _Synced by AILeetHub._
 | 1380 | [Lucky Numbers in a Matrix](Matrix/1380-lucky-numbers-in-a-matrix/) | Easy | Matrix | java |
 | 1399 | [Count Largest Group](Math/1399-count-largest-group/) | Easy | Math | java |
 | 1407 | [Top Travellers](Database/1407-top-travellers/) | Easy | Database | mysql |
+| 1413 | [Minimum Value to Get Positive Step by Step Sum](Prefix%20Sum/1413-minimum-value-to-get-positive-step-by-step-sum/) | Easy | Prefix Sum | Java |
 | 1437 | [Check If All 1's Are at Least Length K Places Away](Array/1437-check-if-all-1s-are-at-least-length-k-places-away/) | Easy | Array | java |
 | 1518 | [Water Bottles](Math/1518-water-bottles/) | Easy | Math | java |
 | 1539 | [Kth Missing Positive Number](Binary%20Search/1539-kth-missing-positive-number/) | Easy | Binary Search | java |
