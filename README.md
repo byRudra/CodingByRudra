@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**295 problems solved**
+**296 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 158  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 124  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 13
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 158  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 125  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 13
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -156,6 +156,7 @@ _Synced by AILeetHub._
 | 577 | [Employee Bonus](Database/0577-employee-bonus/) | Easy | Database | pythondata |
 | 595 | [Big Countries](Database/0595-big-countries/) | Easy | Database | mysql |
 | 596 | [Classes With at Least 5 Students](Database/0596-classes-with-at-least-5-students/) | Easy | Database | pythondata |
+| 602 | [Friend Requests II: Who Has the Most Friends](Database/0602-friend-requests-ii-who-has-the-most-friends/) | Medium | Database | MySQL |
 | 605 | [Can Place Flowers](Greedy/0605-can-place-flowers/) | Easy | Greedy | java |
 | 620 | [Not Boring Movies](Database/0620-not-boring-movies/) | Easy | Database | mysql |
 | 621 | [Task Scheduler](Heap%20(Priority%20Queue)/0621-task-scheduler/) | Medium | Heap (Priority Queue) | java |
