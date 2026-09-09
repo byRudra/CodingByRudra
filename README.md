@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**302 problems solved**
+**303 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 162  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 126  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 14
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 162  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 127  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 14
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -132,6 +132,7 @@ _Synced by AILeetHub._
 | 292 | [Nim Game](Math/0292-nim-game/) | Easy | Math | java |
 | 303 | [Range Sum Query - Immutable](Design/0303-range-sum-query-immutable/) | Easy | Design | java |
 | 319 | [Bulb Switcher](Math/0319-bulb-switcher/) | Medium | Math | java |
+| 322 | [Coin Change](Dynamic%20Programming/0322-coin-change/) | Medium | Dynamic Programming | Java |
 | 344 | [Reverse String](Two%20Pointers/0344-reverse-string/) | Easy | Two Pointers | java |
 | 347 | [Top K Frequent Elements](Divide%20and%20Conquer/0347-top-k-frequent-elements/) | Medium | Divide and Conquer | java |
 | 387 | [First Unique Character in a String](Counting/0387-first-unique-character-in-a-string/) | Easy | Counting | java |
