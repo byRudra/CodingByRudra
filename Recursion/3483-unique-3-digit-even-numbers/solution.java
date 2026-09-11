@@ -1,40 +1,38 @@
 class Solution {
     public int totalNumbers(int[] digits) {
-        int[] freq = new int[10];
-
-        for (int d : digits) {
-            freq[d]++;
+        int freq[] = new int[10];
+        for (int digit : digits) {
+            freq[digit]++;
         }
 
-        int ans = 0;
+        int count = 0;
 
-        // Choose the last digit: must be even
+        // Find last Must be EVEN
+
         for (int last = 0; last <= 8; last += 2) {
-
-            if (freq[last] == 0) continue;
-
+            if (freq[last] == 0)
+                continue;
             freq[last]--;
 
-            // Choose first digit: 1-9
+            // Find First Must not be 0
             for (int first = 1; first <= 9; first++) {
-
-                if (freq[first] == 0) continue;
+                if (freq[first] == 0)
+                    continue;
 
                 freq[first]--;
 
-                // Choose middle digit: 0-9
+                // Find the Middle
                 for (int middle = 0; middle <= 9; middle++) {
-                    if (freq[middle] > 0) {
-                        ans++;
-                    }
+                    if (freq[middle] != 0)
+                        count++;
                 }
 
                 freq[first]++;
             }
 
             freq[last]++;
-        }
 
-        return ans;
+        }
+        return count;
     }
 }
