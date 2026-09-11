@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**305 problems solved**
+**306 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 163  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 128  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 14
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 163  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 128  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 15
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -36,6 +36,7 @@ _Synced by AILeetHub._
 | 34 | [Find First and Last Position of Element in Sorted Array](Binary%20Search/0034-find-first-and-last-position-of-element-in-sorted-array/) | Medium | Binary Search | Java |
 | 35 | [Search Insert Position](Binary%20Search/0035-search-insert-position/) | Easy | Binary Search | java |
 | 38 | [Count and Say](String/0038-count-and-say/) | Medium | String | Java |
+| 41 | [First Missing Positive](Hash%20Table/0041-first-missing-positive/) | Hard | Hash Table | Java |
 | 42 | [Trapping Rain Water](Dynamic%20Programming/0042-trapping-rain-water/) | Hard | Dynamic Programming | java |
 | 45 | [Jump Game II](Dynamic%20Programming/0045-jump-game-ii/) | Medium | Dynamic Programming | java |
 | 48 | [Rotate Image](Math/0048-rotate-image/) | Medium | Math | java |
