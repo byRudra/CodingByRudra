@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**310 problems solved**
+**311 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 167  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 128  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 15
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 167  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 129  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 15
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -18,6 +18,7 @@ _Synced by AILeetHub._
 | 7 | [Reverse Integer](Math/0007-reverse-integer/) | Medium | Math | java |
 | 9 | [Palindrome Number](Math/0009-palindrome-number/) | Easy | Math | java |
 | 11 | [Container With Most Water](Two%20Pointers/0011-container-with-most-water/) | Medium | Two Pointers | java |
+| 12 | [Integer to Roman](Math/0012-integer-to-roman/) | Medium | Math | Java |
 | 13 | [Roman to Integer](Math/0013-roman-to-integer/) | Easy | Math | java |
 | 14 | [Longest Common Prefix](Trie/0014-longest-common-prefix/) | Easy | Trie | java |
 | 15 | [3Sum](Two%20Pointers/0015-3sum/) | Medium | Two Pointers | Java |
