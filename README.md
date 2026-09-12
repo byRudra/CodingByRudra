@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**308 problems solved**
+**309 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 165  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 128  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 15
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 166  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 128  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 15
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -175,6 +175,7 @@ _Synced by AILeetHub._
 | 724 | [Find Pivot Index](Prefix%20Sum/0724-find-pivot-index/) | Easy | Prefix Sum | java |
 | 739 | [Daily Temperatures](Monotonic%20Stack/0739-daily-temperatures/) | Medium | Monotonic Stack | java |
 | 746 | [Min Cost Climbing Stairs](Dynamic%20Programming/0746-min-cost-climbing-stairs/) | Easy | Dynamic Programming | Java |
+| 766 | [Toeplitz Matrix](Matrix/0766-toeplitz-matrix/) | Easy | Matrix | Java |
 | 788 | [Rotated Digits](Dynamic%20Programming/0788-rotated-digits/) | Medium | Dynamic Programming | java |
 | 796 | [Rotate String](String/0796-rotate-string/) | Easy | String | java |
 | 832 | [Flipping an Image](Two%20Pointers/0832-flipping-an-image/) | Easy | Two Pointers | java |
