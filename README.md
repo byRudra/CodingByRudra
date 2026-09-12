@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**309 problems solved**
+**310 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 166  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 128  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 15
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 167  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 128  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 15
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -136,6 +136,7 @@ _Synced by AILeetHub._
 | 322 | [Coin Change](Dynamic%20Programming/0322-coin-change/) | Medium | Dynamic Programming | Java |
 | 344 | [Reverse String](Two%20Pointers/0344-reverse-string/) | Easy | Two Pointers | java |
 | 347 | [Top K Frequent Elements](Divide%20and%20Conquer/0347-top-k-frequent-elements/) | Medium | Divide and Conquer | java |
+| 349 | [Intersection of Two Arrays](Two%20Pointers/0349-intersection-of-two-arrays/) | Easy | Two Pointers | Java |
 | 387 | [First Unique Character in a String](Counting/0387-first-unique-character-in-a-string/) | Easy | Counting | java |
 | 389 | [Find the Difference](Bit%20Manipulation/0389-find-the-difference/) | Easy | Bit Manipulation | java |
 | 392 | [Is Subsequence](Dynamic%20Programming/0392-is-subsequence/) | Easy | Dynamic Programming | java |
