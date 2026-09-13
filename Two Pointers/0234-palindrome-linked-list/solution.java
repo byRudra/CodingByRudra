@@ -8,35 +8,64 @@
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
+// class Solution {
+//     public boolean isPalindrome(ListNode head) {
+//          ListNode copyHead = new ListNode(head.val);
+//         ListNode copy = copyHead;
+//         ListNode curr = head.next;
+
+//         while (curr != null) {
+//             copy.next = new ListNode(curr.val);
+//             copy = copy.next;
+//             curr = curr.next;
+//         }
+
+//         // Reverse the copied list
+//         ListNode prev = null;
+//         curr = copyHead;
+
+//         while (curr != null) {
+//             ListNode next = curr.next;
+//             curr.next = prev;
+//             prev = curr;
+//             curr = next;
+//         }
+
+//         ListNode reversed = prev;
+//         while (head != null) {
+//             if (head.val != reversed.val)
+//                 return false;
+//             head = head.next;
+//             reversed = reversed.next;
+//         }
+//         return true;
+//     }
+// }
+
+// better approach
 class Solution {
     public boolean isPalindrome(ListNode head) {
-         ListNode copyHead = new ListNode(head.val);
-        ListNode copy = copyHead;
-        ListNode curr = head.next;
+        ListNode fast = head;
+        ListNode slow = head;
 
-        while (curr != null) {
-            copy.next = new ListNode(curr.val);
-            copy = copy.next;
-            curr = curr.next;
+        while(fast != null && fast.next != null){
+            fast = fast.next.next;
+            slow = slow.next;
         }
 
-        // Reverse the copied list
-        ListNode prev = null;
-        curr = copyHead;
-
-        while (curr != null) {
-            ListNode next = curr.next;
-            curr.next = prev;
-            prev = curr;
-            curr = next;
+        ListNode reverse = null;
+        while(slow != null){
+            ListNode next = slow.next;
+            slow.next = reverse;
+            reverse = slow;
+            slow = next;
         }
 
-        ListNode reversed = prev;
-        while (head != null) {
-            if (head.val != reversed.val)
+        while(reverse != null){
+            if(reverse.val != head.val)
                 return false;
+            reverse = reverse.next;
             head = head.next;
-            reversed = reversed.next;
         }
         return true;
     }
