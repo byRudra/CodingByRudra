@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**313 problems solved**
+**314 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 167  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 130  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 16
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 168  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 130  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 16
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -122,6 +122,7 @@ _Synced by AILeetHub._
 | 217 | [Contains Duplicate](Sorting/0217-contains-duplicate/) | Easy | Sorting | java |
 | 228 | [Summary Ranges](Array/0228-summary-ranges/) | Easy | Array | java |
 | 229 | [Majority Element II](Sorting/0229-majority-element-ii/) | Medium | Sorting | java |
+| 234 | [Palindrome Linked List](Two%20Pointers/0234-palindrome-linked-list/) | Easy | Two Pointers | Java |
 | 238 | [Product of Array Except Self](Prefix%20Sum/0238-product-of-array-except-self/) | Medium | Prefix Sum | java |
 | 239 | [Sliding Window Maximum](Heap%20(Priority%20Queue)/0239-sliding-window-maximum/) | Hard | Heap (Priority Queue) | java |
 | 240 | [Search a 2D Matrix II](Divide%20and%20Conquer/0240-search-a-2d-matrix-ii/) | Medium | Divide and Conquer | java |
