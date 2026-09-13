@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**312 problems solved**
+**313 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 167  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 129  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 16
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 167  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 130  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 16
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -181,6 +181,7 @@ _Synced by AILeetHub._
 | 788 | [Rotated Digits](Dynamic%20Programming/0788-rotated-digits/) | Medium | Dynamic Programming | java |
 | 796 | [Rotate String](String/0796-rotate-string/) | Easy | String | java |
 | 832 | [Flipping an Image](Two%20Pointers/0832-flipping-an-image/) | Easy | Two Pointers | java |
+| 835 | [Image Overlap](Matrix/0835-image-overlap/) | Medium | Matrix | Java |
 | 840 | [Magic Squares In Grid](Math/0840-magic-squares-in-grid/) | Medium | Math | java |
 | 868 | [Binary Gap](Bit%20Manipulation/0868-binary-gap/) | Easy | Bit Manipulation | java |
 | 875 | [Koko Eating Bananas](Binary%20Search/0875-koko-eating-bananas/) | Medium | Binary Search | java |
