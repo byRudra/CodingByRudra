@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**314 problems solved**
+**315 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 168  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 130  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 16
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 168  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 130  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 17
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -268,6 +268,7 @@ _Synced by AILeetHub._
 | 2300 | [Successful Pairs of Spells and Potions](Two%20Pointers/2300-successful-pairs-of-spells-and-potions/) | Medium | Two Pointers | java |
 | 2356 | [Number of Unique Subjects Taught by Each Teacher](Database/2356-number-of-unique-subjects-taught-by-each-teacher/) | Easy | Database | mysql |
 | 2452 | [Words Within Two Edits of Dictionary](Trie/2452-words-within-two-edits-of-dictionary/) | Medium | Trie | java |
+| 2472 | [Maximum Number of Non-overlapping Palindrome Substrings](Dynamic%20Programming/2472-maximum-number-of-non-overlapping-palindrome-substrings/) | Hard | Dynamic Programming | Java |
 | 2515 | [Shortest Distance to Target String in a Circular Array](String/2515-shortest-distance-to-target-string-in-a-circular-array/) | Easy | String | java |
 | 2540 | [Minimum Common Value](Two%20Pointers/2540-minimum-common-value/) | Easy | Two Pointers | java |
 | 2558 | [Take Gifts From the Richest Pile](Heap%20(Priority%20Queue)/2558-take-gifts-from-the-richest-pile/) | Easy | Heap (Priority Queue) | Java |
