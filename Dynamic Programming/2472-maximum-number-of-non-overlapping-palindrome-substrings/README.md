@@ -5,75 +5,72 @@
 `Two Pointers` · `String` · `Dynamic Programming` · `Greedy`
 
 ## Intuition  
-If we always take the left‑most palindrome that satisfies the length requirement, we never hurt the chance of adding more substrings later. Any palindrome longer than the minimum viable length ( k or k+1 ) consumes extra characters that could serve as the start of another valid piece, so a greedy choice of the shortest possible palindrome is optimal. The naïve way would be to try every subset of palindromes with DP, costing O(n²) time and extra memory. The observation that a local, shortest‑possible decision is safe lets us replace the DP with a single linear scan, using the classic two‑pointer palindrome test.
+If we scan the string from left to right and always take the *earliest* palindrome that satisfies the length requirement, we never lose a chance to place another palindrome later, because any later palindrome would start at or after the current start index. Moreover, any palindrome of length ≥ k must contain either a palindrome of exactly length k or length k+1 that begins at the same position – the extra character (if any) can only be the middle of an odd‑length palindrome. Therefore we only need to test the two smallest possible lengths. This observation eliminates the need for a full DP table or a second pass to collect all palindrome intervals; a single greedy pass suffices.
 
 ## Approach  
-1. **Initialisation** – `n = s.length()`, `ans = 0`, `i = 0`.  
-2. **Main loop** – `while (i + k <= n)` ensures there are at least k characters left to form a candidate. Invariant: all indices `< i` are already fixed and never overlap with future choices.  
-3. **Try length k** – Call `isPalindrome(s, i, i + k - 1)`.  
-   *If true*: increment `ans`, advance `i` by `k`, set `found = true`. This respects non‑overlap because we jump exactly past the taken substring.  
-4. **Otherwise try length k+1** – Guarded by `i + k + 1 <= n` (the `+1` must still fit). Call `isPalindrome(s, i, i + k)`.  
-   *If true*: increment `ans`, advance `i` by `k + 1`, set `found = true`. The extra character is allowed because a palindrome of odd length may start at the same index and still be the shortest odd candidate.  
-5. **No palindrome found** – If both checks fail, increment `i` by 1 to shift the window rightward. This maintains the invariant that we have examined every possible start position.  
-6. **Termination** – Loop ends when fewer than k characters remain, because no further substring can satisfy the length constraint. Return `ans`.  
+1. **Initialize** `count = 0`, `start = 0`, `length = s.length()`.  
+2. **Loop while a palindrome of length k could still fit**: `while (start + k <= length)`.  
+   - *Invariant*: all characters before `start` have already been assigned to non‑overlapping palindromes (or skipped), and `start` is the leftmost index not yet processed.  
+3. **Check length‑k palindrome**: call `isPalindrome(s, start, start + k - 1)`.  
+   - If true, advance `start += k` and increment `count`. This consumes exactly the k characters we just verified.  
+4. **Otherwise, check length‑(k+1) palindrome** (only if it fits): `if (start + k + 1 <= length && isPalindrome(s, start, start + k))`.  
+   - If true, advance `start += k + 1` and increment `count`. This handles the smallest odd‑length case that still meets the minimum length.  
+5. **Otherwise**, no palindrome starts at `start` with the allowed lengths, so we move one character forward: `start++`.  
+6. **Terminate** when `start + k > length`; no further palindrome of required size can start.  
+7. **Return** `count`.
 
-The helper `isPalindrome` uses two indices `l` and `r` that move inward (`l++`, `r--`) until they cross; it stops early on a mismatch, guaranteeing O(length) work per call.
+**Edge handling**:  
+- The loop guard `start + k <= length` prevents out‑of‑bounds when checking the k‑length case.  
+- The second guard `start + k + 1 <= length` ensures the k+1 check is safe for odd‑length strings.  
+- Single‑character strings never enter the loop because `k ≥ 1` and `start + k > length` immediately.  
 
 ## Dry Run  
+
 Input: `s = "abaccdbbd"`, `k = 3`
 
-| iter | i (start) | check k | check k+1 | ans | note |
-|------|-----------|---------|-----------|-----|------|
-| 1 | 0 | `aba` → true | – | 1 | take “aba”, i←0+3 |
-| 2 | 3 | `c c d` → false | `c cd` → false | 1 | move i←4 |
-| 3 | 4 | `c d b` → false | `c db` → false | 1 | move i←5 |
-| 4 | 5 | `d b b` → false | `d bbd` → true | 2 | take “dbbd”, i←5+4 |
-| 5 | 9 | loop condition fails (`9+3>9`) | – | 2 | termination |
+| iteration | start | check k? (positions) | check k+1? (positions) | count | note |
+|-----------|-------|----------------------|------------------------|-------|------|
+| 1 | 0 | `aba` → true | – | 1 | palindrome of length 3 found, jump to 3 |
+| 2 | 3 | `c c d` → false | `c cd` → false | 1 | no palindrome, move start to 4 |
+| 3 | 4 | `c d b` → false | `c db` → false | 1 | no palindrome, move start to 5 |
+| 4 | 5 | `d b b` → false | `d bb` → true | 2 | length‑4 palindrome `dbbd` found, jump to 9 (end) |
 
-The algorithm finishes with `ans = 2`, exactly the optimal selection “aba” and “dbbd”.
+The loop ends because `start = 9` and `9 + 3 > 9`. The final `count = 2`, which matches the optimal selection (`"aba"` and `"dbbd"`).
 
 ## Complexity  
-- **Time:** O(n · k) ≤ O(n²) – each iteration performs at most two palindrome checks, each scanning at most k or k+1 characters, and the outer loop runs at most n times.  
-- **Space:** O(1) – only a few integer variables and the two‑pointer indices inside `isPalindrome` are used; no extra containers are allocated.
+- **Time:** O(n · k) in the worst case, because each call to `isPalindrome` scans at most `k+1` characters and the outer loop advances at least one position per iteration, giving ≤ n iterations.  
+- **Space:** O(1) extra space; only a few integer variables are used, independent of the input size. (The output integer does not count toward auxiliary space.)
 
 ## Solution (Java)
 
 ```java
 class Solution {
     public int maxPalindromes(String s, int k) {
-        int n = s.length();
-        int ans = 0;
-        int i = 0;
+        int count = 0;
+        int start = 0;
+        int length = s.length();
 
-       while (i + k <= n) {
-            boolean found = false;
-
-            // Check length k
-            if (isPalindrome(s, i, i + k - 1)) {
-                ans++;
-                i += k;
-                found = true;
-            }
-            // Check length k + 1
-            else if (i + k + 1 <= n &&
-                     isPalindrome(s, i, i + k)) {
-                ans++;
-                i += k + 1;
-                found = true;
-            }
-
-            if (!found) {
-                i++;
+        while (start + k <= length) {
+            if (isPalindrome(s, start, start + k - 1)) {
+                start += k;
+                count++;
+            } else if (start + k + 1 <= length && isPalindrome(s, start, start + k)) {
+                start += k + 1;
+                count++;
+            } else {
+                start++;
             }
         }
-
-        return ans;
+        return count;
     }
 
-    private boolean isPalindrome(String s, int l, int r) {
-        while (l < r) {
-            if (s.charAt(l++) != s.charAt(r--))
+    private boolean isPalindrome(String s, int left, int right) {
+        while (left < right) {
+            if (s.charAt(left) != s.charAt(right))
                 return false;
+
+            left++;
+            right--;
         }
         return true;
     }
@@ -82,6 +79,6 @@ class Solution {
 
 ---
 
-**Runtime** 1 ms (beats 100.0%) · **Memory** 42.9 MB (beats 71.9%)
+**Runtime** 1 ms (beats 100.0%) · **Memory** 42.8 MB (beats 79.4%)
 
 <sub>Synced by AILeetHub on 2026-09-15.</sub>
