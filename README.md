@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**316 problems solved**
+**317 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 169  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 130  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 17
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 169  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 131  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 17
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -15,6 +15,7 @@ _Synced by AILeetHub._
 | 3 | [Longest Substring Without Repeating Characters](Sliding%20Window/0003-longest-substring-without-repeating-characters/) | Medium | Sliding Window | java |
 | 4 | [Median of Two Sorted Arrays](Divide%20and%20Conquer/0004-median-of-two-sorted-arrays/) | Hard | Divide and Conquer | java |
 | 5 | [Longest Palindromic Substring](Dynamic%20Programming/0005-longest-palindromic-substring/) | Medium | Dynamic Programming | java |
+| 6 | [Zigzag Conversion](String/0006-zigzag-conversion/) | Medium | String | Java |
 | 7 | [Reverse Integer](Math/0007-reverse-integer/) | Medium | Math | java |
 | 9 | [Palindrome Number](Math/0009-palindrome-number/) | Easy | Math | java |
 | 11 | [Container With Most Water](Two%20Pointers/0011-container-with-most-water/) | Medium | Two Pointers | java |
