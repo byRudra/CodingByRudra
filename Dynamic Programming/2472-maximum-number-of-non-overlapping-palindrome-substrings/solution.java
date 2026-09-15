@@ -1,33 +1,32 @@
 class Solution {
     public int maxPalindromes(String s, int k) {
         int n = s.length();
-                int count = 0;
-        int start = 0;
+        int ans = 0;
+        int i = 0;
 
-        while (start < n) {
+       while (i + k <= n) {
             boolean found = false;
 
-            // Earliest ending position
-            for (int r = start + k - 1; r < n; r++) {
-
-                // Try every possible starting point
-                for (int l = start; l <= r - k + 1; l++) {
-
-                    if (isPalindrome(s, l, r)) {
-                        count++;
-                        start = r + 1;
-                        found = true;
-                        break;
-                    }
-                }
-
-                if (found) break;
+            // Check length k
+            if (isPalindrome(s, i, i + k - 1)) {
+                ans++;
+                i += k;
+                found = true;
+            }
+            // Check length k + 1
+            else if (i + k + 1 <= n &&
+                     isPalindrome(s, i, i + k)) {
+                ans++;
+                i += k + 1;
+                found = true;
             }
 
-            if (!found) break;
+            if (!found) {
+                i++;
+            }
         }
 
-        return count;
+        return ans;
     }
 
     private boolean isPalindrome(String s, int l, int r) {
