@@ -16,8 +16,7 @@ class Solution {
         long denominator2 = factorial(n - k - 1);
         long denominator = denominator1 * denominator2 % MOD;
 
-        long result = numerator * modInverse(denominator);
-        result = result % MOD;
+        long result = numerator * modInverse(denominator) % MOD;
         return (int) result ;
     }
 

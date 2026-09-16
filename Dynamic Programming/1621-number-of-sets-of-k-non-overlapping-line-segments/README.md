@@ -5,46 +5,49 @@
 `Math` · `Dynamic Programming` · `Combinatorics` · `Prefix Sum`
 
 ## Intuition  
-The key observation is that a set of k non‑overlapping segments on points 0…n‑1 can be encoded by choosing 2k positions for the segment endpoints among n+k‑1 “slots” that arise after we insert a dummy separator after each chosen endpoint. This bijection yields the closed‑form count  
-
-\[
-\binom{n+k-1}{2k} = \frac{(n+k-1)!}{(2k)!\,(n-k-1)!}.
-\]
-
-A naïve DP would enumerate left/right choices for every point, costing O(n·k) time and O(n·k) memory. The combinatorial insight eliminates the DP entirely, reducing the problem to a single binomial coefficient computed modulo 10⁹+7. The pattern used is **modular combinatorics via factorials and modular inverses**.
+The key observation is that a set of k non‑overlapping segments on points 0…n‑1 can be represented by choosing 2k ordered endpoints after we “reserve” one interior point for each segment. If we shrink every required interior point into a dummy slot, the effective line length becomes n + k − 1, and any valid configuration corresponds to picking 2k positions among these n + k − 1 slots. Hence the answer is the binomial coefficient C(n + k − 1, 2k). A naïve DP would be O(n·k) and a combinatorial enumeration would be exponential; the insight collapses the problem to a single closed‑form expression. The pattern used is **combinatorial counting via factorials and modular inverses**.
 
 ## Approach  
-1. **Compute the numerator** – call `factorial(n + k - 1)` which iterates `i` from 2 to `n + k - 1`, multiplying `fact` by `i` and taking `% MOD` each step.  
-2. **Compute the first denominator term** – `factorial(2 * k)` using the same routine, producing `(2k)! mod MOD`.  
-3. **Compute the second denominator term** – `factorial(n - k - 1)`, yielding `(n‑k‑1)! mod MOD`.  
-4. **Combine denominator terms** – `denominator = denominator1 * denominator2 % MOD`. The loop invariant is that after each multiplication `denominator` holds the product of the processed factorial parts modulo MOD.  
-5. **Find modular inverse** – invoke `modInverse(denominator)`, which calls `pow(denominator, MOD‑2)`. The fast exponentiation loop maintains the invariant “`result` equals `denominator` raised to the already‑processed bits of the exponent, modulo MOD”.  
-6. **Assemble the answer** – multiply `numerator` by the modular inverse, reduce modulo MOD, and cast to `int`. The final product equals the binomial coefficient under the modulus.
+1. **Compute the numerator** – call `factorial(n + k - 1)`.  
+   *Loop*: `for i = 2 … n+k-1` multiply `fact` by i mod MOD.  
+   *Invariant*: after processing i, `fact` equals i! mod MOD.  
+2. **Compute the two denominator parts** – `factorial(2 * k)` and `factorial(n - k - 1)`.  
+   *Loop*: identical structure; the same invariant holds for each call.  
+   *Edge handling*: when `n - k - 1` equals 0 the loop body never runs, returning 1, which correctly represents 0!.  
+3. **Combine denominator** – `denominator = denominator1 * denominator2 % MOD`.  
+   This respects modular arithmetic while keeping the product within 64‑bit range.  
+4. **Find modular inverse of denominator** – `modInverse(denominator)` uses Fermat’s little theorem because MOD is prime.  
+   *Loop*: binary exponentiation (`pow`) repeatedly squares the base and multiplies when the current bit of the exponent is 1.  
+   *Invariant*: after each iteration, `result` equals the original base raised to the processed bits of the exponent, all modulo MOD.  
+5. **Multiply numerator by the inverse** – `result = numerator * modInverse(denominator) % MOD`.  
+   This yields C(n + k − 1, 2k) mod MOD, which is returned as an `int`.  
 
-Edge cases are handled implicitly: when `n‑k‑1` equals 0 the factorial loop returns 1; the algorithm never accesses negative indices because the constraints guarantee `k ≤ n‑1`.
+The code deliberately uses `<=` in the factorial loops (`i <= limit`) to include the upper bound, ensuring that limit! is fully computed. All arithmetic stays in `long` to avoid overflow before the modulo reduction.
 
 ## Dry Run  
-**Input:** `n = 4, k = 2`  
 
-| Step | i (loop variable) | fact (numerator) | denominator1 (2k!) | denominator2 (n‑k‑1)! | note |
-|------|-------------------|------------------|--------------------|----------------------|------|
-| 1    | 2                 | 2                | –                  | –                    | start numerator |
-| 2    | 3                 | 6                | –                  | –                    | 3! |
-| 3    | 4                 | 24               | –                  | –                    | 4! |
-| 4    | 5                 | 120              | –                  | –                    | 5! (stop, n+k‑1=5) |
-| 5    | 2 (den1)          | –                | 2                  | –                    | (2k)! = 2! |
-| 6    | 3 (den1)          | –                | 6                  | –                    | 3! → 6 |
-| 7    | 4 (den1)          | –                | 24                 | –                    | 4! → 24 = (2k)! |
-| 8    | 1 (den2)          | –                | –                  | 1                    | (n‑k‑1)! = 0! =1 |
-| 9    | –                 | –                | –                  | –                    | denominator = 24·1 % MOD = 24 |
-|10    | –                 | –                | –                  | –                    | inv = pow(24, MOD‑2) = 41666667 |
-|11    | –                 | –                | –                  | –                    | result = 120 * 41666667 % MOD = 5 |
+**Input:** `n = 4, k = 2`
+
+| Step | i (factorial loop) | fact (mod) | note |
+|------|-------------------|------------|------|
+| 1️⃣ numerator loop start | – | fact = 1 | initialize |
+| 1️⃣ i=2 | fact = 2 | 2! |
+| 1️⃣ i=3 | fact = 6 | 3! |
+| 1️⃣ i=4 | fact = 24 | 4! |
+| 1️⃣ i=5 | fact = 120 | 5! = numerator |
+| 2️⃣ denom1 (`2k=4`) loop i=2 | fact = 2 | 2! |
+| 2️⃣ i=3 | fact = 6 | 3! |
+| 2️⃣ i=4 | fact = 24 | 4! = denominator1 |
+| 3️⃣ denom2 (`n‑k‑1=1`) loop skips (i starts at 2) → fact = 1 = denominator2 |
+| 4️⃣ denominator = 24 * 1 % MOD = 24 |
+| 5️⃣ inverse = pow(24, MOD‑2) = 41666667 (pre‑computed) |
+| 6️⃣ result = 120 * 41666667 % MOD = 5 |
 
 Final state: `result = 5`, which matches the five valid segment sets.
 
 ## Complexity  
-- **Time:** O(n + k) – the three factorial loops each run at most `n + k - 1` iterations, and the fast‑power loop runs in O(log MOD) ≈ 30 steps, all bounded by a linear scan of the input size.  
-- **Space:** O(1) – only a handful of `long` variables are kept; the output array is not counted.
+- **Time:** O(n + k) – the three factorial calls each traverse at most n + k − 1 steps, and binary exponentiation runs in O(log MOD) ≈ 30 steps, dominated by the linear passes.  
+- **Space:** O(1) – only a handful of primitive variables are stored; the output array is not counted.
 
 ## Solution (Java)
 
@@ -67,8 +70,7 @@ class Solution {
         long denominator2 = factorial(n - k - 1);
         long denominator = denominator1 * denominator2 % MOD;
 
-        long result = numerator * modInverse(denominator);
-        result = result % MOD;
+        long result = numerator * modInverse(denominator) % MOD;
         return (int) result ;
     }
 
@@ -101,6 +103,6 @@ class Solution {
 
 ---
 
-**Runtime** 1 ms (beats 95.5%) · **Memory** 41.8 MB (beats 98.7%)
+**Runtime** 0 ms (beats 100.0%) · **Memory** 42 MB (beats 94.2%)
 
 <sub>Synced by AILeetHub on 2026-09-16.</sub>
