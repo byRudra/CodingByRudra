@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**321 problems solved**
+**322 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 170  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 134  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 17
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 170  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 135  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 17
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -228,6 +228,7 @@ _Synced by AILeetHub._
 | 1407 | [Top Travellers](Database/1407-top-travellers/) | Easy | Database | mysql |
 | 1413 | [Minimum Value to Get Positive Step by Step Sum](Prefix%20Sum/1413-minimum-value-to-get-positive-step-by-step-sum/) | Easy | Prefix Sum | Java |
 | 1437 | [Check If All 1's Are at Least Length K Places Away](Array/1437-check-if-all-1s-are-at-least-length-k-places-away/) | Easy | Array | java |
+| 1477 | [Find Two Non-overlapping Sub-arrays Each With Target Sum](Dynamic%20Programming/1477-find-two-non-overlapping-sub-arrays-each-with-target-sum/) | Medium | Dynamic Programming | Java |
 | 1518 | [Water Bottles](Math/1518-water-bottles/) | Easy | Math | java |
 | 1527 | [Patients With a Condition](Database/1527-patients-with-a-condition/) | Easy | Database | MySQL |
 | 1539 | [Kth Missing Positive Number](Binary%20Search/1539-kth-missing-positive-number/) | Easy | Binary Search | java |
