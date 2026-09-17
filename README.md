@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**320 problems solved**
+**321 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 170  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 133  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 17
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 170  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 134  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 17
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -176,6 +176,7 @@ _Synced by AILeetHub._
 | 680 | [Valid Palindrome II](Two%20Pointers/0680-valid-palindrome-ii/) | Easy | Two Pointers | Java |
 | 703 | [Kth Largest Element in a Stream](Binary%20Search%20Tree/0703-kth-largest-element-in-a-stream/) | Easy | Binary Search Tree | Java |
 | 704 | [Binary Search](Binary%20Search/0704-binary-search/) | Easy | Binary Search | java |
+| 707 | [Design Linked List](Design/0707-design-linked-list/) | Medium | Design | Java |
 | 713 | [Subarray Product Less Than K](Sliding%20Window/0713-subarray-product-less-than-k/) | Medium | Sliding Window | java |
 | 724 | [Find Pivot Index](Prefix%20Sum/0724-find-pivot-index/) | Easy | Prefix Sum | java |
 | 739 | [Daily Temperatures](Monotonic%20Stack/0739-daily-temperatures/) | Medium | Monotonic Stack | java |
