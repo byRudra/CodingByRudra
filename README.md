@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**324 problems solved**
+**325 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 171  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 136  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 17
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 172  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 136  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 17
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -149,6 +149,7 @@ _Synced by AILeetHub._
 | 396 | [Rotate Function](Dynamic%20Programming/0396-rotate-function/) | Medium | Dynamic Programming | java |
 | 409 | [Longest Palindrome](Greedy/0409-longest-palindrome/) | Easy | Greedy | java |
 | 416 | [Partition Equal Subset Sum](Dynamic%20Programming/0416-partition-equal-subset-sum/) | Medium | Dynamic Programming | java |
+| 441 | [Arranging Coins](Binary%20Search/0441-arranging-coins/) | Easy | Binary Search | Java |
 | 448 | [Find All Numbers Disappeared in an Array](Hash%20Table/0448-find-all-numbers-disappeared-in-an-array/) | Easy | Hash Table | java |
 | 485 | [Max Consecutive Ones](Array/0485-max-consecutive-ones/) | Easy | Array | Java |
 | 496 | [Next Greater Element I](Monotonic%20Stack/0496-next-greater-element-i/) | Easy | Monotonic Stack | java |
