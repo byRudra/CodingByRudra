@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**325 problems solved**
+**326 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 172  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 136  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 17
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 172  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 136  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 18
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -233,6 +233,7 @@ _Synced by AILeetHub._
 | 1437 | [Check If All 1's Are at Least Length K Places Away](Array/1437-check-if-all-1s-are-at-least-length-k-places-away/) | Easy | Array | java |
 | 1477 | [Find Two Non-overlapping Sub-arrays Each With Target Sum](Dynamic%20Programming/1477-find-two-non-overlapping-sub-arrays-each-with-target-sum/) | Medium | Dynamic Programming | Java |
 | 1518 | [Water Bottles](Math/1518-water-bottles/) | Easy | Math | java |
+| 1520 | [Maximum Number of Non-Overlapping Substrings](Greedy/1520-maximum-number-of-non-overlapping-substrings/) | Hard | Greedy | Java |
 | 1527 | [Patients With a Condition](Database/1527-patients-with-a-condition/) | Easy | Database | MySQL |
 | 1539 | [Kth Missing Positive Number](Binary%20Search/1539-kth-missing-positive-number/) | Easy | Binary Search | java |
 | 1581 | [Customer Who Visited but Did Not Make Any Transactions](Database/1581-customer-who-visited-but-did-not-make-any-transactions/) | Easy | Database | pythondata |
