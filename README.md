@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**323 problems solved**
+**324 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 171  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 135  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 17
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 171  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 136  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 17
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -130,6 +130,7 @@ _Synced by AILeetHub._
 | 242 | [Valid Anagram](Sorting/0242-valid-anagram/) | Easy | Sorting | java |
 | 263 | [Ugly Number](Math/0263-ugly-number/) | Easy | Math | Java |
 | 268 | [Missing Number](Binary%20Search/0268-missing-number/) | Easy | Binary Search | java |
+| 274 | [H-Index](Sorting/0274-h-index/) | Medium | Sorting | Java |
 | 278 | [First Bad Version](Binary%20Search/0278-first-bad-version/) | Easy | Binary Search | java |
 | 283 | [Move Zeroes](Two%20Pointers/0283-move-zeroes/) | Easy | Two Pointers | java |
 | 287 | [Find the Duplicate Number](Two%20Pointers/0287-find-the-duplicate-number/) | Medium | Two Pointers | java |
