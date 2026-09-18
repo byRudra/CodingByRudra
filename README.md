@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**322 problems solved**
+**323 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 170  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 135  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 17
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 171  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 135  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 17
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -152,6 +152,7 @@ _Synced by AILeetHub._
 | 485 | [Max Consecutive Ones](Array/0485-max-consecutive-ones/) | Easy | Array | Java |
 | 496 | [Next Greater Element I](Monotonic%20Stack/0496-next-greater-element-i/) | Easy | Monotonic Stack | java |
 | 503 | [Next Greater Element II](Monotonic%20Stack/0503-next-greater-element-ii/) | Medium | Monotonic Stack | java |
+| 507 | [Perfect Number](Math/0507-perfect-number/) | Easy | Math | Java |
 | 509 | [Fibonacci Number](Dynamic%20Programming/0509-fibonacci-number/) | Easy | Dynamic Programming | java |
 | 511 | [Game Play Analysis I](Database/0511-game-play-analysis-i/) | Easy | Database | mysql |
 | 516 | [Longest Palindromic Subsequence](Dynamic%20Programming/0516-longest-palindromic-subsequence/) | Medium | Dynamic Programming | java |
