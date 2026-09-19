@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**327 problems solved**
+**328 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 172  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 137  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 18
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 172  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 138  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 18
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -84,6 +84,7 @@ _Synced by AILeetHub._
 | 136 | [Single Number](Bit%20Manipulation/0136-single-number/) | Easy | Bit Manipulation | java |
 | 138 | [Copy List with Random Pointer](Hash%20Table/0138-copy-list-with-random-pointer/) | Medium | Hash Table | Java |
 | 141 | [Linked List Cycle](Two%20Pointers/0141-linked-list-cycle/) | Easy | Two Pointers | Java |
+| 142 | [Linked List Cycle II](Two%20Pointers/0142-linked-list-cycle-ii/) | Medium | Two Pointers | Java |
 | 143 | [Reorder List](Two%20Pointers/0143-reorder-list/) | Medium | Two Pointers | Java |
 | 144 | [Binary Tree Preorder Traversal](Binary%20Tree/0144-binary-tree-preorder-traversal/) | Easy | Binary Tree | java |
 | 145 | [Binary Tree Postorder Traversal](Binary%20Tree/0145-binary-tree-postorder-traversal/) | Easy | Binary Tree | java |
