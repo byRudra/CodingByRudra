@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**326 problems solved**
+**327 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 172  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 136  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 18
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 172  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 137  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 18
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -228,6 +228,7 @@ _Synced by AILeetHub._
 | 1344 | [Angle Between Hands of a Clock](Math/1344-angle-between-hands-of-a-clock/) | Medium | Math | java |
 | 1380 | [Lucky Numbers in a Matrix](Matrix/1380-lucky-numbers-in-a-matrix/) | Easy | Matrix | java |
 | 1399 | [Count Largest Group](Math/1399-count-largest-group/) | Easy | Math | java |
+| 1401 | [Circle and Rectangle Overlapping](Geometry/1401-circle-and-rectangle-overlapping/) | Medium | Geometry | Java |
 | 1407 | [Top Travellers](Database/1407-top-travellers/) | Easy | Database | mysql |
 | 1413 | [Minimum Value to Get Positive Step by Step Sum](Prefix%20Sum/1413-minimum-value-to-get-positive-step-by-step-sum/) | Easy | Prefix Sum | Java |
 | 1437 | [Check If All 1's Are at Least Length K Places Away](Array/1437-check-if-all-1s-are-at-least-length-k-places-away/) | Easy | Array | java |
