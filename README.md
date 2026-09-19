@@ -242,7 +242,7 @@ _Synced by AILeetHub._
 | 1581 | [Customer Who Visited but Did Not Make Any Transactions](Database/1581-customer-who-visited-but-did-not-make-any-transactions/) | Easy | Database | pythondata |
 | 1621 | [Number of Sets of K Non-Overlapping Line Segments](Dynamic%20Programming/1621-number-of-sets-of-k-non-overlapping-line-segments/) | Medium | Dynamic Programming | Java |
 | 1653 | [Minimum Deletions to Make String Balanced](Dynamic%20Programming/1653-minimum-deletions-to-make-string-balanced/) | Medium | Dynamic Programming | java |
-| 1669 | [Merge In Between Linked Lists](Linked%20List/1669-merge-in-between-linked-lists/) | Medium | Linked List | java |
+| 1669 | [Merge In Between Linked Lists](Linked%20List/1669-merge-in-between-linked-lists/) | Medium | Linked List | Java |
 | 1722 | [Minimize Hamming Distance After Swap Operations](Union-Find/1722-minimize-hamming-distance-after-swap-operations/) | Medium | Union-Find | java |
 | 1732 | [Find the Highest Altitude](Prefix%20Sum/1732-find-the-highest-altitude/) | Easy | Prefix Sum | java |
 | 1752 | [Check if Array Is Sorted and Rotated](Array/1752-check-if-array-is-sorted-and-rotated/) | Easy | Array | java |
