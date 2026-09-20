@@ -5,27 +5,29 @@
 `Array` · `Greedy` · `Sorting`
 
 ## Intuition  
-If we line up the balloons by their rightmost coordinate, the earliest‑ending balloon determines the only x‑position where an arrow can still hit it without missing any earlier balloon. Any later balloon whose left end lies to the left of (or exactly at) that rightmost coordinate can be burst by the same arrow. Thus we can greedily “close” a group of overlapping intervals as soon as we encounter a balloon that starts after the current rightmost bound. The naïve solution would sort twice or use a set to track overlaps, but the single‑pass after one sort eliminates all extra passes or data structures. This is the classic **interval‑covering with two pointers** (or “greedy on sorted ends”) pattern.
+If we line up all balloons by the rightmost point of each interval, the first balloon’s end is the earliest position where an arrow can possibly burst it. Placing an arrow exactly at that end also bursts every subsequent balloon whose start is ≤ that end, because all those intervals overlap the chosen point. The naive way would be to examine every balloon against every previously placed arrow ( O(n²) ) or to keep a hash of covered ranges, both of which are unnecessary. The key observation is that after sorting by the right endpoint, a single pass with a “current arrow position” suffices – a classic **greedy interval‑cover** pattern.
 
 ## Approach  
-1. **Sort by end coordinate** – `Arrays.sort(intervals, (a,b) -> Integer.compare(a[1], b[1]));`  
-   *Invariant*: after sorting, `intervals[i][1] ≤ intervals[i+1][1]`.  
-2. **Initialize** – `prevEnd = intervals[0][1];` and `count = 0;`  
-   `prevEnd` holds the rightmost coordinate of the current arrow’s feasible region.  
-3. **Iterate i = 1 … n‑1**  
-   *Loop condition*: `i < intervals.length`.  
-   *Invariant each iteration*: all balloons up to `i‑1` are already accounted for, and `prevEnd` is the smallest right end among the balloons that share the current arrow.  
-   - If `prevEnd >= intervals[i][0]` (the current balloon starts before the feasible region ends) → overlap:  
-     * increment `count` because this balloon can share the existing arrow,  
-     * shrink `prevEnd` to `Math.min(prevEnd, intervals[i][1])` to keep the feasible region as tight as possible.  
-   - Else (`prevEnd < intervals[i][0]`) → no overlap: start a new arrow region by setting `prevEnd = intervals[i][1]`.  
-4. **Return result** – `intervals.length - count;`  
-   `count` is the number of balloons that were merged into existing groups; subtracting from the total yields the number of distinct arrow groups (i.e., arrows needed).
+1. **Sort by end** – `Arrays.sort(points, (a, b) -> Integer.compare(a[1], b[1]));`  
+   *Exit condition*: all `points` are ordered so that `points[i][1] ≤ points[i+1][1]`.  
+   *Invariant*: after sorting, any balloon that can be hit by an arrow placed at `points[i][1]` must appear at index ≥ i.  
 
-**Edge handling**:  
-- The code assumes `intervals` is non‑empty (problem guarantees at least one balloon).  
-- For a single balloon the loop never runs, `count` stays 0, and the answer is `1`.  
-- The comparison uses `>=` so a balloon that touches the previous one at exactly the same x (e.g., `[1,2]` and `[2,3]`) is considered overlapping, matching the problem’s inclusive interval definition.
+2. **Initialize first arrow** – `int arrows = 1; int arrowPos = points[0][1];`  
+   Handles the guaranteed non‑empty input; for a single balloon the answer is 1.  
+
+3. **Iterate from the second balloon** – `for (int i = 1; i < points.length; i++)`  
+   *Loop exit*: `i == points.length`.  
+   *Invariant each iteration*: `arrowPos` is the rightmost coordinate of the last arrow placed, and all balloons with index `< i` are already burst.  
+
+   - **Check overlap** – `if (points[i][0] > arrowPos)`  
+     *Why `>` not `>=`*: when `points[i][0] == arrowPos` the current arrow still hits the balloon because the interval is inclusive on both ends.  
+
+   - **Place new arrow when needed** – `arrows++; arrowPos = points[i][1];`  
+     This updates the greedy choice to the earliest possible end that can cover the current balloon and any following overlapping ones.  
+
+4. **Return result** – `return arrows;`  
+
+Edge‑case handling: the code never accesses `points[-1]` because the first arrow is set before the loop. The sorting step also guarantees correct behavior for duplicate intervals or intervals that share endpoints.
 
 ## Dry Run  
 
@@ -33,44 +35,40 @@ Input: `[[10,16],[2,8],[1,6],[7,12]]`
 
 After sorting by end: `[[1,6],[2,8],[7,12],[10,16]]`
 
-| i | intervals[i][0] | intervals[i][1] | prevEnd (before) | count (before) | Action / Note                              |
-|---|----------------|----------------|------------------|----------------|--------------------------------------------|
-| 0 | 1              | 6              | 6                | 0              | initialization                              |
-| 1 | 2              | 8              | 6                | 0              | 6 ≥ 2 → overlap → count=1, prevEnd=6        |
-| 2 | 7              | 12             | 6                | 1              | 6 < 7 → new group → prevEnd=12              |
-| 3 | 10             | 16             | 12               | 1              | 12 ≥ 10 → overlap → count=2, prevEnd=12    |
+| i | arrowPos (prev) | points[i][0] | points[i][1] | arrows | Action | Note |
+|---|----------------|--------------|--------------|--------|--------|------|
+| 0 (init) | – | – | – | 1 | arrowPos = 6 | First arrow at end of first interval |
+| 1 | 6 | 2 | 8 | 1 | no new arrow | 2 ≤ 6, balloon already burst |
+| 2 | 6 | 7 | 12 | 2 | arrows=2, arrowPos=12 | 7 > 6, need new arrow at 12 |
+| 3 | 12 | 10 | 16 | 2 | no new arrow | 10 ≤ 12, covered by second arrow |
 
-Loop ends. `intervals.length = 4`, `count = 2`, so answer = `4‑2 = 2`.  
-Two arrows suffice: one at x = 6 (covers first two balloons) and one at x = 12 (covers last two).
+Final state: `arrows = 2`, which is minimal because the two arrows at 6 and 12 each cover a maximal overlapping group.
 
 ## Complexity  
-- **Time:** `O(n log n)` – sorting dominates; the subsequent single pass runs `n‑1` iterations, each doing O(1) work.  
-- **Space:** `O(1)` – only a few primitive variables (`prevEnd`, `count`, loop index) are used; the sort is in‑place for primitive arrays. (Output integer is not counted.)
+- **Time:** `O(n log n)` – sorting dominates; the subsequent loop runs `n‑1` times, each iteration performing O(1) work.  
+- **Space:** `O(1)` extra – only a few integer variables are used; the sort is in‑place for primitive arrays. (Output integer does not count toward space.)
 
 ## Solution (Java)
 
 ```java
 class Solution {
-    public int findMinArrowShots(int[][] intervals) {
-        int count = 0;
-        Arrays.sort(intervals, (a,b) -> Integer.compare(a[1], b[1]));
-        int prevEnd = intervals[0][1];
-        for(int i = 1; i < intervals.length; i++){
-            if(prevEnd >= intervals[i][0]){
-                count ++;
-                prevEnd = Math.min(prevEnd, intervals[i][1]);
-            }
-            else{
-                prevEnd =  intervals[i][1];
+    public int findMinArrowShots(int[][] points) {
+        Arrays.sort(points, (a, b) -> Integer.compare(a[1], b[1]));
+        int arrows = 1;
+        int arrowPos = points[0][1];
+        for (int i = 1; i < points.length; i++) {
+            if (points[i][0] > arrowPos) {
+                arrows++;
+                arrowPos = points[i][1];
             }
         }
-        return intervals.length - count;
+        return arrows;
     }
 }
 ```
 
 ---
 
-**Runtime** 53 ms (beats 47.3%) · **Memory** 95.5 MB (beats 69.4%)
+**Runtime** 53 ms (beats 47.3%) · **Memory** 95.6 MB (beats 69.4%)
 
 <sub>Synced by AILeetHub on 2026-09-20.</sub>
