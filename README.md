@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**330 problems solved**
+**331 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 174  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 138  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 18
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 174  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 139  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 18
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -47,6 +47,7 @@ _Synced by AILeetHub._
 | 53 | [Maximum Subarray](Dynamic%20Programming/0053-maximum-subarray/) | Medium | Dynamic Programming | java |
 | 54 | [Spiral Matrix](Simulation/0054-spiral-matrix/) | Medium | Simulation | java |
 | 55 | [Jump Game](Dynamic%20Programming/0055-jump-game/) | Medium | Dynamic Programming | java |
+| 56 | [Merge Intervals](Sorting/0056-merge-intervals/) | Medium | Sorting | Java |
 | 58 | [Length of Last Word](String/0058-length-of-last-word/) | Easy | String | java |
 | 59 | [Spiral Matrix II](Simulation/0059-spiral-matrix-ii/) | Medium | Simulation | java |
 | 61 | [Rotate List](Two%20Pointers/0061-rotate-list/) | Medium | Two Pointers | java |
