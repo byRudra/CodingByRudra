@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**335 problems solved**
+**336 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 174  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 143  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 18
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 174  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 144  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 18
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -256,6 +256,7 @@ _Synced by AILeetHub._
 | 1848 | [Minimum Distance to the Target Element](Array/1848-minimum-distance-to-the-target-element/) | Easy | Array | java |
 | 1854 | [Maximum Population Year](Prefix%20Sum/1854-maximum-population-year/) | Easy | Prefix Sum | java |
 | 1855 | [Maximum Distance Between a Pair of Values](Two%20Pointers/1855-maximum-distance-between-a-pair-of-values/) | Medium | Two Pointers | python3 |
+| 1864 | [Minimum Number of Swaps to Make the Binary String Alternating](Greedy/1864-minimum-number-of-swaps-to-make-the-binary-string-alternating/) | Medium | Greedy | Java |
 | 1871 | [Jump Game VII](Dynamic%20Programming/1871-jump-game-vii/) | Medium | Dynamic Programming | java |
 | 1872 | [Stone Game VIII](Dynamic%20Programming/1872-stone-game-viii/) | Hard | Dynamic Programming | java |
 | 1886 | [Determine Whether Matrix Can Be Obtained By Rotation](Matrix/1886-determine-whether-matrix-can-be-obtained-by-rotation/) | Easy | Matrix | java |
