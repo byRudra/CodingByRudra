@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**336 problems solved**
+**337 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 174  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 144  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 18
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 175  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 144  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 18
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -292,6 +292,7 @@ _Synced by AILeetHub._
 | 2540 | [Minimum Common Value](Two%20Pointers/2540-minimum-common-value/) | Easy | Two Pointers | java |
 | 2558 | [Take Gifts From the Richest Pile](Heap%20(Priority%20Queue)/2558-take-gifts-from-the-richest-pile/) | Easy | Heap (Priority Queue) | Java |
 | 2574 | [Left and Right Sum Differences](Prefix%20Sum/2574-left-and-right-sum-differences/) | Easy | Prefix Sum | Java |
+| 2706 | [Buy Two Chocolates](Greedy/2706-buy-two-chocolates/) | Easy | Greedy | Java |
 | 2798 | [Number of Employees Who Met the Target](Array/2798-number-of-employees-who-met-the-target/) | Easy | Array | java |
 | 2799 | [Count Complete Subarrays in an Array](Sliding%20Window/2799-count-complete-subarrays-in-an-array/) | Medium | Sliding Window | java |
 | 2833 | [Furthest Point From Origin](Counting/2833-furthest-point-from-origin/) | Easy | Counting | python3 |
