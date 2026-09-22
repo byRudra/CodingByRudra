@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**337 problems solved**
+**338 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 175  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 144  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 18
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 175  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 144  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 19
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -318,6 +318,7 @@ _Synced by AILeetHub._
 | 3483 | [Unique 3-Digit Even Numbers](Recursion/3483-unique-3-digit-even-numbers/) | Easy | Recursion | Java |
 | 3498 | [Reverse Degree of a String](Simulation/3498-reverse-degree-of-a-string/) | Easy | Simulation | Java |
 | 3524 | [Find X Value of Array I](Dynamic%20Programming/3524-find-x-value-of-array-i/) | Medium | Dynamic Programming | Java |
+| 3525 | [Find X Value of Array II](Segment%20Tree/3525-find-x-value-of-array-ii/) | Hard | Segment Tree | Java |
 | 3568 | [Minimum Moves to Clean the Classroom](Bit%20Manipulation/3568-minimum-moves-to-clean-the-classroom/) | Medium | Bit Manipulation | java |
 | 3622 | [Check Divisibility by Digit Sum and Product](Math/3622-check-divisibility-by-digit-sum-and-product/) | Easy | Math | java |
 | 3633 | [Earliest Finish Time for Land and Water Rides I](Two%20Pointers/3633-earliest-finish-time-for-land-and-water-rides-i/) | Easy | Two Pointers | java |
