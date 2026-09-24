@@ -145,7 +145,7 @@ _Synced by AILeetHub._
 | 344 | [Reverse String](Two%20Pointers/0344-reverse-string/) | Easy | Two Pointers | java |
 | 347 | [Top K Frequent Elements](Divide%20and%20Conquer/0347-top-k-frequent-elements/) | Medium | Divide and Conquer | java |
 | 349 | [Intersection of Two Arrays](Two%20Pointers/0349-intersection-of-two-arrays/) | Easy | Two Pointers | Java |
-| 387 | [First Unique Character in a String](Counting/0387-first-unique-character-in-a-string/) | Easy | Counting | java |
+| 387 | [First Unique Character in a String](Counting/0387-first-unique-character-in-a-string/) | Easy | Counting | Java |
 | 389 | [Find the Difference](Bit%20Manipulation/0389-find-the-difference/) | Easy | Bit Manipulation | java |
 | 392 | [Is Subsequence](Dynamic%20Programming/0392-is-subsequence/) | Easy | Dynamic Programming | java |
 | 394 | [Decode String](Recursion/0394-decode-string/) | Medium | Recursion | java |
