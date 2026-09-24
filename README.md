@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**340 problems solved**
+**341 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 176  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 145  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 19
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 176  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 146  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 19
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -64,6 +64,7 @@ _Synced by AILeetHub._
 | 82 | [Remove Duplicates from Sorted List II](Two%20Pointers/0082-remove-duplicates-from-sorted-list-ii/) | Medium | Two Pointers | java |
 | 83 | [Remove Duplicates from Sorted List](Linked%20List/0083-remove-duplicates-from-sorted-list/) | Easy | Linked List | java |
 | 88 | [Merge Sorted Array](Two%20Pointers/0088-merge-sorted-array/) | Easy | Two Pointers | java |
+| 89 | [Gray Code](Backtracking/0089-gray-code/) | Medium | Backtracking | Java |
 | 92 | [Reverse Linked List II](Linked%20List/0092-reverse-linked-list-ii/) | Medium | Linked List | Java |
 | 94 | [Binary Tree Inorder Traversal](Binary%20Tree/0094-binary-tree-inorder-traversal/) | Easy | Binary Tree | java |
 | 100 | [Same Tree](Binary%20Tree/0100-same-tree/) | Easy | Binary Tree | java |
