@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**341 problems solved**
+**342 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 176  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 146  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 19
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 176  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 146  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 20
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -220,6 +220,7 @@ _Synced by AILeetHub._
 | 1070 | [Product Sales Analysis III](Database/1070-product-sales-analysis-iii/) | Medium | Database | mysql |
 | 1075 | [Project Employees I](Database/1075-project-employees-i/) | Easy | Database | mysql |
 | 1092 | [Shortest Common Supersequence ](Dynamic%20Programming/1092-shortest-common-supersequence/) | Hard | Dynamic Programming | java |
+| 1096 | [Brace Expansion II](Backtracking/1096-brace-expansion-ii/) | Hard | Backtracking | Java |
 | 1137 | [N-th Tribonacci Number](Dynamic%20Programming/1137-n-th-tribonacci-number/) | Easy | Dynamic Programming | java |
 | 1143 | [Longest Common Subsequence](Dynamic%20Programming/1143-longest-common-subsequence/) | Medium | Dynamic Programming | java |
 | 1148 | [Article Views I](Database/1148-article-views-i/) | Easy | Database | mysql |
