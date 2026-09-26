@@ -179,7 +179,7 @@ _Synced by AILeetHub._
 | 602 | [Friend Requests II: Who Has the Most Friends](Database/0602-friend-requests-ii-who-has-the-most-friends/) | Medium | Database | MySQL |
 | 605 | [Can Place Flowers](Greedy/0605-can-place-flowers/) | Easy | Greedy | java |
 | 619 | [Biggest Single Number](Database/0619-biggest-single-number/) | Easy | Database | MySQL |
-| 620 | [Not Boring Movies](Database/0620-not-boring-movies/) | Easy | Database | mysql |
+| 620 | [Not Boring Movies](Database/0620-not-boring-movies/) | Easy | Database | MySQL |
 | 621 | [Task Scheduler](Heap%20(Priority%20Queue)/0621-task-scheduler/) | Medium | Heap (Priority Queue) | java |
 | 627 | [Swap Sex of Employees](Database/0627-swap-sex-of-employees/) | Easy | Database | mysql |
 | 643 | [Maximum Average Subarray I](Sliding%20Window/0643-maximum-average-subarray-i/) | Easy | Sliding Window | java |
