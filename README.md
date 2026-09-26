@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**349 problems solved**
+**350 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 181  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 148  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 20
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 182  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 148  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 20
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -238,6 +238,7 @@ _Synced by AILeetHub._
 | 1323 | [Maximum 69 Number](Greedy/1323-maximum-69-number/) | Easy | Greedy | java |
 | 1342 | [Number of Steps to Reduce a Number to Zero](Bit%20Manipulation/1342-number-of-steps-to-reduce-a-number-to-zero/) | Easy | Bit Manipulation | java |
 | 1344 | [Angle Between Hands of a Clock](Math/1344-angle-between-hands-of-a-clock/) | Medium | Math | java |
+| 1378 | [Replace Employee ID With The Unique Identifier](Database/1378-replace-employee-id-with-the-unique-identifier/) | Easy | Database | MySQL |
 | 1380 | [Lucky Numbers in a Matrix](Matrix/1380-lucky-numbers-in-a-matrix/) | Easy | Matrix | java |
 | 1399 | [Count Largest Group](Math/1399-count-largest-group/) | Easy | Math | java |
 | 1401 | [Circle and Rectangle Overlapping](Geometry/1401-circle-and-rectangle-overlapping/) | Medium | Geometry | Java |
