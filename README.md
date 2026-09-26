@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**350 problems solved**
+**351 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 182  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 148  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 20
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 182  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 149  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 20
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -143,6 +143,7 @@ _Synced by AILeetHub._
 | 303 | [Range Sum Query - Immutable](Design/0303-range-sum-query-immutable/) | Easy | Design | java |
 | 319 | [Bulb Switcher](Math/0319-bulb-switcher/) | Medium | Math | java |
 | 322 | [Coin Change](Dynamic%20Programming/0322-coin-change/) | Medium | Dynamic Programming | Java |
+| 328 | [Odd Even Linked List](Linked%20List/0328-odd-even-linked-list/) | Medium | Linked List | Java |
 | 344 | [Reverse String](Two%20Pointers/0344-reverse-string/) | Easy | Two Pointers | java |
 | 347 | [Top K Frequent Elements](Divide%20and%20Conquer/0347-top-k-frequent-elements/) | Medium | Divide and Conquer | java |
 | 349 | [Intersection of Two Arrays](Two%20Pointers/0349-intersection-of-two-arrays/) | Easy | Two Pointers | Java |
