@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**348 problems solved**
+**349 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 180  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 148  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 20
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 181  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 148  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 20
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -254,6 +254,7 @@ _Synced by AILeetHub._
 | 1653 | [Minimum Deletions to Make String Balanced](Dynamic%20Programming/1653-minimum-deletions-to-make-string-balanced/) | Medium | Dynamic Programming | java |
 | 1658 | [Minimum Operations to Reduce X to Zero](Sliding%20Window/1658-minimum-operations-to-reduce-x-to-zero/) | Medium | Sliding Window | Java |
 | 1669 | [Merge In Between Linked Lists](Linked%20List/1669-merge-in-between-linked-lists/) | Medium | Linked List | Java |
+| 1683 | [Invalid Tweets](Database/1683-invalid-tweets/) | Easy | Database | MySQL |
 | 1722 | [Minimize Hamming Distance After Swap Operations](Union-Find/1722-minimize-hamming-distance-after-swap-operations/) | Medium | Union-Find | java |
 | 1732 | [Find the Highest Altitude](Prefix%20Sum/1732-find-the-highest-altitude/) | Easy | Prefix Sum | java |
 | 1752 | [Check if Array Is Sorted and Rotated](Array/1752-check-if-array-is-sorted-and-rotated/) | Easy | Array | java |
