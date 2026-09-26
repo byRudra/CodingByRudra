@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**346 problems solved**
+**347 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 178  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 148  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 20
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 179  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 148  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 20
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -185,6 +185,7 @@ _Synced by AILeetHub._
 | 643 | [Maximum Average Subarray I](Sliding%20Window/0643-maximum-average-subarray-i/) | Easy | Sliding Window | java |
 | 657 | [Robot Return to Origin](Simulation/0657-robot-return-to-origin/) | Easy | Simulation | python |
 | 680 | [Valid Palindrome II](Two%20Pointers/0680-valid-palindrome-ii/) | Easy | Two Pointers | Java |
+| 682 | [Baseball Game](Simulation/0682-baseball-game/) | Easy | Simulation | Java |
 | 703 | [Kth Largest Element in a Stream](Binary%20Search%20Tree/0703-kth-largest-element-in-a-stream/) | Easy | Binary Search Tree | Java |
 | 704 | [Binary Search](Binary%20Search/0704-binary-search/) | Easy | Binary Search | java |
 | 707 | [Design Linked List](Design/0707-design-linked-list/) | Medium | Design | Java |
