@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**343 problems solved**
+**344 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 177  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 146  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 20
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 177  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 147  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 20
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -257,6 +257,7 @@ _Synced by AILeetHub._
 | 1757 | [Recyclable and Low Fat Products](Database/1757-recyclable-and-low-fat-products/) | Easy | Database | mysql |
 | 1768 | [Merge Strings Alternately](Two%20Pointers/1768-merge-strings-alternately/) | Easy | Two Pointers | Java |
 | 1789 | [Primary Department for Each Employee](Database/1789-primary-department-for-each-employee/) | Easy | Database | mysql |
+| 1807 | [Evaluate the Bracket Pairs of a String](Hash%20Table/1807-evaluate-the-bracket-pairs-of-a-string/) | Medium | Hash Table | Java |
 | 1848 | [Minimum Distance to the Target Element](Array/1848-minimum-distance-to-the-target-element/) | Easy | Array | java |
 | 1854 | [Maximum Population Year](Prefix%20Sum/1854-maximum-population-year/) | Easy | Prefix Sum | java |
 | 1855 | [Maximum Distance Between a Pair of Values](Two%20Pointers/1855-maximum-distance-between-a-pair-of-values/) | Medium | Two Pointers | python3 |
