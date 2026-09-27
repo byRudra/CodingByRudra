@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**352 problems solved**
+**353 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 182  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 150  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 20
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 183  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 150  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 20
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -323,6 +323,7 @@ _Synced by AILeetHub._
 | 3120 | [Count the Number of Special Characters I](Hash%20Table/3120-count-the-number-of-special-characters-i/) | Easy | Hash Table | java |
 | 3121 | [Count the Number of Special Characters II](Hash%20Table/3121-count-the-number-of-special-characters-ii/) | Medium | Hash Table | java |
 | 3300 | [Minimum Element After Replacement With Digit Sum](Math/3300-minimum-element-after-replacement-with-digit-sum/) | Easy | Math | java |
+| 3345 | [Smallest Divisible Digit Product I](Math/3345-smallest-divisible-digit-product-i/) | Easy | Math | Java |
 | 3379 | [Transformed Array](Simulation/3379-transformed-array/) | Easy | Simulation | java |
 | 3414 | [Maximum Score of Non-overlapping Intervals](Dynamic%20Programming/3414-maximum-score-of-non-overlapping-intervals/) | Hard | Dynamic Programming | Java |
 | 3436 | [Find Valid Emails](Database/3436-find-valid-emails/) | Easy | Database | mysql |
