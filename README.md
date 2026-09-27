@@ -316,7 +316,7 @@ _Synced by AILeetHub._
 | 2948 | [Make Lexicographically Smallest Array by Swapping Elements](Union-Find/2948-make-lexicographically-smallest-array-by-swapping-elements/) | Medium | Union-Find | java |
 | 2958 | [Length of Longest Subarray With at Most K Frequency](Sliding%20Window/2958-length-of-longest-subarray-with-at-most-k-frequency/) | Medium | Sliding Window | java |
 | 2965 | [Find Missing and Repeated Values](Math/2965-find-missing-and-repeated-values/) | Easy | Math | java |
-| 3069 | [Distribute Elements Into Two Arrays I](Simulation/3069-distribute-elements-into-two-arrays-i/) | Easy | Simulation | Java |
+| 3069 | [Distribute Elements Into Two Arrays I](Two%20Pointers/3069-distribute-elements-into-two-arrays-i/) | Easy | Two Pointers | Java |
 | 3070 | [Count Submatrices with Top-Left Element and Sum Less Than k](Prefix%20Sum/3070-count-submatrices-with-top-left-element-and-sum-less-than-k/) | Medium | Prefix Sum | java |
 | 3090 | [Maximum Length Substring With Two Occurrences](Sliding%20Window/3090-maximum-length-substring-with-two-occurrences/) | Easy | Sliding Window | java |
 | 3110 | [Score of a String](String/3110-score-of-a-string/) | Easy | String | java |
