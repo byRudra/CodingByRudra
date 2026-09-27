@@ -5,36 +5,39 @@
 `Math` · `Enumeration`
 
 ## Intuition  
-The key observation is that the constraints are tiny ( n ≤ 100, t ≤ 10 ), so the answer cannot be far from the starting value. If we can compute the digit product of a candidate in O(number of digits) time, we can simply test successive integers until the product becomes a multiple of t. A naïve “enumerate all numbers up to 10⁹” would be hopeless, but here the search space is bounded by at most a few hundred steps, eliminating the need for any pre‑computation, hashing, or binary search. This is a classic **brute‑force enumeration** pattern.
+The key observation is that for the given limits (`1 ≤ n ≤ 100`, `1 ≤ t ≤ 10`) the answer lies very close to the starting value – at most a few dozen steps away. Because the product of the digits of a number can be computed in constant time, we can simply walk forward from `n` until we encounter a number whose digit product is a multiple of `t`. The naïve alternative would be to pre‑compute all numbers up to some huge bound or to factor `t` and try to construct a number digit‑by‑digit, both of which are unnecessary here. The pattern used is a straightforward linear scan (enumeration) combined with a helper that evaluates the digit product.
 
 ## Approach  
-1. **Loop until condition holds** – `while (product(n) % t != 0) { n++; }`.  
-   *Exit condition*: `product(n) % t == 0`.  
-   *Invariant*: At the start of each iteration, `n` is the smallest integer ≥ the original input that has not yet been proven to satisfy the divisibility requirement.  
-2. **Compute digit product** – `product(int num)` multiplies all decimal digits of `num`.  
-   *Loop*: `while (num > 0) { res *= num % 10; num /= 10; }`.  
-   *Exit condition*: `num == 0`.  
-   *Invariant*: After each inner iteration, `res` equals the product of the digits processed so far, and the remaining `num` holds the yet‑unprocessed suffix.  
-3. **Return the found value** – once the outer loop exits, `n` is guaranteed to be the smallest qualifying number, so `return n;`.  
+1. **Loop start** – Begin with the given `n`.  
+2. **Compute product** – Call `product(n)`, which multiplies each decimal digit:  
+   ```java
+   int res = 1;
+   while (num > 0) { res *= num % 10; num /= 10; }
+   ```  
+   The loop invariant is “`res` equals the product of all digits processed so far”.  
+3. **Check divisibility** – Evaluate `product(n) % t`.  
+   *Exit condition*: the remainder is `0`. While it is non‑zero, the current `n` does **not** satisfy the requirement.  
+4. **Advance** – Increment `n` (`n++`) and repeat step 2. The outer loop invariant is “all numbers `< n` have been proven unsuitable, so the current `n` is the smallest candidate not yet ruled out”.  
+5. **Return** – When the remainder becomes `0`, return the current `n`.  
 
-**Edge‑case handling**:  
-- If the original `n` already satisfies the condition, the outer loop body is skipped entirely, returning the input unchanged.  
-- A digit `0` forces `res` to become `0`; because `0 % t == 0` for any positive `t`, numbers containing a zero are automatically accepted, matching the problem’s definition.  
-- The code treats all numbers uniformly; there is no special case for single‑digit inputs because the product loop correctly returns the digit itself.  
+**Edge‑case handling**  
+- If any digit is `0`, the product becomes `0`; `0 % t` is `0` for any `t`, so numbers containing a zero are automatically accepted.  
+- Single‑digit inputs work because the product loop runs once and the outer loop still increments correctly.  
+- No overflow concerns: the largest possible product for a three‑digit number ≤ 100 is `9·9·9 = 729`, well within `int`.  
 
 ## Dry Run  
 
-**Input**: `n = 15, t = 3`
+**Input:** `n = 15`, `t = 3`
 
-| Iteration | n  | product(n) | product(n) % t | Change                         |
-|-----------|----|------------|----------------|--------------------------------|
-| 0 (start) | 15 | 1·5 = 5    | 5 % 3 = 2      | initial check fails           |
-| 1         | 16 | 1·6 = 6    | 6 % 3 = 0      | n incremented, product now 0  |
+| Iteration | n  | product(n) | product(n) % t | Note                         |
+|-----------|----|------------|----------------|------------------------------|
+| 1         | 15 | 5          | 2              | 5 % 3 ≠ 0 → continue          |
+| 2         | 16 | 6          | 0              | 6 % 3 = 0 → stop             |
 
-The loop stops after the second check because `product(16) % 3 == 0`. The final state is `n = 16`, which is the smallest number ≥ 15 whose digit product is divisible by 3.
+After the second iteration the loop exits and returns `16`, which is the smallest number ≥ 15 whose digit product (6) is divisible by 3.
 
 ## Complexity  
-- **Time:** O(k·d) where *k* is the number of increments performed and *d* ≤ 3 is the digit count of each candidate (since n ≤ 100). In the worst case *k* ≤ 90, so the loop runs at most O(100) steps.  
+- **Time:** O(k) where *k* is the number of increments performed. In the worst case `k ≤ 90` (from 10 to 100), because each iteration does a constant‑time digit product.  
 - **Space:** O(1) extra space; only a few integer variables are used, independent of input size. (The output integer itself is not counted.)
 
 ## Solution (Java)
