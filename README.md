@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**356 problems solved**
+**357 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 184  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 152  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 20
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 185  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 152  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 20
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -120,6 +120,7 @@ _Synced by AILeetHub._
 | 202 | [Happy Number](Two%20Pointers/0202-happy-number/) | Easy | Two Pointers | Java |
 | 203 | [Remove Linked List Elements](Recursion/0203-remove-linked-list-elements/) | Easy | Recursion | java |
 | 204 | [Count Primes](Number%20Theory/0204-count-primes/) | Medium | Number Theory | java |
+| 205 | [Isomorphic Strings](Hash%20Table/0205-isomorphic-strings/) | Easy | Hash Table | Java |
 | 206 | [Reverse Linked List](Recursion/0206-reverse-linked-list/) | Easy | Recursion | python3 |
 | 209 | [Minimum Size Subarray Sum](Sliding%20Window/0209-minimum-size-subarray-sum/) | Medium | Sliding Window | java |
 | 213 | [House Robber II](Dynamic%20Programming/0213-house-robber-ii/) | Medium | Dynamic Programming | java |
