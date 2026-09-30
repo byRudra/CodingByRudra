@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**355 problems solved**
+**356 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 183  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 152  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 20
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 184  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 152  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 20
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -170,6 +170,7 @@ _Synced by AILeetHub._
 | 518 | [Coin Change II](Dynamic%20Programming/0518-coin-change-ii/) | Medium | Dynamic Programming | java |
 | 520 | [Detect Capital](String/0520-detect-capital/) | Easy | String | java |
 | 532 | [K-diff Pairs in an Array](Two%20Pointers/0532-k-diff-pairs-in-an-array/) | Medium | Two Pointers | java |
+| 541 | [Reverse String II](Two%20Pointers/0541-reverse-string-ii/) | Easy | Two Pointers | Java |
 | 560 | [Subarray Sum Equals K](Prefix%20Sum/0560-subarray-sum-equals-k/) | Medium | Prefix Sum | java |
 | 561 | [Array Partition](Greedy/0561-array-partition/) | Easy | Greedy | java |
 | 566 | [Reshape the Matrix](Simulation/0566-reshape-the-matrix/) | Easy | Simulation | java |
