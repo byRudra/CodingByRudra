@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**360 problems solved**
+**361 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 187  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 153  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 20
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 188  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 153  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 20
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -302,6 +302,7 @@ _Synced by AILeetHub._
 | 2149 | [Rearrange Array Elements by Sign](Two%20Pointers/2149-rearrange-array-elements-by-sign/) | Medium | Two Pointers | java |
 | 2161 | [Partition Array According to Given Pivot](Two%20Pointers/2161-partition-array-according-to-given-pivot/) | Medium | Two Pointers | java |
 | 2181 | [Merge Nodes in Between Zeros](Simulation/2181-merge-nodes-in-between-zeros/) | Medium | Simulation | java |
+| 2215 | [Find the Difference of Two Arrays](Hash%20Table/2215-find-the-difference-of-two-arrays/) | Easy | Hash Table | Java |
 | 2265 | [Count Nodes Equal to Average of Subtree](Binary%20Tree/2265-count-nodes-equal-to-average-of-subtree/) | Medium | Binary Tree | Java |
 | 2300 | [Successful Pairs of Spells and Potions](Two%20Pointers/2300-successful-pairs-of-spells-and-potions/) | Medium | Two Pointers | java |
 | 2356 | [Number of Unique Subjects Taught by Each Teacher](Database/2356-number-of-unique-subjects-taught-by-each-teacher/) | Easy | Database | mysql |
