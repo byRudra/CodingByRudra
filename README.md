@@ -155,7 +155,7 @@ _Synced by AILeetHub._
 | 392 | [Is Subsequence](Dynamic%20Programming/0392-is-subsequence/) | Easy | Dynamic Programming | java |
 | 394 | [Decode String](Recursion/0394-decode-string/) | Medium | Recursion | java |
 | 396 | [Rotate Function](Dynamic%20Programming/0396-rotate-function/) | Medium | Dynamic Programming | java |
-| 409 | [Longest Palindrome](Greedy/0409-longest-palindrome/) | Easy | Greedy | java |
+| 409 | [Longest Palindrome](Greedy/0409-longest-palindrome/) | Easy | Greedy | Java |
 | 416 | [Partition Equal Subset Sum](Dynamic%20Programming/0416-partition-equal-subset-sum/) | Medium | Dynamic Programming | java |
 | 435 | [Non-overlapping Intervals](Dynamic%20Programming/0435-non-overlapping-intervals/) | Medium | Dynamic Programming | Java |
 | 441 | [Arranging Coins](Binary%20Search/0441-arranging-coins/) | Easy | Binary Search | Java |
