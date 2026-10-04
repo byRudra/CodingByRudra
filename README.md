@@ -82,7 +82,7 @@ _Synced by AILeetHub._
 | 123 | [Best Time to Buy and Sell Stock III](Dynamic%20Programming/0123-best-time-to-buy-and-sell-stock-iii/) | Hard | Dynamic Programming | java |
 | 125 | [Valid Palindrome](Two%20Pointers/0125-valid-palindrome/) | Easy | Two Pointers | java |
 | 128 | [Longest Consecutive Sequence](Union-Find/0128-longest-consecutive-sequence/) | Medium | Union-Find | java |
-| 134 | [Gas Station](Greedy/0134-gas-station/) | Medium | Greedy | java |
+| 134 | [Gas Station](Greedy/0134-gas-station/) | Medium | Greedy | Java |
 | 135 | [Candy](Greedy/0135-candy/) | Hard | Greedy | Java |
 | 136 | [Single Number](Bit%20Manipulation/0136-single-number/) | Easy | Bit Manipulation | java |
 | 138 | [Copy List with Random Pointer](Hash%20Table/0138-copy-list-with-random-pointer/) | Medium | Hash Table | Java |
