@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**363 problems solved**
+**364 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 188  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 155  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 20
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 188  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 156  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 20
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -68,6 +68,7 @@ _Synced by AILeetHub._
 | 89 | [Gray Code](Backtracking/0089-gray-code/) | Medium | Backtracking | Java |
 | 92 | [Reverse Linked List II](Linked%20List/0092-reverse-linked-list-ii/) | Medium | Linked List | Java |
 | 94 | [Binary Tree Inorder Traversal](Binary%20Tree/0094-binary-tree-inorder-traversal/) | Easy | Binary Tree | java |
+| 98 | [Validate Binary Search Tree](Binary%20Search%20Tree/0098-validate-binary-search-tree/) | Medium | Binary Search Tree | Java |
 | 100 | [Same Tree](Binary%20Tree/0100-same-tree/) | Easy | Binary Tree | java |
 | 101 | [Symmetric Tree](Binary%20Tree/0101-symmetric-tree/) | Easy | Binary Tree | java |
 | 104 | [Maximum Depth of Binary Tree](Binary%20Tree/0104-maximum-depth-of-binary-tree/) | Easy | Binary Tree | java |
