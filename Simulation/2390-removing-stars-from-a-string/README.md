@@ -5,73 +5,91 @@
 `String` · `Stack` · `Simulation`
 
 ## Intuition  
-The key observation is that each `*` erases the most recent non‑star character that has not been removed yet. If we process the string from left to right and keep a structure that always gives us the last kept character, we can apply every deletion instantly without a second pass. A naïve solution might scan for a `*`, then search leftwards for the nearest letter, resulting in O(n²) time. By maintaining a stack of characters, the leftmost undeleted character is always on top, turning the whole process into a single linear scan. This is the classic **two‑pointer / stack simulation** pattern for “undo‑the‑last‑action” problems.
+When we scan the string from left to right, every `*` erases the most recent non‑star character that has not been erased yet. This means the characters that survive form a **last‑in‑first‑out** sequence: the newest character is the first one that can be removed by a later star. A single pass with a LIFO container therefore eliminates the need for a second pass, a hash map, or any explicit back‑tracking. The pattern used here is the classic *stack* simulation.
 
 ## Approach  
-1. **Initialize** an empty `Stack<Character>` called `stack`.  
-2. **Iterate** over each `ch` in `s.toCharArray()`.  
-   - **Loop exit condition:** the loop ends after the last character of `s` is processed.  
-   - **Invariant:** before processing `ch`, `stack` contains exactly the characters of the prefix processed so far after all deletions triggered by stars in that prefix.  
-   - **If** `ch` is not `'*'`, execute `stack.push(ch)`. This records a new candidate for future deletion.  
-   - **Else** (`ch == '*'`), the problem guarantees a deletable character exists, so we safely call `stack.pop()` (guarded by `!stack.isEmpty()` to handle edge cases like a leading star, though such input never occurs). This removes the closest left‑hand non‑star character.  
-3. **Build the answer**: create a `StringBuilder ans`.  
-   - **Loop** over the elements of `stack` in their natural order (which is the order they were pushed).  
-   - **Invariant:** after each iteration, `ans` holds the concatenation of all characters seen so far in `stack`.  
-   - Append each `ch` to `ans`.  
-4. **Return** `ans.toString()`. The stack now represents the final string after all star operations.
+1. **Initialize** an empty `StringBuilder sb` which will act as a mutable stack.  
+2. **Iterate** over each `char ch` in `s.toCharArray()`.  
+   - **Loop condition:** runs until the end of the character array; the invariant is that `sb` contains exactly the characters that remain after processing the prefix seen so far.  
+3. **If** `ch == '*'`  
+   - **Action:** `sb.setLength(sb.length() - 1)` removes the top element of the stack, i.e., the closest left non‑star character. The code relies on the problem guarantee that a star never appears when the stack is empty, so no extra guard is needed.  
+4. **Else** (`ch` is a lowercase letter)  
+   - **Action:** `sb.append(ch)` pushes the character onto the stack.  
+5. **After the loop**, `sb` holds the final characters in their original order because we never reorder the stack; we only append or pop the most recent element.  
+6. **Return** `sb.toString()`, converting the mutable buffer to the required immutable result.
 
-Edge‑case handling:  
-- Empty or single‑character strings are covered because the for‑loop simply never pushes a star without a preceding character.  
-- Even vs. odd length does not matter; the stack size automatically reflects the net number of non‑star characters remaining.  
-- The `<=` vs `<` discussion is irrelevant here because we never compare indices; we rely on the stack’s emptiness check.
+*Edge considerations*  
+- An empty or single‑character input never triggers the `*` branch, so `sb` simply accumulates the characters.  
+- For an even number of stars the stack may become empty multiple times; `setLength` safely reduces the length to zero.  
+- The implementation chooses `StringBuilder` over `java.util.Stack` to avoid the overhead of boxing `Character` objects and to achieve O(1) amortized push/pop via length adjustments.
 
 ## Dry Run  
 
-Input: `s = "ab*c*"`  
+**Input:** `leet**cod*e`
 
-| Iteration | ch processed | stack (top→bottom) | Action taken | Note |
-|-----------|--------------|--------------------|--------------|------|
-| 1 | 'a' | a | push | first letter kept |
-| 2 | 'b' | b, a | push | second letter kept |
-| 3 | '*' | a | pop | removes 'b' (closest left) |
-| 4 | 'c' | c, a | push | new letter added |
-| 5 | '*' | a | pop | removes 'c' |
+| Iteration | ch | sb before            | sb after               | Note                              |
+|-----------|----|----------------------|------------------------|-----------------------------------|
+| 1         | l  | ""                   | "l"                    | push letter                       |
+| 2         | e  | "l"                  | "le"                   | push                              |
+| 3         | e  | "le"                 | "lee"                  | push                              |
+| 4         | t  | "lee"                | "leet"                 | push                              |
+| 5         | *  | "leet"               | "lee"                  | pop (removes 't')                 |
+| 6         | *  | "lee"                | "le"                   | pop (removes 'e')                 |
+| 7         | c  | "le"                 | "lec"                  | push                              |
+| 8         | o  | "lec"                | "leco"                 | push                              |
+| 9         | d  | "leco"               | "lecod"                | push                              |
+|10         | *  | "lecod"              | "leco"                 | pop (removes 'd')                 |
+|11         | e  | "leco"               | "lecoe"                | push                              |
 
-Final stack content: `a`. The algorithm returns `"a"`, which matches the expected result after removing each star’s left neighbor.
+Final `sb` = `"lecoe"`, which is exactly the required result because every star has removed its nearest left survivor.
 
 ## Complexity  
-- **Time:** O(n) – the first loop visits each character once, and the second loop traverses the stack whose size is at most n.  
-- **Space:** O(n) – in the worst case (no stars) the stack stores all n characters; the `StringBuilder` reuses this data, so additional auxiliary space is constant.
+- **Time:** O(n) – the single pass processes each character once, and each `setLength` or `append` is O(1).  
+- **Space:** O(n) – in the worst case (no stars) the `StringBuilder` stores all n characters; the extra space does not include the output string itself because `sb` *is* the output buffer.
 
 ## Solution (Java)
 
 ```java
+// class Solution {
+//     public String removeStars(String s) {
+//         Stack<Character> stack = new Stack<>();
+
+//         for(char ch : s.toCharArray()){
+//             if(ch != '*'){
+//                 stack.push(ch);
+//             }
+//             else{
+//                 if(!stack.isEmpty()) stack.pop();
+//             }
+//         }
+
+//         StringBuilder ans = new StringBuilder();
+
+//         for (char ch : stack) {
+//             ans.append(ch);
+//         }
+
+//         return ans.toString();
+//     }
+// }
+
 class Solution {
     public String removeStars(String s) {
-        Stack<Character> stack = new Stack<>();
-
+        StringBuilder sb = new StringBuilder();
         for(char ch : s.toCharArray()){
-            if(ch != '*'){
-                stack.push(ch);
-            }
-            else{
-                if(!stack.isEmpty()) stack.pop();
-            }
+            if(ch == '*')
+                sb.setLength(sb.length() - 1);
+            else
+                sb.append(ch);
         }
+        return sb.toString();
 
-        StringBuilder ans = new StringBuilder();
-
-        for (char ch : stack) {
-            ans.append(ch);
-        }
-
-        return ans.toString();
     }
 }
 ```
 
 ---
 
-**Runtime** 71 ms (beats 45.0%) · **Memory** 48.1 MB (beats 52.8%)
+**Runtime** 22 ms (beats 94.3%) · **Memory** 48.2 MB (beats 52.8%)
 
 <sub>Synced by AILeetHub on 2026-10-05.</sub>
