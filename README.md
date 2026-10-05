@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**366 problems solved**
+**367 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 188  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 158  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 20
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 189  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 158  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 20
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -243,6 +243,7 @@ _Synced by AILeetHub._
 | 1179 | [Reformat Department Table](Database/1179-reformat-department-table/) | Easy | Database | MySQL |
 | 1189 | [Maximum Number of Balloons](Counting/1189-maximum-number-of-balloons/) | Easy | Counting | java |
 | 1190 | [Reverse Substrings Between Each Pair of Parentheses](Stack/1190-reverse-substrings-between-each-pair-of-parentheses/) | Medium | Stack | Java |
+| 1207 | [Unique Number of Occurrences](Hash%20Table/1207-unique-number-of-occurrences/) | Easy | Hash Table | Java |
 | 1249 | [Minimum Remove to Make Valid Parentheses](Stack/1249-minimum-remove-to-make-valid-parentheses/) | Medium | Stack | Java |
 | 1280 | [Students and Examinations](Database/1280-students-and-examinations/) | Easy | Database | pythondata |
 | 1290 | [Convert Binary Number in a Linked List to Integer](Math/1290-convert-binary-number-in-a-linked-list-to-integer/) | Easy | Math | Java |
