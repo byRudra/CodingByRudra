@@ -5,59 +5,76 @@
 `Array` · `Hash Table` · `Two Pointers` · `Sorting`
 
 ## Intuition  
-When scanning the array from left to right, any element that can immediately close a previously seen “half‑pair” forms a valid operation. The key claim is: **if we keep a count of numbers that are still waiting for their complement (k − x), each new element either finishes one waiting pair or becomes a new waiting entry**. This eliminates the need for a second pass, sorting, or a hash set that stores all values. The pattern is a single‑pass hash‑map counting (often called “frequency map pairing”).
+When the array is sorted, the smallest remaining element and the largest remaining element are the only candidates that can possibly form a valid pair. If their sum exceeds *k* we must discard the larger one; if it falls short we must discard the smaller one. This single observation eliminates the need for a hash map or a second pass, because each element is examined at most once while the two pointers converge. The pattern employed is the classic **two‑pointer** technique on a sorted list.
 
 ## Approach  
-1. **Initialize** an empty `HashMap<Integer,Integer>` called `map` and a counter `operations = 0`.  
-2. **Iterate** over each `num` in `nums` (the outer `for‑each` loop).  
-   - *Invariant*: before processing the current `num`, `map` holds the exact multiset of values that have appeared earlier but have not yet been paired.  
-3. **Compute** `compliment = k - num`.  
-4. **Check** `map.getOrDefault(compliment, 0) > 0`.  
-   - If true, a waiting complement exists:  
-     a. Decrement its count with `map.put(compliment, map.get(compliment) - 1)`.  
-     b. Increment `operations`.  
-   - The decrement may drop the count to zero; the map entry is left with value 0, which is harmless because the `getOrDefault` guard ignores non‑positive counts.  
-5. **Otherwise** (no complement waiting):  
-   - Record the current `num` as a new waiting value: `map.put(num, map.getOrDefault(num, 0) + 1)`.  
-   - This step ensures that later elements can pair with the current one.  
-6. **After the loop**, return `operations`.  
+1. **Sort the input** `nums`. After this step the array is in non‑decreasing order, which guarantees that moving the left pointer rightward increases the left value and moving the right pointer leftward decreases the right value.  
+2. **Initialize** `left = 0`, `right = nums.length - 1`, and `operations = 0`.  
+3. **Loop while `left < right`**:  
+   - Compute `sum = nums[left] + nums[right]`.  
+   - **Invariant**: all indices `< left` and `> right` have already been paired or discarded, so only the sub‑array `[left … right]` can still contribute to new operations.  
+   - If `sum == k` → a valid pair is found: increment `operations`, then advance both pointers (`left++`, `right--`) to remove the used elements.  
+   - Else if `sum > k` → the pair is too large; decrement `right--` to try a smaller right‑hand value.  
+   - Else (`sum < k`) → the pair is too small; increment `left++` to try a larger left‑hand value.  
+4. **Terminate** when `left` meets or crosses `right`; at that point no further disjoint pairs exist.  
+5. **Return** `operations`.  
 
-Edge handling: an empty or single‑element array never enters the pairing branch, so `operations` stays 0. The code treats even and odd lengths uniformly because pairing is driven solely by complement availability, not by index parity. The `> 0` test (instead of `>= 0`) guarantees we only consume a genuine waiting entry, avoiding a false pair when the count is zero.
+Edge handling: an empty or single‑element array makes the loop condition false immediately, yielding `0`. The code consistently uses `left < right` (not `<=`) because a single element cannot pair with itself under the problem’s “remove two numbers” rule. The choice of `right--` on `sum > k` and `left++` on `sum < k` follows the monotonicity guaranteed by the sorted order.
 
 ## Dry Run  
-
 Input: `nums = [1, 2, 3, 4]`, `k = 5`
 
-| Iteration | num | compliment | map before                | map after (action)                                 | operations |
-|-----------|-----|------------|---------------------------|----------------------------------------------------|------------|
-| 1         | 1   | 4          | {}                        | put(1,1) → `{1=1}`                                 | 0          |
-| 2         | 2   | 3          | `{1=1}`                   | put(2,1) → `{1=1, 2=1}`                            | 0          |
-| 3         | 3   | 2          | `{1=1, 2=1}`              | decrement 2 → `{1=1, 2=0}` → `operations=1`        | 1          |
-| 4         | 4   | 1          | `{1=1, 2=0}` (2’s count is 0) | decrement 1 → `{1=0, 2=0}` → `operations=2`        | 2          |
+| Iteration | left (value) | right (value) | sum | operations | Note |
+|-----------|--------------|---------------|-----|------------|------|
+| 1 | 0 (1) | 3 (4) | 5 | 1 | `sum == k` → pair (1,4), move both pointers |
+| 2 | 1 (2) | 2 (3) | 5 | 2 | `sum == k` → pair (2,3), move both pointers |
+| 3 | 2 | 1 | – | 2 | Loop exits because `left >= right` |
 
-After processing all elements, `operations = 2`, which is the maximum number of disjoint pairs summing to 5.
+Final state: `operations = 2`, which is the maximum number of disjoint pairs summing to 5.
 
 ## Complexity  
-- **Time:** O(n) – each element is examined once, and all map operations (`getOrDefault`, `put`) are O(1) on average.  
-- **Space:** O(n) in the worst case – the map may store every distinct number when no complements are found; the output integer does not affect the bound.
+- **Time:** **O(n log n)** – sorting dominates; the two‑pointer scan runs at most *n/2* iterations because each step moves at least one pointer.  
+- **Space:** **O(1)** – only a few integer variables are used; the sort is in‑place (or uses the language’s standard O(log n) recursion stack, which is ignored for this bound).
 
 ## Solution (Java)
 
 ```java
+// class Solution {
+//     public int maxOperations(int[] nums, int k) {
+//         HashMap<Integer, Integer> map = new HashMap<>();
+//         int operations = 0;
+//         for(int num : nums){
+//             int compliment = k - num;
+//             if(map.getOrDefault(compliment, 0) > 0){
+//                 map.put(compliment, map.get(compliment) - 1);
+//                 operations++;
+//             }
+//             else{
+//                 map.put(num, map.getOrDefault(num, 0)  + 1);
+//             }
+//         } 
+//         return operations;
+//     }
+// }
+
+//  Better 
 class Solution {
     public int maxOperations(int[] nums, int k) {
-        HashMap<Integer, Integer> map = new HashMap<>();
+        Arrays.sort(nums);
         int operations = 0;
-        for(int num : nums){
-            int compliment = k - num;
-            if(map.getOrDefault(compliment, 0) > 0){
-                map.put(compliment, map.get(compliment) - 1);
+        int left = 0, right = nums.length - 1;
+        while (left < right) {
+            int sum = nums[left] + nums[right];
+            if (sum == k) {
                 operations++;
+                left++;
+                right--;
+            } else if (sum > k) {
+                right--;
+            } else {
+                left++;
             }
-            else{
-                map.put(num, map.getOrDefault(num, 0)  + 1);
-            }
-        } 
+        }
         return operations;
     }
 }
@@ -65,6 +82,6 @@ class Solution {
 
 ---
 
-**Runtime** 40 ms (beats 14.0%) · **Memory** 70.2 MB (beats 21.4%)
+**Runtime** 22 ms (beats 99.4%) · **Memory** 69 MB (beats 79.9%)
 
 <sub>Synced by AILeetHub on 2026-10-05.</sub>
