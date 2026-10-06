@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**369 problems solved**
+**370 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 189  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 160  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 20
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 189  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 161  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 20
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -165,6 +165,7 @@ _Synced by AILeetHub._
 | 451 | [Sort Characters By Frequency](Heap%20(Priority%20Queue)/0451-sort-characters-by-frequency/) | Medium | Heap (Priority Queue) | Java |
 | 452 | [Minimum Number of Arrows to Burst Balloons](Greedy/0452-minimum-number-of-arrows-to-burst-balloons/) | Medium | Greedy | Java |
 | 485 | [Max Consecutive Ones](Array/0485-max-consecutive-ones/) | Easy | Array | Java |
+| 494 | [Target Sum](Dynamic%20Programming/0494-target-sum/) | Medium | Dynamic Programming | Java |
 | 496 | [Next Greater Element I](Monotonic%20Stack/0496-next-greater-element-i/) | Easy | Monotonic Stack | java |
 | 503 | [Next Greater Element II](Monotonic%20Stack/0503-next-greater-element-ii/) | Medium | Monotonic Stack | java |
 | 504 | [Base 7](Math/0504-base-7/) | Easy | Math | Java |
