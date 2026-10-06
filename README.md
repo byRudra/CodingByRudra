@@ -55,7 +55,7 @@ _Synced by AILeetHub._
 | 66 | [Plus One](Math/0066-plus-one/) | Easy | Math | cpp |
 | 67 | [Add Binary](Bit%20Manipulation/0067-add-binary/) | Easy | Bit Manipulation | java |
 | 69 | [Sqrt(x)](Binary%20Search/0069-sqrtx/) | Easy | Binary Search | java |
-| 70 | [Climbing Stairs](Dynamic%20Programming/0070-climbing-stairs/) | Easy | Dynamic Programming | java |
+| 70 | [Climbing Stairs](Dynamic%20Programming/0070-climbing-stairs/) | Easy | Dynamic Programming | Java |
 | 73 | [Set Matrix Zeroes](Hash%20Table/0073-set-matrix-zeroes/) | Medium | Hash Table | java |
 | 74 | [Search a 2D Matrix](Binary%20Search/0074-search-a-2d-matrix/) | Medium | Binary Search | java |
 | 75 | [Sort Colors](Two%20Pointers/0075-sort-colors/) | Medium | Two Pointers | java |
