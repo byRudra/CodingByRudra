@@ -158,7 +158,7 @@ _Synced by AILeetHub._
 | 394 | [Decode String](Recursion/0394-decode-string/) | Medium | Recursion | java |
 | 396 | [Rotate Function](Dynamic%20Programming/0396-rotate-function/) | Medium | Dynamic Programming | java |
 | 409 | [Longest Palindrome](Greedy/0409-longest-palindrome/) | Easy | Greedy | Java |
-| 416 | [Partition Equal Subset Sum](Dynamic%20Programming/0416-partition-equal-subset-sum/) | Medium | Dynamic Programming | java |
+| 416 | [Partition Equal Subset Sum](Dynamic%20Programming/0416-partition-equal-subset-sum/) | Medium | Dynamic Programming | Java |
 | 435 | [Non-overlapping Intervals](Dynamic%20Programming/0435-non-overlapping-intervals/) | Medium | Dynamic Programming | Java |
 | 441 | [Arranging Coins](Binary%20Search/0441-arranging-coins/) | Easy | Binary Search | Java |
 | 448 | [Find All Numbers Disappeared in an Array](Hash%20Table/0448-find-all-numbers-disappeared-in-an-array/) | Easy | Hash Table | java |
