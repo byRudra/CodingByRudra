@@ -5,38 +5,39 @@
 `String` · `Stack` · `Greedy` · `Bracket Sequences`
 
 ## Intuition  
-When scanning a parentheses string left‑to‑right, every opening `'('` can potentially match a later closing `')'`. The key observation is that the number of unmatched openings seen so far (`opening`) tells us exactly how many future `')'` can be paired without any insertions. Conversely, whenever we encounter a `')'` while `opening` is zero, that `')'` has nothing to match, so we must insert a `'('` before it. This single pass eliminates the need for a second traversal, a stack, or any extra data structure.
+When scanning a parentheses string from left to right, each `'('` creates a pending opening that must later be closed, while each `')'` tries to consume one pending opening. If a closing appears when no opening is pending, it is *unmatched* and will require an extra `'('` insertion. Conversely, any openings left pending after the scan will each need a `')'`. The naive approach would be to simulate insertions or use a stack, both of which cost extra memory or extra passes. The key insight is that we only need two counters: one for currently unmatched openings (`opening`) and one for unmatched closings (`ending`). This “two‑counter” pattern captures the balance in a single linear pass.
 
 ## Approach  
-1. **Initialize counters** – `opening = 0` (unmatched `'('` seen) and `ans = 0` (insertions needed for unmatched `')'`).  
-2. **Iterate** over the string with `for (int i = 0; i < s.length(); i++)`.  
-   - *Exit condition*: loop stops when `i == s.length()`.  
-   - *Invariant*: before each iteration, `opening` equals the count of `'('` that have not yet been paired, and `ans` equals the number of `'('` we have hypothetically inserted to balance earlier stray `')'`.  
-3. **Process current character** `c = s.charAt(i)`.  
-   - If `c == '('`, increment `opening` because we have one more potential match.  
-   - Else (`c == ')'`):  
-     - If `opening > 0`, decrement `opening` – we pair this `')'` with a previous `'('`.  
-     - Otherwise (`opening == 0`), increment `ans` – we must insert a `'('` before this `')'`.  
-   - This branch choice (`> 0` vs `== 0`) avoids off‑by‑one errors: we never allow `opening` to become negative, which would incorrectly suggest a match that does not exist.  
-4. **After the loop**, any remaining `opening` are unmatched `'('` that need closing `')'`. Return `ans + opening`.  
-   - The code chooses to add the two counters at the end rather than inserting during the scan, which keeps the loop simple and guarantees O(1) extra space.
+1. **Initialize counters** – `opening = 0` (unmatched `'('` seen so far) and `ending = 0` (unmatched `')'` that cannot be paired).  
+2. **Iterate over the string** (`i` from `0` to `s.length()‑1`).  
+   - **Loop invariant:** before processing `s[i]`, `opening` equals the number of `'('` that have not yet been matched, and `ending` equals the number of `')'` that could not be matched earlier.  
+3. **If the current character is `'('`** → increment `opening`. This records a new pending opening.  
+4. **Else the character is `')'`** →  
+   - If `opening > 0`, a pending `'('` exists; decrement `opening` to pair them.  
+   - Otherwise (`opening == 0`), this `')'` has nothing to close; increment `ending` to note that one extra `'('` will be required later.  
+5. **After the loop**, `opening` holds the count of unmatched `'('` that need closing, and `ending` holds the count of unmatched `')'` that need opening.  
+6. **Return the sum** `ending + opening`, which is the minimal number of insertions required.
+
+*Edge handling*:  
+- Empty or single‑character strings are naturally covered because the loop runs zero or one iteration, leaving the counters correctly reflecting the needed insertions.  
+- The code treats both even and odd lengths uniformly; no special parity logic is needed.  
+- The condition `opening > 0` (rather than `>= 0`) prevents underflow and ensures we never decrement a counter below zero.
 
 ## Dry Run  
 
 Input: `s = "())"`  
 
-| i | c | opening (before) | ans (before) | change | opening (after) | ans (after) | note |
-|---|---|------------------|--------------|--------|-----------------|-------------|------|
-| 0 | '(' | 0 | 0 | +1 | 1 | 0 | see an opening, increase `opening` |
-| 1 | ')' | 1 | 0 | -1 | 0 | 0 | match with previous `'('` |
-| 2 | ')' | 0 | 0 | +1 | 0 | 1 | no `'('` to match, need an insertion (`ans++`) |
-| – | – | – | – | – | 0 | 1 | loop ends; `opening` is 0, `ans` is 1 |
+| i | char | opening (before) | ending (before) | action                               | opening (after) | ending (after) | note                              |
+|---|------|------------------|-----------------|--------------------------------------|-----------------|----------------|-----------------------------------|
+| 0 | '('  | 0                | 0               | opening++                            | 1               | 0              | new pending '('                   |
+| 1 | ')'  | 1                | 0               | opening>0 → opening--                | 0               | 0              | pair with previous '('            |
+| 2 | ')'  | 0                | 0               | opening==0 → ending++                | 0               | 1              | unmatched ')', need an extra '(' |
 
-Final state: `ans + opening = 1`. One insertion (a `'('` before the last `')'`) makes the string valid.
+Loop ends. `opening = 0`, `ending = 1`. Return `1`, which is exactly the minimal insertion (prepend `'('`).
 
 ## Complexity  
-- **Time:** O(n) – the single `for` loop visits each character exactly once (`i` advances from 0 to `s.length() - 1`).  
-- **Space:** O(1) – only two integer counters (`opening`, `ans`) are used, independent of input size. The output integer is not counted as extra space.
+- **Time:** O(n) – the single `for` loop visits each of the `n` characters once, and `fast`‑forward logic is replaced by constant‑time counter updates.  
+- **Space:** O(1) – only two integer variables (`opening`, `ending`) are used regardless of input size; the output integer does not count toward extra space.
 
 ## Solution (Java)
 
@@ -44,7 +45,7 @@ Final state: `ans + opening = 1`. One insertion (a `'('` before the last `')'`) 
 class Solution {
     public int minAddToMakeValid(String s) {
         int opening = 0;
-        int ans = 0;
+        int ending = 0;
 
         for (int i = 0; i < s.length(); i++) {
 
@@ -56,18 +57,18 @@ class Solution {
                     opening--;
                 } 
                 else {
-                    ans++;
+                    ending++;
                 }
             }
         }
 
-        return ans + opening;
+        return ending + opening;
     }
 }
 ```
 
 ---
 
-**Runtime** 0 ms (beats 100.0%) · **Memory** 43 MB (beats 39.7%)
+**Runtime** 0 ms (beats 100.0%) · **Memory** 43 MB (beats 22.0%)
 
-<sub>Synced by AILeetHub on 2026-08-18.</sub>
+<sub>Synced by AILeetHub on 2026-10-06.</sub>

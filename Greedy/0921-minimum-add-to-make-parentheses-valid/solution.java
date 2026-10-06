@@ -1,7 +1,7 @@
 class Solution {
     public int minAddToMakeValid(String s) {
         int opening = 0;
-        int ans = 0;
+        int ending = 0;
 
         for (int i = 0; i < s.length(); i++) {
 
@@ -13,11 +13,11 @@ class Solution {
                     opening--;
                 } 
                 else {
-                    ans++;
+                    ending++;
                 }
             }
         }
 
-        return ans + opening;
+        return ending + opening;
     }
 }
