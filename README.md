@@ -219,7 +219,7 @@ _Synced by AILeetHub._
 | 896 | [Monotonic Array](Array/0896-monotonic-array/) | Easy | Array | java |
 | 907 | [Sum of Subarray Minimums](Dynamic%20Programming/0907-sum-of-subarray-minimums/) | Medium | Dynamic Programming | java |
 | 914 | [X of a Kind in a Deck of Cards](Number%20Theory/0914-x-of-a-kind-in-a-deck-of-cards/) | Easy | Number Theory | Java |
-| 921 | [Minimum Add to Make Parentheses Valid](Greedy/0921-minimum-add-to-make-parentheses-valid/) | Medium | Greedy | java |
+| 921 | [Minimum Add to Make Parentheses Valid](Greedy/0921-minimum-add-to-make-parentheses-valid/) | Medium | Greedy | Java |
 | 930 | [Binary Subarrays With Sum](Sliding%20Window/0930-binary-subarrays-with-sum/) | Medium | Sliding Window | java |
 | 940 | [Distinct Subsequences II](Dynamic%20Programming/0940-distinct-subsequences-ii/) | Hard | Dynamic Programming | Java |
 | 973 | [K Closest Points to Origin](Divide%20and%20Conquer/0973-k-closest-points-to-origin/) | Medium | Divide and Conquer | Java |
