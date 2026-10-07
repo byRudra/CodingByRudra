@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**370 problems solved**
+**371 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 189  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 161  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 20
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 190  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 161  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 20
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -273,6 +273,7 @@ _Synced by AILeetHub._
 | 1669 | [Merge In Between Linked Lists](Linked%20List/1669-merge-in-between-linked-lists/) | Medium | Linked List | Java |
 | 1679 | [Max Number of K-Sum Pairs](Two%20Pointers/1679-max-number-of-k-sum-pairs/) | Medium | Two Pointers | Java |
 | 1683 | [Invalid Tweets](Database/1683-invalid-tweets/) | Easy | Database | MySQL |
+| 1688 | [Count of Matches in Tournament](Math/1688-count-of-matches-in-tournament/) | Easy | Math | Java |
 | 1722 | [Minimize Hamming Distance After Swap Operations](Union-Find/1722-minimize-hamming-distance-after-swap-operations/) | Medium | Union-Find | java |
 | 1732 | [Find the Highest Altitude](Prefix%20Sum/1732-find-the-highest-altitude/) | Easy | Prefix Sum | java |
 | 1752 | [Check if Array Is Sorted and Rotated](Array/1752-check-if-array-is-sorted-and-rotated/) | Easy | Array | java |
