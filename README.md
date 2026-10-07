@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**371 problems solved**
+**372 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 190  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 161  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 20
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 190  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 161  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 21
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -143,6 +143,7 @@ _Synced by AILeetHub._
 | 287 | [Find the Duplicate Number](Two%20Pointers/0287-find-the-duplicate-number/) | Medium | Two Pointers | java |
 | 290 | [Word Pattern](Hash%20Table/0290-word-pattern/) | Easy | Hash Table | Java |
 | 292 | [Nim Game](Math/0292-nim-game/) | Easy | Math | java |
+| 301 | [Remove Invalid Parentheses](Backtracking/0301-remove-invalid-parentheses/) | Hard | Backtracking | Java |
 | 303 | [Range Sum Query - Immutable](Design/0303-range-sum-query-immutable/) | Easy | Design | java |
 | 319 | [Bulb Switcher](Math/0319-bulb-switcher/) | Medium | Math | java |
 | 322 | [Coin Change](Dynamic%20Programming/0322-coin-change/) | Medium | Dynamic Programming | Java |
