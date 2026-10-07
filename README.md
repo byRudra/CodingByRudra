@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**372 problems solved**
+**373 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 190  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 161  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 21
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 191  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 161  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 21
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -277,6 +277,7 @@ _Synced by AILeetHub._
 | 1688 | [Count of Matches in Tournament](Math/1688-count-of-matches-in-tournament/) | Easy | Math | Java |
 | 1722 | [Minimize Hamming Distance After Swap Operations](Union-Find/1722-minimize-hamming-distance-after-swap-operations/) | Medium | Union-Find | java |
 | 1732 | [Find the Highest Altitude](Prefix%20Sum/1732-find-the-highest-altitude/) | Easy | Prefix Sum | java |
+| 1741 | [Find Total Time Spent by Each Employee](Database/1741-find-total-time-spent-by-each-employee/) | Easy | Database | MySQL |
 | 1752 | [Check if Array Is Sorted and Rotated](Array/1752-check-if-array-is-sorted-and-rotated/) | Easy | Array | java |
 | 1757 | [Recyclable and Low Fat Products](Database/1757-recyclable-and-low-fat-products/) | Easy | Database | mysql |
 | 1768 | [Merge Strings Alternately](Two%20Pointers/1768-merge-strings-alternately/) | Easy | Two Pointers | Java |
