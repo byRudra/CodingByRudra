@@ -93,7 +93,7 @@ _Synced by AILeetHub._
 | 143 | [Reorder List](Two%20Pointers/0143-reorder-list/) | Medium | Two Pointers | Java |
 | 144 | [Binary Tree Preorder Traversal](Binary%20Tree/0144-binary-tree-preorder-traversal/) | Easy | Binary Tree | java |
 | 145 | [Binary Tree Postorder Traversal](Binary%20Tree/0145-binary-tree-postorder-traversal/) | Easy | Binary Tree | java |
-| 148 | [Sort List](Divide%20and%20Conquer/0148-sort-list/) | Medium | Divide and Conquer | java |
+| 148 | [Sort List](Divide%20and%20Conquer/0148-sort-list/) | Medium | Divide and Conquer | Java |
 | 150 | [Evaluate Reverse Polish Notation](Math/0150-evaluate-reverse-polish-notation/) | Medium | Math | java |
 | 151 | [Reverse Words in a String](Two%20Pointers/0151-reverse-words-in-a-string/) | Medium | Two Pointers | java |
 | 153 | [Find Minimum in Rotated Sorted Array](Binary%20Search/0153-find-minimum-in-rotated-sorted-array/) | Medium | Binary Search | java |
