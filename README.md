@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**378 problems solved**
+**379 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 192  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 163  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 23
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 192  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 163  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 24
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -46,6 +46,7 @@ _Synced by AILeetHub._
 | 49 | [Group Anagrams](Sorting/0049-group-anagrams/) | Medium | Sorting | java |
 | 50 | [Pow(x, n)](Math/0050-powx-n/) | Medium | Math | java |
 | 51 | [N-Queens](Backtracking/0051-n-queens/) | Hard | Backtracking | Java |
+| 52 | [N-Queens II](Backtracking/0052-n-queens-ii/) | Hard | Backtracking | Java |
 | 53 | [Maximum Subarray](Dynamic%20Programming/0053-maximum-subarray/) | Medium | Dynamic Programming | java |
 | 54 | [Spiral Matrix](Simulation/0054-spiral-matrix/) | Medium | Simulation | java |
 | 55 | [Jump Game](Dynamic%20Programming/0055-jump-game/) | Medium | Dynamic Programming | java |
