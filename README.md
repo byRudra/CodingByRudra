@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**373 problems solved**
+**374 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 191  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 161  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 21
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 191  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 162  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 21
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -243,6 +243,7 @@ _Synced by AILeetHub._
 | 1143 | [Longest Common Subsequence](Dynamic%20Programming/1143-longest-common-subsequence/) | Medium | Dynamic Programming | java |
 | 1148 | [Article Views I](Database/1148-article-views-i/) | Easy | Database | mysql |
 | 1158 | [Market Analysis I](Database/1158-market-analysis-i/) | Medium | Database | mysql |
+| 1174 | [Immediate Food Delivery II](Database/1174-immediate-food-delivery-ii/) | Medium | Database | MySQL |
 | 1179 | [Reformat Department Table](Database/1179-reformat-department-table/) | Easy | Database | MySQL |
 | 1189 | [Maximum Number of Balloons](Counting/1189-maximum-number-of-balloons/) | Easy | Counting | java |
 | 1190 | [Reverse Substrings Between Each Pair of Parentheses](Stack/1190-reverse-substrings-between-each-pair-of-parentheses/) | Medium | Stack | Java |
