@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**375 problems solved**
+**376 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 192  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 162  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 21
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 192  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 162  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 22
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -174,6 +174,7 @@ _Synced by AILeetHub._
 | 509 | [Fibonacci Number](Dynamic%20Programming/0509-fibonacci-number/) | Easy | Dynamic Programming | java |
 | 511 | [Game Play Analysis I](Database/0511-game-play-analysis-i/) | Easy | Database | mysql |
 | 516 | [Longest Palindromic Subsequence](Dynamic%20Programming/0516-longest-palindromic-subsequence/) | Medium | Dynamic Programming | java |
+| 517 | [Super Washing Machines](Greedy/0517-super-washing-machines/) | Hard | Greedy | Java |
 | 518 | [Coin Change II](Dynamic%20Programming/0518-coin-change-ii/) | Medium | Dynamic Programming | java |
 | 520 | [Detect Capital](String/0520-detect-capital/) | Easy | String | java |
 | 532 | [K-diff Pairs in an Array](Two%20Pointers/0532-k-diff-pairs-in-an-array/) | Medium | Two Pointers | java |
