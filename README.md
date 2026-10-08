@@ -233,7 +233,7 @@ _Synced by AILeetHub._
 | 989 | [Add to Array-Form of Integer](Math/0989-add-to-array-form-of-integer/) | Easy | Math | java |
 | 1004 | [Max Consecutive Ones III](Sliding%20Window/1004-max-consecutive-ones-iii/) | Medium | Sliding Window | java |
 | 1011 | [Capacity To Ship Packages Within D Days](Binary%20Search/1011-capacity-to-ship-packages-within-d-days/) | Medium | Binary Search | Java |
-| 1021 | [Remove Outermost Parentheses](Stack/1021-remove-outermost-parentheses/) | Easy | Stack | java |
+| 1021 | [Remove Outermost Parentheses](Stack/1021-remove-outermost-parentheses/) | Easy | Stack | Java |
 | 1046 | [Last Stone Weight](Heap%20(Priority%20Queue)/1046-last-stone-weight/) | Easy | Heap (Priority Queue) | Java |
 | 1049 | [Last Stone Weight II](Dynamic%20Programming/1049-last-stone-weight-ii/) | Medium | Dynamic Programming | Java |
 | 1051 | [Height Checker](Sorting/1051-height-checker/) | Easy | Sorting | java |
