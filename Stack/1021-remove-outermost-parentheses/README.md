@@ -5,44 +5,40 @@
 `String` · `Stack` · `Bracket Sequences`
 
 ## Intuition  
-When scanning a valid parentheses string, the current nesting **depth** tells us exactly whether a parenthesis belongs to the outermost layer of its primitive component. The first '(' that raises the depth from 0 to 1 and the matching ')' that brings it back to 0 are the outermost pair and must be omitted. All other characters appear while the depth is ≥ 1, so they belong to the interior and can be kept. A naïve solution might first split the string into primitives (requiring extra passes or a stack) and then trim each piece, but tracking depth alone eliminates any additional data structures or passes. This is the classic **two‑pointer / depth‑counter** pattern for bracket processing.
+The key observation is that the *nesting depth* of a parenthesis tells us whether it belongs to the outermost layer of its primitive block. While scanning the string left‑to‑right, a `'('` increases the depth and a `')'` decreases it; the first `'('` that brings depth from 0 to 1 and the matching `')'` that brings depth back to 0 are precisely the outermost pair of the current primitive. By ignoring characters when the depth is 0 or 1 for `'('` and when the depth becomes 0 after a `')'`, we drop exactly those outermost brackets. The naïve way would be to first split the string into primitives (requiring extra storage or a second pass) and then trim each piece. Tracking depth eliminates the extra pass and any auxiliary data structures.
 
 ## Approach  
-1. **Initialize** an empty `StringBuilder finalString` and set `depth = 0`.  
-2. **Iterate** over each `current` character of `s.toCharArray()`. The loop exits when the array is exhausted; the invariant is that `depth` equals the number of unmatched '(' seen so far.  
-3. **If** `current == '('`:  
-   - *Invariant*: before increment, `depth` reflects the nesting of the previous character.  
-   - **Decision**: append `current` only when `depth > 0` (i.e., we are already inside a primitive).  
-   - Increment `depth`. This moves the invariant forward: after the increment, `depth` counts the newly opened '(' as well.  
-4. **Else** (`current == ')'`):  
-   - Decrement `depth` first, because the matching '(' for this ')' has already been counted.  
-   - *Invariant*: after decrement, `depth` is the nesting level *after* closing this parenthesis.  
-   - **Decision**: append `current` only when the new `depth > 0`, meaning the closing parenthesis is not the outermost one of its primitive.  
-5. **Return** `finalString.toString()`. The loop guarantees that every character belonging to an outermost pair was skipped, while all interior characters were collected.
+1. **Initialize** `StringBuilder finalString = new StringBuilder("")` and `int depth = 0`.  
+2. **Iterate** over each `char current` in `s.toCharArray()`.  
+   - **Loop invariant:** before processing `current`, `depth` equals the number of unmatched `'('` seen so far in the current primitive.  
+3. **If** `current == '('`  
+   - **Check** `if (depth > 0) finalString.append(current);` – we append only when we are already inside a primitive (depth ≥ 1), thereby skipping the outermost opening bracket.  
+   - **Update** `depth++`.  
+4. **Else** (`current == ')'`)  
+   - **Update** `depth--` first, because the closing bracket belongs to the current depth level.  
+   - **Check** `if (depth > 0) finalString.append(current);` – we append only while the primitive is still open after this decrement, thus omitting the matching outermost closing bracket.  
+5. **After the loop**, `finalString` contains the original string with every primitive’s outermost pair removed. Return `finalString.toString()`.
 
-**Edge considerations**:  
-- Empty or single‑character inputs cannot occur because the problem guarantees a valid non‑empty string.  
-- For an even‑length string consisting solely of primitive `"()"` pairs, `depth` never exceeds 1, so no character is appended, yielding an empty result.  
-- The `<=` vs `<` check is unnecessary; the code uses `depth > 0` after the increment/decrement, which correctly excludes the outermost pair without off‑by‑one errors.  
+Edge cases are handled naturally: an empty or single‑pair primitive never appends anything because `depth` never exceeds 1, and the loop’s `depth > 0` guard prevents off‑by‑one errors at the boundaries of each primitive.
 
 ## Dry Run  
 
 Input: `(()())`
 
-| Step | `current` | `depth` (before) | Action (append?) | `depth` (after) | finalString | Note |
-|------|-----------|------------------|------------------|-----------------|-------------|------|
-| 1    | '('       | 0                | no (depth==0)    | 1               | ""          | opening outermost |
-| 2    | '('       | 1                | yes              | 2               | "("         | interior start |
-| 3    | ')'       | 2 → 1            | yes (depth>0)    | 1               | "()"        | interior close |
-| 4    | '('       | 1                | yes              | 2               | "()("       | new interior |
-| 5    | ')'       | 2 → 1            | yes              | 1               | "()()"      | interior close |
-| 6    | ')'       | 1 → 0            | no (depth==0)    | 0               | "()()"      | closing outermost |
+| i | current | depth (before) | depth (after) | finalString | note |
+|---|---------|----------------|---------------|-------------|------|
+| 0 | '('     | 0              | 1             | ""          | outer '(' skipped |
+| 1 | '('     | 1              | 2             | "("         | inner '(' kept |
+| 2 | ')'     | 2 → 1          | 1             | "()"        | inner ')' kept |
+| 3 | '('     | 1              | 2             | "()("       | inner '(' kept |
+| 4 | ')'     | 2 → 1          | 1             | "()()"      | inner ')' kept |
+| 5 | ')'     | 1 → 0          | 0             | "()()"      | outer ')' skipped |
 
-After processing all characters, `finalString` is `"()()"`, which is exactly the original string with the outermost parentheses of its single primitive removed.
+After processing all characters, `finalString` is `"()()"`, which is the original primitive without its outermost parentheses.
 
 ## Complexity  
-- **Time:** O(n) – the single `for` loop visits each of the `n` characters once, and `depth` updates are O(1) per iteration.  
-- **Space:** O(n) – `finalString` stores at most `n‑2k` characters (where `k` is the number of primitives), which is linear in the input size; no auxiliary data structures are used beyond the output buffer.
+- **Time:** O(n) – the single pass visits each of the `n` characters once, and `depth` updates are O(1).  
+- **Space:** O(n) – `finalString` stores at most `n‑2k` characters (where `k` is the number of primitives); no additional data structures are used beyond the output buffer.
 
 ## Solution (Java)
 
@@ -70,6 +66,6 @@ class Solution {
 
 ---
 
-**Runtime** 2 ms (beats 99.8%) · **Memory** 43.6 MB (beats 42.5%)
+**Runtime** 2 ms (beats 99.8%) · **Memory** 43.9 MB (beats 20.9%)
 
-<sub>Synced by AILeetHub on 2026-01-07.</sub>
+<sub>Synced by AILeetHub on 2026-10-08.</sub>
