@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**380 problems solved**
+**381 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 192  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 164  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 24
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 192  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 165  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 24
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -272,6 +272,7 @@ _Synced by AILeetHub._
 | 1520 | [Maximum Number of Non-Overlapping Substrings](Greedy/1520-maximum-number-of-non-overlapping-substrings/) | Hard | Greedy | Java |
 | 1527 | [Patients With a Condition](Database/1527-patients-with-a-condition/) | Easy | Database | MySQL |
 | 1539 | [Kth Missing Positive Number](Binary%20Search/1539-kth-missing-positive-number/) | Easy | Binary Search | java |
+| 1541 | [Minimum Insertions to Balance a Parentheses String](Greedy/1541-minimum-insertions-to-balance-a-parentheses-string/) | Medium | Greedy | Java |
 | 1581 | [Customer Who Visited but Did Not Make Any Transactions](Database/1581-customer-who-visited-but-did-not-make-any-transactions/) | Easy | Database | pythondata |
 | 1621 | [Number of Sets of K Non-Overlapping Line Segments](Dynamic%20Programming/1621-number-of-sets-of-k-non-overlapping-line-segments/) | Medium | Dynamic Programming | Java |
 | 1653 | [Minimum Deletions to Make String Balanced](Dynamic%20Programming/1653-minimum-deletions-to-make-string-balanced/) | Medium | Dynamic Programming | java |
