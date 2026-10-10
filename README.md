@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**382 problems solved**
+**383 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 192  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 166  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 24
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 192  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 167  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 24
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -90,6 +90,7 @@ _Synced by AILeetHub._
 | 134 | [Gas Station](Greedy/0134-gas-station/) | Medium | Greedy | Java |
 | 135 | [Candy](Greedy/0135-candy/) | Hard | Greedy | Java |
 | 136 | [Single Number](Bit%20Manipulation/0136-single-number/) | Easy | Bit Manipulation | java |
+| 137 | [Single Number II](Bit%20Manipulation/0137-single-number-ii/) | Medium | Bit Manipulation | Java |
 | 138 | [Copy List with Random Pointer](Hash%20Table/0138-copy-list-with-random-pointer/) | Medium | Hash Table | Java |
 | 141 | [Linked List Cycle](Two%20Pointers/0141-linked-list-cycle/) | Easy | Two Pointers | Java |
 | 142 | [Linked List Cycle II](Two%20Pointers/0142-linked-list-cycle-ii/) | Medium | Two Pointers | Java |
