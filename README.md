@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**383 problems solved**
+**384 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 192  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 167  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 24
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 192  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 168  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 24
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -105,6 +105,7 @@ _Synced by AILeetHub._
 | 155 | [Min Stack](Design/0155-min-stack/) | Medium | Design | java |
 | 160 | [Intersection of Two Linked Lists](Two%20Pointers/0160-intersection-of-two-linked-lists/) | Easy | Two Pointers | java |
 | 162 | [Find Peak Element](Binary%20Search/0162-find-peak-element/) | Medium | Binary Search | java |
+| 164 | [Maximum Gap](Sorting/0164-maximum-gap/) | Medium | Sorting | Java |
 | 167 | [Two Sum II - Input Array Is Sorted](Two%20Pointers/0167-two-sum-ii-input-array-is-sorted/) | Medium | Two Pointers | java |
 | 168 | [Excel Sheet Column Title](Math/0168-excel-sheet-column-title/) | Easy | Math | java |
 | 169 | [Majority Element](Divide%20and%20Conquer/0169-majority-element/) | Easy | Divide and Conquer | java |
