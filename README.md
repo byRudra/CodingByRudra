@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**387 problems solved**
+**388 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 193  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 170  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 24
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 193  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 171  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 24
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -320,6 +320,7 @@ _Synced by AILeetHub._
 | 2095 | [Delete the Middle Node of a Linked List](Two%20Pointers/2095-delete-the-middle-node-of-a-linked-list/) | Medium | Two Pointers | java |
 | 2124 | [Check if All A's Appears Before All B's](String/2124-check-if-all-as-appears-before-all-bs/) | Easy | String | java |
 | 2126 | [Destroying Asteroids](Greedy/2126-destroying-asteroids/) | Medium | Greedy | java |
+| 2130 | [Maximum Twin Sum of a Linked List](Two%20Pointers/2130-maximum-twin-sum-of-a-linked-list/) | Medium | Two Pointers | Java |
 | 2144 | [Minimum Cost of Buying Candies With Discount](Greedy/2144-minimum-cost-of-buying-candies-with-discount/) | Easy | Greedy | java |
 | 2149 | [Rearrange Array Elements by Sign](Two%20Pointers/2149-rearrange-array-elements-by-sign/) | Medium | Two Pointers | java |
 | 2161 | [Partition Array According to Given Pivot](Two%20Pointers/2161-partition-array-according-to-given-pivot/) | Medium | Two Pointers | java |
