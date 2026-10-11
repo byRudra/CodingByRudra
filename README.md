@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**386 problems solved**
+**387 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 193  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 169  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 24
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 193  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 170  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 24
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -55,6 +55,7 @@ _Synced by AILeetHub._
 | 58 | [Length of Last Word](String/0058-length-of-last-word/) | Easy | String | java |
 | 59 | [Spiral Matrix II](Simulation/0059-spiral-matrix-ii/) | Medium | Simulation | java |
 | 61 | [Rotate List](Two%20Pointers/0061-rotate-list/) | Medium | Two Pointers | java |
+| 63 | [Unique Paths II](Dynamic%20Programming/0063-unique-paths-ii/) | Medium | Dynamic Programming | Java |
 | 66 | [Plus One](Math/0066-plus-one/) | Easy | Math | cpp |
 | 67 | [Add Binary](Bit%20Manipulation/0067-add-binary/) | Easy | Bit Manipulation | java |
 | 69 | [Sqrt(x)](Binary%20Search/0069-sqrtx/) | Easy | Binary Search | java |
