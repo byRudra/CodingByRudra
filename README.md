@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**384 problems solved**
+**385 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 192  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 168  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 24
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 193  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 168  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 24
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -336,6 +336,7 @@ _Synced by AILeetHub._
 | 2558 | [Take Gifts From the Richest Pile](Heap%20(Priority%20Queue)/2558-take-gifts-from-the-richest-pile/) | Easy | Heap (Priority Queue) | Java |
 | 2574 | [Left and Right Sum Differences](Prefix%20Sum/2574-left-and-right-sum-differences/) | Easy | Prefix Sum | Java |
 | 2706 | [Buy Two Chocolates](Greedy/2706-buy-two-chocolates/) | Easy | Greedy | Java |
+| 2778 | [Sum of Squares of Special Elements ](Array/2778-sum-of-squares-of-special-elements/) | Easy | Array | Java |
 | 2798 | [Number of Employees Who Met the Target](Array/2798-number-of-employees-who-met-the-target/) | Easy | Array | java |
 | 2799 | [Count Complete Subarrays in an Array](Sliding%20Window/2799-count-complete-subarrays-in-an-array/) | Medium | Sliding Window | java |
 | 2833 | [Furthest Point From Origin](Counting/2833-furthest-point-from-origin/) | Easy | Counting | python3 |
