@@ -5,48 +5,46 @@
 `Array` · `Backtracking` · `Algorithm X`
 
 ## Intuition  
-When we place queens row by row, any conflict can only come from previously placed queens in earlier rows. Thus after placing `k` queens, the board’s first `k` rows are fully determined and safe, and the remaining rows are untouched. The naive way would try every possible placement of `n` queens on an `n×n` board, which is `nⁿ` possibilities. By advancing one row at a time and discarding a column as soon as it attacks an existing queen, we prune the search dramatically. This is the classic **backtracking** pattern.
+When we place queens row by row, any queen that has already been placed can only threaten cells in the rows above the current one. Therefore, after we have fixed the first *k* rows, the safety of a candidate column in row *k* depends solely on those *k* rows; we never need to look ahead. This observation eliminates the need for a second pass, a global hash map, or exhaustive enumeration of all board configurations. By pruning illegal placements immediately, the search space shrinks dramatically, and a simple depth‑first traversal suffices. The overall pattern is classic **backtracking with pruning**.
 
 ## Approach  
-1. **Initialize board** – create a `char[n][n]` filled with `'.'`.  
-2. **Start recursion** – call `backTrack(0, board, result, n)`.  
-3. **Base case** – if `row == n`, all rows are filled safely; convert each `char[]` to a `String`, collect them into `candidate`, and add to `result`.  
-4. **Iterate columns** – for the current `row`, loop `col` from `0` to `n‑1`.  
-5. **Safety test** – invoke `isSafe(row, col, board, n)`. Inside:  
-   - Scan column `col` for any `'Q'` in rows `0 … row‑1`.  
-   - Scan the upper‑left diagonal (`i--, j--`) until out of bounds.  
-   - Scan the upper‑right diagonal (`i--, j++`) until out of bounds.  
-   If any queen is found, return `false`.  
-6. **Place queen** – set `board[row][col] = 'Q'`.  
-7. **Recurse deeper** – call `backTrack(row + 1, board, result, n)`.  
-8. **Backtrack** – after the recursive call returns, reset `board[row][col] = '.'` to explore alternative columns.  
-9. **Loop termination** – the `for` loop ends when `col == n`; at that point the current row has no safe column, so the call returns to the previous level.
-
-Key edge handling:  
-- If `n == 0` the outer call never reaches the base case, but constraints guarantee `n ≥ 1`.  
-- For a single‑row board (`n == 1`) the first column passes `isSafe`, producing the solitary solution.  
-- The safety checks use `<=` bounds for the diagonal loops (`i >= 0 && j >= 0` / `j < n`) because the current cell itself is not yet occupied.
+1. **Initial board construction** – Create an `n×n` char matrix `board` filled with `'.'`.  
+2. **Recursive entry** – Call `backTrack(0, board, result, n)`. The parameter `row` denotes the next row to fill.  
+3. **Base case** – If `row == n`, every row contains a queen; convert each `char[]` in `board` to a `String`, collect them into `candidate`, and add `candidate` to `result`.  
+4. **Column iteration** – For the current `row`, iterate `col` from `0` to `n‑1`.  
+   - **Invariant**: before each iteration, all rows `< row` already satisfy the N‑Queens constraints.  
+5. **Safety check** – Invoke `isSafe(row, col, board, n)`.  
+   - **Column check** scans rows `0 … row‑1` in column `col`.  
+   - **Upper‑left diagonal** walks `(i‑1, j‑1)` while `i ≥ 0 && j ≥ 0`.  
+   - **Upper‑right diagonal** walks `(i‑1, j+1)` while `i ≥ 0 && j < n`.  
+   - If any queen `'Q'` is found, the placement is illegal and the loop proceeds to the next `col`.  
+6. **Place queen** – Set `board[row][col] = 'Q'`.  
+7. **Recurse** – Call `backTrack(row + 1, board, result, n)` to fill the next row.  
+8. **Backtrack** – After the recursive call returns, reset `board[row][col] = '.'` to undo the decision and try the next column.  
+9. **Edge handling** – The algorithm naturally handles `n = 1` (the first placement succeeds) and returns an empty list for `n = 2` or `3` because the loop exhausts all columns without reaching the base case.
 
 ## Dry Run  
 **Input:** `n = 4`  
 
-| step | row | col tried | board (rows shown)                     | note                              |
-|------|-----|-----------|----------------------------------------|-----------------------------------|
-| 1    | 0   | 1         | `.Q..`                                 | queen placed at (0,1)            |
-| 2    | 1   | 3         | `.Q..`<br>`...Q`                       | safe; place queen at (1,3)       |
-| 3    | 2   | 0         | `.Q..`<br>`...Q`<br>`Q...`             | safe; place queen at (2,0)       |
-| 4    | 3   | 2         | `.Q..`<br>`...Q`<br>`Q...`<br>`..Q.`   | safe; all rows filled → add solution |
-| 5    | 3   | backtrack | board reset to `...` in row 3         | backtrack, try next column (none) |
-| 6    | 2   | backtrack | row 2 reset to `....`                 | backtrack, try next column (2)   |
-| 7    | 2   | 2 (fails) | conflict on upper‑right diagonal       | `isSafe` returns false           |
-| 8    | 2   | 3 (fails) | conflict on column                     | `isSafe` returns false           |
-| 9    | 1   | backtrack | row 1 reset to `....`                  | continue exploring other branches |
+| Step | row | col tried | board change (row,col) | Note |
+|------|-----|-----------|------------------------|------|
+| 1 | 0 | 0 | `board[0][0] = 'Q'` | First queen placed at (0,0) |
+| 2 | 1 | 0 | `isSafe` fails (same column) | skip |
+| 3 | 1 | 1 | `isSafe` fails (diag left) | skip |
+| 4 | 1 | 2 | `board[1][2] = 'Q'` | second queen placed |
+| 5 | 2 | 0 | `isSafe` fails (diag left) | skip |
+| 6 | 2 | 1 | `isSafe` fails (diag right) | skip |
+| 7 | 2 | 2 | `isSafe` fails (column) | skip |
+| 8 | 2 | 3 | `board[2][3] = 'Q'` | third queen placed |
+| 9 | 3 | 0‑2 | all `isSafe` fail | backtrack: remove (2,3) |
+|10 | 2 | 3 (retry) | backtrack removes (1,2) | try next column in row 1 |
+|…| … | … | … | continues until a full board is found (`[".Q..","...Q","Q...","..Q."]`).  
 
-The algorithm eventually records the second valid board `["..Q.", "Q...", "...Q", ".Q.."]`. The final state is that `result` contains exactly the two known 4‑queen solutions.
+When `row` finally reaches `4`, the board represents a valid solution and is added to `result`. The same process discovers the second solution.
 
 ## Complexity  
-- **Time:** O(N!), because each row tries up to N columns and the safety checks prune many branches, but in the worst case the recursion explores all permutations of queen placements.  
-- **Space:** O(N²) for the mutable `board` plus O(N) recursion stack depth; the output list is not counted toward auxiliary space.
+- **Time:** O(N!), because each row tries up to N columns and the depth‑first search explores only the permutations that survive the `isSafe` pruning; the worst‑case number of recursive calls is proportional to the factorial of N.  
+- **Space:** O(N²) for the `board` matrix plus O(N) recursion stack depth; the output list itself is not counted in the auxiliary space.
 
 ## Solution (Java)
 
@@ -121,6 +119,6 @@ class Solution {
 
 ---
 
-**Runtime** 2 ms (beats 81.7%) · **Memory** 46.3 MB (beats 91.0%)
+**Runtime** 2 ms (beats 81.8%) · **Memory** 46.3 MB (beats 90.9%)
 
 <sub>Synced by AILeetHub on 2026-10-07.</sub>
