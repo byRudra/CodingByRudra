@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**389 problems solved**
+**390 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 194  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 171  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 24
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 194  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 172  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 24
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -387,6 +387,7 @@ _Synced by AILeetHub._
 | 3741 | [Minimum Distance Between Three Equal Elements II](Hash%20Table/3741-minimum-distance-between-three-equal-elements-ii/) | Medium | Hash Table | java |
 | 3751 | [Total Waviness of Numbers in Range I](Dynamic%20Programming/3751-total-waviness-of-numbers-in-range-i/) | Medium | Dynamic Programming | java |
 | 3754 | [Concatenate Non-Zero Digits and Multiply by Sum I](Math/3754-concatenate-non-zero-digits-and-multiply-by-sum-i/) | Easy | Math | java |
+| 3760 | [Maximum Substrings With Distinct Start](Hash%20Table/3760-maximum-substrings-with-distinct-start/) | Medium | Hash Table | Java |
 | 3761 | [Minimum Absolute Distance Between Mirror Pairs](Math/3761-minimum-absolute-distance-between-mirror-pairs/) | Medium | Math | java |
 | 3783 | [Mirror Distance of an Integer](Math/3783-mirror-distance-of-an-integer/) | Easy | Math | java |
 | 3838 | [Weighted Word Mapping](Simulation/3838-weighted-word-mapping/) | Easy | Simulation | java |
