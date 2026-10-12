@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**390 problems solved**
+**391 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 194  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 172  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 24
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 194  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 172  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 25
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -347,6 +347,7 @@ _Synced by AILeetHub._
 | 2839 | [Check if Strings Can be Made Equal With Operations I](String/2839-check-if-strings-can-be-made-equal-with-operations-i/) | Easy | String | java |
 | 2848 | [Points That Intersect With Cars](Prefix%20Sum/2848-points-that-intersect-with-cars/) | Easy | Prefix Sum | java |
 | 2886 | [Change Data Type](Misc/2886-change-data-type/) | Easy | Misc | Pandas |
+| 2897 | [Apply Operations on Array to Maximize Sum of Squares](Greedy/2897-apply-operations-on-array-to-maximize-sum-of-squares/) | Hard | Greedy | Java |
 | 2904 | [Shortest and Lexicographically Smallest Beautiful String](Sliding%20Window/2904-shortest-and-lexicographically-smallest-beautiful-string/) | Medium | Sliding Window | java |
 | 2946 | [Matrix Similarity After Cyclic Shifts](Math/2946-matrix-similarity-after-cyclic-shifts/) | Easy | Math | python3 |
 | 2948 | [Make Lexicographically Smallest Array by Swapping Elements](Union-Find/2948-make-lexicographically-smallest-array-by-swapping-elements/) | Medium | Union-Find | java |
