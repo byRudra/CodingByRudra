@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**392 problems solved**
+**393 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 194  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 173  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 25
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 194  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 174  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 25
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -328,6 +328,7 @@ _Synced by AILeetHub._
 | 2181 | [Merge Nodes in Between Zeros](Simulation/2181-merge-nodes-in-between-zeros/) | Medium | Simulation | java |
 | 2215 | [Find the Difference of Two Arrays](Hash%20Table/2215-find-the-difference-of-two-arrays/) | Easy | Hash Table | Java |
 | 2265 | [Count Nodes Equal to Average of Subtree](Binary%20Tree/2265-count-nodes-equal-to-average-of-subtree/) | Medium | Binary Tree | Java |
+| 2294 | [Partition Array Such That Maximum Difference Is K](Greedy/2294-partition-array-such-that-maximum-difference-is-k/) | Medium | Greedy | Java |
 | 2300 | [Successful Pairs of Spells and Potions](Two%20Pointers/2300-successful-pairs-of-spells-and-potions/) | Medium | Two Pointers | java |
 | 2333 | [Minimum Sum of Squared Difference](Heap%20(Priority%20Queue)/2333-minimum-sum-of-squared-difference/) | Medium | Heap (Priority Queue) | Java |
 | 2356 | [Number of Unique Subjects Taught by Each Teacher](Database/2356-number-of-unique-subjects-taught-by-each-teacher/) | Easy | Database | mysql |
