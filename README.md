@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**393 problems solved**
+**394 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 194  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 174  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 25
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 194  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 175  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 25
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -142,6 +142,7 @@ _Synced by AILeetHub._
 | 239 | [Sliding Window Maximum](Heap%20(Priority%20Queue)/0239-sliding-window-maximum/) | Hard | Heap (Priority Queue) | java |
 | 240 | [Search a 2D Matrix II](Divide%20and%20Conquer/0240-search-a-2d-matrix-ii/) | Medium | Divide and Conquer | java |
 | 242 | [Valid Anagram](Sorting/0242-valid-anagram/) | Easy | Sorting | java |
+| 260 | [Single Number III](Bit%20Manipulation/0260-single-number-iii/) | Medium | Bit Manipulation | Java |
 | 263 | [Ugly Number](Math/0263-ugly-number/) | Easy | Math | Java |
 | 268 | [Missing Number](Binary%20Search/0268-missing-number/) | Easy | Binary Search | java |
 | 274 | [H-Index](Sorting/0274-h-index/) | Medium | Sorting | Java |
