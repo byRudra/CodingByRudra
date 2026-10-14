@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**394 problems solved**
+**395 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 194  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 175  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 25
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 194  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 176  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 25
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -385,6 +385,7 @@ _Synced by AILeetHub._
 | 3702 | [Longest Subsequence With Non-Zero Bitwise XOR](Bit%20Manipulation/3702-longest-subsequence-with-non-zero-bitwise-xor/) | Medium | Bit Manipulation | java |
 | 3718 | [Smallest Missing Multiple of K](Hash%20Table/3718-smallest-missing-multiple-of-k/) | Easy | Hash Table | java |
 | 3720 | [Lexicographically Smallest Permutation Greater Than Target](Greedy/3720-lexicographically-smallest-permutation-greater-than-target/) | Medium | Greedy | java |
+| 3723 | [Maximize Sum of Squares of Digits](Greedy/3723-maximize-sum-of-squares-of-digits/) | Medium | Greedy | Java |
 | 3727 | [Maximum Alternating Sum of Squares](Greedy/3727-maximum-alternating-sum-of-squares/) | Medium | Greedy | Java |
 | 3734 | [Lexicographically Smallest Palindromic Permutation Greater Than Target](Two%20Pointers/3734-lexicographically-smallest-palindromic-permutation-greater-than-target/) | Hard | Two Pointers | java |
 | 3740 | [Minimum Distance Between Three Equal Elements I](Hash%20Table/3740-minimum-distance-between-three-equal-elements-i/) | Easy | Hash Table | python3 |
