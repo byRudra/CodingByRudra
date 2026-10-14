@@ -10,7 +10,7 @@ _Synced by AILeetHub._
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
-| 1 | [Two Sum](Hash%20Table/0001-two-sum/) | Easy | Hash Table | java |
+| 1 | [Two Sum](Hash%20Table/0001-two-sum/) | Easy | Hash Table | Java |
 | 2 | [Add Two Numbers](Math/0002-add-two-numbers/) | Medium | Math | Python3 |
 | 3 | [Longest Substring Without Repeating Characters](Sliding%20Window/0003-longest-substring-without-repeating-characters/) | Medium | Sliding Window | java |
 | 4 | [Median of Two Sorted Arrays](Divide%20and%20Conquer/0004-median-of-two-sorted-arrays/) | Hard | Divide and Conquer | java |
