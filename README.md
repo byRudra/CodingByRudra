@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**398 problems solved**
+**399 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 196  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 177  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 25
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 197  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 177  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 25
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -232,6 +232,7 @@ _Synced by AILeetHub._
 | 907 | [Sum of Subarray Minimums](Dynamic%20Programming/0907-sum-of-subarray-minimums/) | Medium | Dynamic Programming | java |
 | 914 | [X of a Kind in a Deck of Cards](Number%20Theory/0914-x-of-a-kind-in-a-deck-of-cards/) | Easy | Number Theory | Java |
 | 921 | [Minimum Add to Make Parentheses Valid](Greedy/0921-minimum-add-to-make-parentheses-valid/) | Medium | Greedy | Java |
+| 922 | [Sort Array By Parity II](Two%20Pointers/0922-sort-array-by-parity-ii/) | Easy | Two Pointers | Java |
 | 930 | [Binary Subarrays With Sum](Sliding%20Window/0930-binary-subarrays-with-sum/) | Medium | Sliding Window | java |
 | 940 | [Distinct Subsequences II](Dynamic%20Programming/0940-distinct-subsequences-ii/) | Hard | Dynamic Programming | Java |
 | 973 | [K Closest Points to Origin](Divide%20and%20Conquer/0973-k-closest-points-to-origin/) | Medium | Divide and Conquer | Java |
