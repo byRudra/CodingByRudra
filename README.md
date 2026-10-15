@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**399 problems solved**
+**400 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 197  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 177  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 25
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 198  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 177  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 25
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -336,6 +336,7 @@ _Synced by AILeetHub._
 | 2300 | [Successful Pairs of Spells and Potions](Two%20Pointers/2300-successful-pairs-of-spells-and-potions/) | Medium | Two Pointers | java |
 | 2333 | [Minimum Sum of Squared Difference](Heap%20(Priority%20Queue)/2333-minimum-sum-of-squared-difference/) | Medium | Heap (Priority Queue) | Java |
 | 2356 | [Number of Unique Subjects Taught by Each Teacher](Database/2356-number-of-unique-subjects-taught-by-each-teacher/) | Easy | Database | mysql |
+| 2363 | [Merge Similar Items](Sorting/2363-merge-similar-items/) | Easy | Sorting | Java |
 | 2390 | [Removing Stars From a String](Simulation/2390-removing-stars-from-a-string/) | Medium | Simulation | Java |
 | 2452 | [Words Within Two Edits of Dictionary](Trie/2452-words-within-two-edits-of-dictionary/) | Medium | Trie | java |
 | 2472 | [Maximum Number of Non-overlapping Palindrome Substrings](Dynamic%20Programming/2472-maximum-number-of-non-overlapping-palindrome-substrings/) | Hard | Dynamic Programming | Java |
