@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**397 problems solved**
+**398 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 195  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 177  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 25
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 196  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 177  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 25
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -228,6 +228,7 @@ _Synced by AILeetHub._
 | 885 | [Spiral Matrix III](Simulation/0885-spiral-matrix-iii/) | Medium | Simulation | java |
 | 890 | [Find and Replace Pattern](Hash%20Table/0890-find-and-replace-pattern/) | Medium | Hash Table | Java |
 | 896 | [Monotonic Array](Array/0896-monotonic-array/) | Easy | Array | java |
+| 905 | [Sort Array By Parity](Two%20Pointers/0905-sort-array-by-parity/) | Easy | Two Pointers | Java |
 | 907 | [Sum of Subarray Minimums](Dynamic%20Programming/0907-sum-of-subarray-minimums/) | Medium | Dynamic Programming | java |
 | 914 | [X of a Kind in a Deck of Cards](Number%20Theory/0914-x-of-a-kind-in-a-deck-of-cards/) | Easy | Number Theory | Java |
 | 921 | [Minimum Add to Make Parentheses Valid](Greedy/0921-minimum-add-to-make-parentheses-valid/) | Medium | Greedy | Java |
