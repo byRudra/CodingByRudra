@@ -41,14 +41,23 @@
 // }
 class Solution {
     public int sumCounts(List<Integer> nums) {
-        int total = 0;
-        for (int left = 0; left < nums.size(); left++) {
-            Set<Integer> seen = new HashSet<>();
-            for (int right = left; right < nums.size(); right++) {
-                seen.add(nums.get(right));
-                total += seen.size() * seen.size();
+        int result = 0;
+        int n = nums.size();
+
+        for (int i = 0; i < n; i++) {
+            int count = 0;
+            boolean[] visited = new boolean[101];
+            for (int j = i; j < n; j++) {
+                int num = nums.get(j);
+                if (!visited[num]) {
+                    visited[num] = true;
+                    count++;
+                }
+                result += count * count;
             }
+
         }
-        return total;
+
+        return result;
     }
 }

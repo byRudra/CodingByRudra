@@ -5,40 +5,43 @@
 `Array` · `Hash Table` · `Binary Indexed Tree` · `Segment Tree`
 
 ## Intuition  
-When we extend a subarray one step to the right, the only thing that can change is whether the newly added element has been seen before. Therefore the distinct‑count of `nums[left..right]` can be obtained from the distinct‑count of `nums[left..right‑1]` by inserting `nums[right]` into a set that already holds all previous elements. The naïve way would recompute a set from scratch for every subarray, costing O(n³). By keeping a single `HashSet` that grows as `right` moves, we eliminate the inner recomputation and reduce the work to a single pass per starting index. This is the classic “two‑pointer with a hash set” pattern, except the left pointer is reset after each outer iteration.
+The distinct count of a subarray grows only when a value that has never appeared in the current window is seen. If we fix the left endpoint and slide the right endpoint one step at a time, we can keep a running count of how many new values have been introduced. The naïve way would rebuild a set for every subarray, costing O(n³) overall, but the observation that the count is monotonic for a fixed left removes the need for a fresh set each time. This leads to a classic **two‑nested‑loops with a constant‑size frequency bitmap** pattern.
 
 ## Approach  
-1. **Initialize** `total = 0`.  
-2. **Outer loop** `left` from 0 to `nums.size()‑1`. The loop stops when `left == nums.size()`.  
-   - Invariant: before the inner loop starts, no element from the current left position has been processed.  
-3. **Create** an empty `HashSet<Integer> seen`. This set will always contain exactly the distinct values of the current subarray `nums[left..right]`.  
-4. **Inner loop** `right` from `left` to `nums.size()‑1`. The loop exits when `right` reaches the end of the array.  
-   - Invariant each iteration: `seen` equals the set of distinct numbers in `nums[left..right]`.  
-5. **Update set** with `seen.add(nums.get(right))`. If `nums[right]` is new, the set size grows; otherwise it stays the same.  
-6. **Accumulate** `total += seen.size() * seen.size()`. The square of the current distinct count is added to the answer.  
-7. After the inner loop finishes, the outer loop increments `left`, discarding the old `seen` and starting a fresh set for the next starting index.  
-8. **Return** `total` after all left positions have been processed.
+1. Initialise `result = 0` and `n = nums.size()`.  
+2. Outer loop: `for (int i = 0; i < n; i++)` – chooses the left boundary of the subarray.  
+   * Before the inner loop we reset `count = 0` and create `boolean[] visited = new boolean[101]`. The array size matches the problem’s value bound, giving O(1) extra memory.  
+3. Inner loop: `for (int j = i; j < n; j++)` – expands the right boundary one element at a time.  
+   * Invariant: `visited[x]` is true iff value `x` has appeared in `nums[i..j]`; `count` equals the number of true entries, i.e., the distinct count of the current window.  
+   * Retrieve `int num = nums.get(j)`.  
+   * If `!visited[num]` then `visited[num] = true` and `count++`. This is the only place `count` can change, guaranteeing monotonic growth.  
+   * Add the square of the current distinct count: `result += count * count`.  
+4. After the inner loop finishes, the next iteration of the outer loop starts a fresh window, so the bitmap is cleared again.  
+5. Return `result` after all `(i, j)` pairs have been processed.
 
-Edge considerations: the constraints guarantee at least one element, so the loops always execute at least once. For a single‑element array the inner loop runs once, `seen.size()` is 1, and `total` becomes 1. Duplicate values never increase `seen.size()`, which correctly keeps the distinct count unchanged. The `HashSet` choice avoids overflow and gives average O(1) insertion.
+Edge handling:  
+* When `n == 1` the outer loop runs once, the inner loop runs once, `count` becomes 1 and `result` receives 1², which is correct.  
+* The bitmap size of 101 safely covers the maximal element value (100); using `<= 100` would be off‑by‑one, so the code allocates `new boolean[101]`.  
+* No overflow guard is needed because the maximum possible sum fits in a 32‑bit signed integer for the given constraints (n ≤ 100, distinct count ≤ 100).
 
 ## Dry Run  
 
-**Input**: `nums = [1, 2, 1]`
+**Input:** `nums = [1, 2, 1]`
 
-| left | right | seen (as set) | seen.size() | total (after addition) | note |
-|------|-------|---------------|-------------|------------------------|------|
-| 0    | 0     | {1}           | 1           | 1                      | first subarray `[1]` |
-| 0    | 1     | {1,2}         | 2           | 1 + 4 = 5              | `[1,2]` adds 2² |
-| 0    | 2     | {1,2}         | 2           | 5 + 4 = 9              | `[1,2,1]` distinct unchanged |
-| 1    | 1     | {2}           | 1           | 9 + 1 = 10             | new left, reset set |
-| 1    | 2     | {1,2}         | 2           | 10 + 4 = 14            | `[2,1]` |
-| 2    | 2     | {1}           | 1           | 14 + 1 = 15            | last subarray `[1]` |
+| i (left) | j (right) | num | visited[1] | visited[2] | count | result (cumulative) | change |
+|----------|-----------|-----|------------|------------|-------|----------------------|--------|
+| 0        | 0         | 1   | true       | false      | 1     | 1                    | count ↑, add 1² |
+| 0        | 1         | 2   | true       | true       | 2     | 5 (=1+4)             | count ↑, add 2² |
+| 0        | 2         | 1   | true       | true       | 2     | 9 (=5+4)             | count unchanged, add 2² |
+| 1        | 1         | 2   | false→true| false      | 1     | 10 (=9+1)            | new bitmap, count ↑ |
+| 1        | 2         | 1   | true       | true       | 2     | 14 (=10+4)           | count ↑, add 2² |
+| 2        | 2         | 1   | true       | false      | 1     | 15 (=14+1)           | new bitmap, count ↑ |
 
-After processing all iterations `total = 15`, which matches the required sum of squares.
+After processing all windows, `result = 15`, which matches the required sum of squares.
 
 ## Complexity  
-- **Time:** **O(n²)** – the outer loop runs *n* times and the inner loop runs *n‑left* times; the total number of iterations is `n·(n+1)/2`. Each iteration performs O(1) work (`HashSet.add` and arithmetic).  
-- **Space:** **O(k)** where *k* ≤ *n* is the number of distinct elements in the current window. The set is recreated for each `left`, so the extra memory never exceeds the size of the whole array, and no additional structures are kept beyond the loop.
+- **Time:** O(n²) – the outer loop runs *n* times and the inner loop runs at most *n – i* times, giving a triangular series of ≈ n·(n+1)/2 iterations; each iteration does O(1) work (bitmap check, possible update, arithmetic).  
+- **Space:** O(1) – the only extra storage is the fixed‑size `boolean[101]` and a few scalar variables, independent of *n* (output integer excluded).
 
 ## Solution (Java)
 
@@ -86,21 +89,30 @@ After processing all iterations `total = 15`, which matches the required sum of 
 // }
 class Solution {
     public int sumCounts(List<Integer> nums) {
-        int total = 0;
-        for (int left = 0; left < nums.size(); left++) {
-            Set<Integer> seen = new HashSet<>();
-            for (int right = left; right < nums.size(); right++) {
-                seen.add(nums.get(right));
-                total += seen.size() * seen.size();
+        int result = 0;
+        int n = nums.size();
+
+        for (int i = 0; i < n; i++) {
+            int count = 0;
+            boolean[] visited = new boolean[101];
+            for (int j = i; j < n; j++) {
+                int num = nums.get(j);
+                if (!visited[num]) {
+                    visited[num] = true;
+                    count++;
+                }
+                result += count * count;
             }
+
         }
-        return total;
+
+        return result;
     }
 }
 ```
 
 ---
 
-**Runtime** 12 ms (beats 18.6%) · **Memory** 46.4 MB (beats 80.6%)
+**Runtime** 3 ms (beats 99.6%) · **Memory** 44.9 MB (beats 99.2%)
 
 <sub>Synced by AILeetHub on 2026-10-15.</sub>
