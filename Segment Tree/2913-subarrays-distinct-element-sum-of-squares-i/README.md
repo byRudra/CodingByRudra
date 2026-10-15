@@ -5,87 +5,102 @@
 `Array` · `Hash Table` · `Binary Indexed Tree` · `Segment Tree`
 
 ## Intuition  
-The distinct count of a subarray can be obtained by simply collecting its elements in a hash set – the set’s size is exactly the number of different values. Because the array length is at most 100, generating every possible contiguous segment (there are n·(n+1)/2 of them) and counting its uniques fits comfortably in the time limit. This observation eliminates the need for sophisticated data structures such as BITs or segment trees; a straightforward double loop plus a per‑subarray set is sufficient. The overall pattern is a brute‑force enumeration with a hash‑based deduplication step.
+When we extend a subarray one step to the right, the only thing that can change is whether the newly added element has been seen before. Therefore the distinct‑count of `nums[left..right]` can be obtained from the distinct‑count of `nums[left..right‑1]` by inserting `nums[right]` into a set that already holds all previous elements. The naïve way would recompute a set from scratch for every subarray, costing O(n³). By keeping a single `HashSet` that grows as `right` moves, we eliminate the inner recomputation and reduce the work to a single pass per starting index. This is the classic “two‑pointer with a hash set” pattern, except the left pointer is reset after each outer iteration.
 
 ## Approach  
-1. **Generate all subarrays** – Initialise `left = 0`. While `left < nums.size()`, create an empty `candidate`. For each `right` from `left` to `nums.size()‑1`, append `nums.get(right)` to `candidate` and store a *copy* of `candidate` in `result`. The copy (`new ArrayList<>(candidate)`) preserves the current window before it grows.  
-   *Invariant*: At the start of each inner iteration, `candidate` holds the elements `nums[left..right‑1]`. The loop stops when `right` reaches the end of the array.  
-2. **Compute distinct counts** – For every subarray `current` in `subArrays`, instantiate an empty `HashSet<Integer> set`. Insert each `num` of `current` into `set`; after the inner loop, `set.size()` equals the distinct count of that subarray. Append this size to `uniqueList`.  
-   *Invariant*: After processing the `i`‑th element of `current`, `set` contains exactly the distinct values seen so far. The loop ends when all elements of `current` have been examined.  
-3. **Square and accumulate** – Iterate over `uniqueList`. For each `num` (which is a distinct count), add `num * num` to `result`. Finally return `result`.  
-   *Invariant*: After processing the first `k` entries of `uniqueList`, `result` equals the sum of squares of those `k` distinct counts.  
+1. **Initialize** `total = 0`.  
+2. **Outer loop** `left` from 0 to `nums.size()‑1`. The loop stops when `left == nums.size()`.  
+   - Invariant: before the inner loop starts, no element from the current left position has been processed.  
+3. **Create** an empty `HashSet<Integer> seen`. This set will always contain exactly the distinct values of the current subarray `nums[left..right]`.  
+4. **Inner loop** `right` from `left` to `nums.size()‑1`. The loop exits when `right` reaches the end of the array.  
+   - Invariant each iteration: `seen` equals the set of distinct numbers in `nums[left..right]`.  
+5. **Update set** with `seen.add(nums.get(right))`. If `nums[right]` is new, the set size grows; otherwise it stays the same.  
+6. **Accumulate** `total += seen.size() * seen.size()`. The square of the current distinct count is added to the answer.  
+7. After the inner loop finishes, the outer loop increments `left`, discarding the old `seen` and starting a fresh set for the next starting index.  
+8. **Return** `total` after all left positions have been processed.
 
-Edge handling:  
-- An empty input never occurs because the constraints guarantee at least one element.  
-- Single‑element arrays produce one subarray; the loops naturally handle `left == right == 0`.  
-- The inner `right` loop uses `<=` on the index bound (`right < nums.size()`) to include the last element; using `<` would miss the final subarray ending at the array’s tail.  
+Edge considerations: the constraints guarantee at least one element, so the loops always execute at least once. For a single‑element array the inner loop runs once, `seen.size()` is 1, and `total` becomes 1. Duplicate values never increase `seen.size()`, which correctly keeps the distinct count unchanged. The `HashSet` choice avoids overflow and gives average O(1) insertion.
 
 ## Dry Run  
-**Input**: `[1, 2, 1]`
 
-| left | right | candidate (after push) | setSize (after counting) | result (running sum) | note |
-|------|-------|------------------------|--------------------------|----------------------|------|
-| 0    | 0     | [1]                    | 1                        | 1                    | first subarray `[1]` |
-| 0    | 1     | [1,2]                  | 2                        | 5 (=1+4)             | `[1,2]` distinct = 2 |
-| 0    | 2     | [1,2,1]                | 2                        | 9 (=5+4)             | `[1,2,1]` distinct = 2 |
-| 1    | 1     | [2]                    | 1                        | 10 (=9+1)            | new left, reset candidate |
-| 1    | 2     | [2,1]                  | 2                        | 14 (=10+4)           | `[2,1]` distinct = 2 |
-| 2    | 2     | [1]                    | 1                        | 15 (=14+1)           | last subarray `[1]` |
+**Input**: `nums = [1, 2, 1]`
 
-After the loops finish, `result = 15`, which matches the required sum of squares.
+| left | right | seen (as set) | seen.size() | total (after addition) | note |
+|------|-------|---------------|-------------|------------------------|------|
+| 0    | 0     | {1}           | 1           | 1                      | first subarray `[1]` |
+| 0    | 1     | {1,2}         | 2           | 1 + 4 = 5              | `[1,2]` adds 2² |
+| 0    | 2     | {1,2}         | 2           | 5 + 4 = 9              | `[1,2,1]` distinct unchanged |
+| 1    | 1     | {2}           | 1           | 9 + 1 = 10             | new left, reset set |
+| 1    | 2     | {1,2}         | 2           | 10 + 4 = 14            | `[2,1]` |
+| 2    | 2     | {1}           | 1           | 14 + 1 = 15            | last subarray `[1]` |
+
+After processing all iterations `total = 15`, which matches the required sum of squares.
 
 ## Complexity  
-- **Time:** **O(n³)** – The outer `while` and inner `for` together generate O(n²) subarrays; for each subarray we traverse its elements to fill a `HashSet`, costing up to O(n) in the worst case, yielding O(n³) overall.  
-- **Space:** **O(n²)** – `subArrays` stores every subarray copy, totaling O(n²) elements; the auxiliary `HashSet` and `uniqueList` are O(n) each and do not dominate the bound. (The output integer itself is excluded from the space count.)
+- **Time:** **O(n²)** – the outer loop runs *n* times and the inner loop runs *n‑left* times; the total number of iterations is `n·(n+1)/2`. Each iteration performs O(1) work (`HashSet.add` and arithmetic).  
+- **Space:** **O(k)** where *k* ≤ *n* is the number of distinct elements in the current window. The set is recreated for each `left`, so the extra memory never exceeds the size of the whole array, and no additional structures are kept beyond the loop.
 
 ## Solution (Java)
 
 ```java
+// class Solution {
+//     public int sumCounts(List<Integer> nums) {
+//         List<List<Integer>> subArrays = findSubarrays(nums);
+//         List<Integer> uniqueList = uniqueValues(subArrays);
+//         int result = squareOfNums(uniqueList);
+//         return result;
+
+//     }
+//     public int squareOfNums(List<Integer> uniqueList){
+//         int result = 0;
+//         for(int num : uniqueList){
+//             result += num * num;
+//         }
+//         return result;
+//     }
+//     public List uniqueValues(List<List<Integer>> subArrays){
+//         List<Integer> result = new ArrayList<>();
+//         for(List<Integer> current : subArrays){
+//             Set<Integer> set = new HashSet<>();
+//             for(int num : current){
+//                 set.add(num);
+//             }
+//             result.add(set.size());
+//         }
+
+//         return result;
+//     }
+//     public List findSubarrays(List<Integer> nums){
+//         List<List<Integer>> result = new ArrayList<>();
+//         int left = 0;
+//         while(left < nums.size()){
+//             List<Integer> candidate = new ArrayList<>();
+//             for(int right = left; right < nums.size(); right++){
+//                 candidate.add(nums.get(right));
+//                 result.add(new ArrayList<>(candidate));
+//             }
+//             left++;
+//         }
+//         return result;
+//     }
+// }
 class Solution {
     public int sumCounts(List<Integer> nums) {
-        List<List<Integer>> subArrays = findSubarrays(nums);
-        List<Integer> uniqueList = uniqueValues(subArrays);
-        int result = squareOfNums(uniqueList);
-        return result;
-
-    }
-    public int squareOfNums(List<Integer> uniqueList){
-        int result = 0;
-        for(int num : uniqueList){
-            result += num * num;
-        }
-        return result;
-    }
-    public List uniqueValues(List<List<Integer>> subArrays){
-        List<Integer> result = new ArrayList<>();
-        for(List<Integer> current : subArrays){
-            Set<Integer> set = new HashSet<>();
-            for(int num : current){
-                set.add(num);
+        int total = 0;
+        for (int left = 0; left < nums.size(); left++) {
+            Set<Integer> seen = new HashSet<>();
+            for (int right = left; right < nums.size(); right++) {
+                seen.add(nums.get(right));
+                total += seen.size() * seen.size();
             }
-            result.add(set.size());
         }
-
-        return result;
-    }
-    public List findSubarrays(List<Integer> nums){
-        List<List<Integer>> result = new ArrayList<>();
-        int left = 0;
-        while(left < nums.size()){
-            List<Integer> candidate = new ArrayList<>();
-            for(int right = left; right < nums.size(); right++){
-                candidate.add(nums.get(right));
-                result.add(new ArrayList<>(candidate));
-            }
-            left++;
-        }
-        return result;
+        return total;
     }
 }
 ```
 
 ---
 
-**Runtime** 164 ms (beats 5.7%) · **Memory** 53.6 MB (beats 11.4%)
+**Runtime** 12 ms (beats 18.6%) · **Memory** 46.4 MB (beats 80.6%)
 
 <sub>Synced by AILeetHub on 2026-10-15.</sub>
