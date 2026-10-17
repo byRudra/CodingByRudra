@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**403 problems solved**
+**404 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 198  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 179  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 26
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 198  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 180  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 26
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -160,6 +160,7 @@ _Synced by AILeetHub._
 | 345 | [Reverse Vowels of a String](Two%20Pointers/0345-reverse-vowels-of-a-string/) | Easy | Two Pointers | Java |
 | 347 | [Top K Frequent Elements](Divide%20and%20Conquer/0347-top-k-frequent-elements/) | Medium | Divide and Conquer | java |
 | 349 | [Intersection of Two Arrays](Two%20Pointers/0349-intersection-of-two-arrays/) | Easy | Two Pointers | Java |
+| 371 | [Sum of Two Integers](Bit%20Manipulation/0371-sum-of-two-integers/) | Medium | Bit Manipulation | Java |
 | 380 | [Insert Delete GetRandom O(1)](Math/0380-insert-delete-getrandom-o1/) | Medium | Math | Java |
 | 387 | [First Unique Character in a String](Counting/0387-first-unique-character-in-a-string/) | Easy | Counting | Java |
 | 389 | [Find the Difference](Bit%20Manipulation/0389-find-the-difference/) | Easy | Bit Manipulation | java |
