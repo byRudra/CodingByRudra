@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**402 problems solved**
+**403 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 198  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 178  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 26
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 198  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 179  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 26
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -366,6 +366,7 @@ _Synced by AILeetHub._
 | 3070 | [Count Submatrices with Top-Left Element and Sum Less Than k](Prefix%20Sum/3070-count-submatrices-with-top-left-element-and-sum-less-than-k/) | Medium | Prefix Sum | java |
 | 3090 | [Maximum Length Substring With Two Occurrences](Sliding%20Window/3090-maximum-length-substring-with-two-occurrences/) | Easy | Sliding Window | java |
 | 3110 | [Score of a String](String/3110-score-of-a-string/) | Easy | String | java |
+| 3115 | [Maximum Prime Difference](Number%20Theory/3115-maximum-prime-difference/) | Medium | Number Theory | Java |
 | 3120 | [Count the Number of Special Characters I](Hash%20Table/3120-count-the-number-of-special-characters-i/) | Easy | Hash Table | java |
 | 3121 | [Count the Number of Special Characters II](Hash%20Table/3121-count-the-number-of-special-characters-ii/) | Medium | Hash Table | java |
 | 3300 | [Minimum Element After Replacement With Digit Sum](Math/3300-minimum-element-after-replacement-with-digit-sum/) | Easy | Math | java |
