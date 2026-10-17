@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**406 problems solved**
+**407 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 200  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 180  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 26
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 200  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 181  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 26
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -205,6 +205,7 @@ _Synced by AILeetHub._
 | 621 | [Task Scheduler](Heap%20(Priority%20Queue)/0621-task-scheduler/) | Medium | Heap (Priority Queue) | java |
 | 627 | [Swap Sex of Employees](Database/0627-swap-sex-of-employees/) | Easy | Database | mysql |
 | 628 | [Maximum Product of Three Numbers](Math/0628-maximum-product-of-three-numbers/) | Easy | Math | Java |
+| 633 | [Sum of Square Numbers](Two%20Pointers/0633-sum-of-square-numbers/) | Medium | Two Pointers | Java |
 | 643 | [Maximum Average Subarray I](Sliding%20Window/0643-maximum-average-subarray-i/) | Easy | Sliding Window | java |
 | 657 | [Robot Return to Origin](Simulation/0657-robot-return-to-origin/) | Easy | Simulation | python |
 | 678 | [Valid Parenthesis String](Dynamic%20Programming/0678-valid-parenthesis-string/) | Medium | Dynamic Programming | Java |
