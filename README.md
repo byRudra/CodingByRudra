@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**412 problems solved**
+**413 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 202  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 183  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 27
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 202  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 183  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 28
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -288,6 +288,7 @@ _Synced by AILeetHub._
 | 1527 | [Patients With a Condition](Database/1527-patients-with-a-condition/) | Easy | Database | MySQL |
 | 1539 | [Kth Missing Positive Number](Binary%20Search/1539-kth-missing-positive-number/) | Easy | Binary Search | java |
 | 1541 | [Minimum Insertions to Balance a Parentheses String](Greedy/1541-minimum-insertions-to-balance-a-parentheses-string/) | Medium | Greedy | Java |
+| 1569 | [Number of Ways to Reorder Array to Get Same BST](Dynamic%20Programming/1569-number-of-ways-to-reorder-array-to-get-same-bst/) | Hard | Dynamic Programming | Java |
 | 1581 | [Customer Who Visited but Did Not Make Any Transactions](Database/1581-customer-who-visited-but-did-not-make-any-transactions/) | Easy | Database | pythondata |
 | 1621 | [Number of Sets of K Non-Overlapping Line Segments](Dynamic%20Programming/1621-number-of-sets-of-k-non-overlapping-line-segments/) | Medium | Dynamic Programming | Java |
 | 1631 | [Path With Minimum Effort](Union-Find/1631-path-with-minimum-effort/) | Medium | Union-Find | Java |
