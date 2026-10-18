@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**409 problems solved**
+**410 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 201  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 182  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 26
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 202  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 182  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 26
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -225,6 +225,7 @@ _Synced by AILeetHub._
 | 832 | [Flipping an Image](Two%20Pointers/0832-flipping-an-image/) | Easy | Two Pointers | java |
 | 835 | [Image Overlap](Matrix/0835-image-overlap/) | Medium | Matrix | Java |
 | 840 | [Magic Squares In Grid](Math/0840-magic-squares-in-grid/) | Medium | Math | java |
+| 844 | [Backspace String Compare](Two%20Pointers/0844-backspace-string-compare/) | Easy | Two Pointers | Java |
 | 856 | [Score of Parentheses](Stack/0856-score-of-parentheses/) | Medium | Stack | Java |
 | 868 | [Binary Gap](Bit%20Manipulation/0868-binary-gap/) | Easy | Bit Manipulation | java |
 | 875 | [Koko Eating Bananas](Binary%20Search/0875-koko-eating-bananas/) | Medium | Binary Search | java |
