@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**411 problems solved**
+**412 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 202  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 183  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 26
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 202  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 183  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 27
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -29,6 +29,7 @@ _Synced by AILeetHub._
 | 22 | [Generate Parentheses](Dynamic%20Programming/0022-generate-parentheses/) | Medium | Dynamic Programming | Java |
 | 23 | [Merge k Sorted Lists](Divide%20and%20Conquer/0023-merge-k-sorted-lists/) | Hard | Divide and Conquer | java |
 | 24 | [Swap Nodes in Pairs](Recursion/0024-swap-nodes-in-pairs/) | Medium | Recursion | java |
+| 25 | [Reverse Nodes in k-Group](Recursion/0025-reverse-nodes-in-k-group/) | Hard | Recursion | Java |
 | 26 | [Remove Duplicates from Sorted Array](Two%20Pointers/0026-remove-duplicates-from-sorted-array/) | Easy | Two Pointers | cpp |
 | 27 | [Remove Element](Two%20Pointers/0027-remove-element/) | Easy | Two Pointers | java |
 | 28 | [Find the Index of the First Occurrence in a String](Two%20Pointers/0028-find-the-index-of-the-first-occurrence-in-a-string/) | Easy | Two Pointers | cpp |
