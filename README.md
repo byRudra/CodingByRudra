@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**413 problems solved**
+**414 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 202  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 183  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 28
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 203  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 183  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 28
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -331,6 +331,7 @@ _Synced by AILeetHub._
 | 2053 | [Kth Distinct String in an Array](Counting/2053-kth-distinct-string-in-an-array/) | Easy | Counting | java |
 | 2058 | [Find the Minimum and Maximum Number of Nodes Between Critical Points](Linked%20List/2058-find-the-minimum-and-maximum-number-of-nodes-between-critical-points/) | Medium | Linked List | java |
 | 2078 | [Two Furthest Houses With Different Colors](Greedy/2078-two-furthest-houses-with-different-colors/) | Easy | Greedy | java |
+| 2089 | [Find Target Indices After Sorting Array](Binary%20Search/2089-find-target-indices-after-sorting-array/) | Easy | Binary Search | Java |
 | 2091 | [Removing Minimum and Maximum From Array](Greedy/2091-removing-minimum-and-maximum-from-array/) | Medium | Greedy | java |
 | 2095 | [Delete the Middle Node of a Linked List](Two%20Pointers/2095-delete-the-middle-node-of-a-linked-list/) | Medium | Two Pointers | java |
 | 2124 | [Check if All A's Appears Before All B's](String/2124-check-if-all-as-appears-before-all-bs/) | Easy | String | java |
