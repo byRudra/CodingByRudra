@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**416 problems solved**
+**417 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 203  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 185  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 28
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 204  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 185  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 28
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -328,6 +328,7 @@ _Synced by AILeetHub._
 | 1979 | [Find Greatest Common Divisor of Array](Number%20Theory/1979-find-greatest-common-divisor-of-array/) | Easy | Number Theory | java |
 | 1980 | [Find Unique Binary String](Backtracking/1980-find-unique-binary-string/) | Medium | Backtracking | java |
 | 1991 | [Find the Middle Index in Array](Prefix%20Sum/1991-find-the-middle-index-in-array/) | Easy | Prefix Sum | java |
+| 2006 | [Count Number of Pairs With Absolute Difference K](Counting/2006-count-number-of-pairs-with-absolute-difference-k/) | Easy | Counting | Java |
 | 2029 | [Stone Game IX](Greedy/2029-stone-game-ix/) | Medium | Greedy | java |
 | 2053 | [Kth Distinct String in an Array](Counting/2053-kth-distinct-string-in-an-array/) | Easy | Counting | java |
 | 2058 | [Find the Minimum and Maximum Number of Nodes Between Critical Points](Linked%20List/2058-find-the-minimum-and-maximum-number-of-nodes-between-critical-points/) | Medium | Linked List | java |
