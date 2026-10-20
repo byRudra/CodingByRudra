@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**418 problems solved**
+**419 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 205  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 185  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 28
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 205  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 185  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 29
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -424,6 +424,7 @@ _Synced by AILeetHub._
 | 3871 | [Count Commas in Range II](Math/3871-count-commas-in-range-ii/) | Medium | Math | Java |
 | 3875 | [Construct Uniform Parity Array I](Math/3875-construct-uniform-parity-array-i/) | Easy | Math | java |
 | 3876 | [Construct Uniform Parity Array II](Math/3876-construct-uniform-parity-array-ii/) | Medium | Math | java |
+| 3886 | [Sum of Sortable Integers](Math/3886-sum-of-sortable-integers/) | Hard | Math | Java |
 | 3903 | [Smallest Stable Index I](Prefix%20Sum/3903-smallest-stable-index-i/) | Easy | Prefix Sum | java |
 | 3904 | [Smallest Stable Index II](Prefix%20Sum/3904-smallest-stable-index-ii/) | Medium | Prefix Sum | Java |
 | 3925 | [Concatenate Array With Reverse](Simulation/3925-concatenate-array-with-reverse/) | Easy | Simulation | java |
