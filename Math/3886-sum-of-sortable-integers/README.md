@@ -5,64 +5,58 @@
 `Array` · `Math` · `Sorting` · `Enumeration`
 
 ## Intuition  
-The array can be sorted by rotating each length‑`k` chunk iff, for every chunk, the sorted version of that chunk appears somewhere inside the chunk after it is concatenated with itself. This “double‑block” observation eliminates the need to try every rotation explicitly. A naïve solution would test all `k` rotations for each chunk, costing `O(n·k)` per divisor, which is far too slow. Recognizing the rotation test as a substring problem lets us apply the linear‑time KMP algorithm, giving an overall `O(n·τ(n))` solution where `τ(n)` is the number of divisors of `n`. The pattern is a classic **two‑pointer / string‑matching** trick applied to arrays.
+The only freedom we have is rotating each length‑`k` segment; a rotation cannot change the multiset of values inside the segment. Therefore a segment can be sorted **iff** the sorted version of the whole array (`target`) appears somewhere in the circular view of the original segment. The key observation is that within a segment the rotation that could work is uniquely determined by the first place where the original values descend (i.e., `nums[i] > nums[i+1]`). If no descent exists the segment is already in the correct order, so the rotation start is at index 0. This eliminates the need for trying all `k` rotations or using extra data structures.
 
 ## Approach  
-1. **Clone and sort** the whole array into `target`. This gives the exact order each position must finally hold.  
-2. **Collect all divisors** of `n` in `fac` by iterating `x` from `1` to `√n`. For each `x` that divides `n`, add both `x` and `n/x` (avoiding duplication when `x*x == n`).  
-3. **Iterate over each divisor `d`** in `fac`.  
+1. **Clone and sort** the input → `target`.  
+2. **Enumerate all divisors** of `n` (both `x` and `n/x`) and store them in `fac`.  
+3. **Iterate over each divisor `d`**:  
    - Initialise `canSort = true`.  
-   - Loop `s` from `0` to `n‑1` in steps of `d`. For each block starting at `s`, call `isRotation(nums, target, s, d)`.  
-   - If any block fails, set `canSort = false` and break out of the inner loop.  
-   - When all blocks succeed, add `d` to `ans`.  
-4. **`isRotation`** checks whether `target[s..s+d)` is a rotation of `nums[s..s+d)`.  
-   - Build the KMP prefix table `pi` for the pattern `target[s..s+d)`. The invariant: after processing `i` characters, `pi[i]` stores the length of the longest proper prefix that is also a suffix of `target[s..s+i]`.  
-   - Scan the “doubled” text `nums[s + i % d]` for `i = 0 … 2·d‑1`. The invariant: `j` is the length of the current matched prefix of the pattern. When `j` reaches `d`, the pattern occurs, meaning a rotation exists, and the method returns `true`.  
-   - If the scan finishes without a full match, return `false`.  
-5. Return `ans`, the sum of all divisors that passed the rotation test.
+   - For every block start `s = 0, d, 2d, …` (`s < n`):  
+     - Call `check(nums, target, s, d)`.  
+     - If any block returns `false`, set `canSort = false` and break out of the block loop.  
+   - If `canSort` stayed `true`, add `d` to the answer.  
+4. **`check` routine** (`s` = block start, `k` = block length):  
+   - Scan the block once (`i = 0 … k‑2`) to find the first index where `nums[s+i] > nums[s+i+1]`.  
+   - Let `split = i`; if none is found `split = -1`.  
+   - The rotation that could align the block with the sorted order must start at `start = split + 1`.  
+   - Verify element‑wise that the rotated block (`nums[s + (start + j) % k]`) equals the corresponding slice of `target` (`target[s + j]`) for all `j = 0 … k‑1`.  
+   - Return `true` only when every comparison matches.  
 
-Key edge handling:  
-- When `n = 1`, the divisor list contains only `1`; the rotation test trivially succeeds.  
-- For already sorted arrays, every divisor passes because each block already equals its target, and the KMP scan finds a match at the first character.  
-- The loop condition `i < 2 * k` (instead of `< 2 * k - 1`) guarantees that a rotation that starts at the last element is still examined.
+**Edge handling** –  
+- When `n = 1` the divisor list contains only `1`; the inner loop runs once and `check` immediately succeeds because the scan finds no descent.  
+- For even and odd `k` the same logic works; the descent‑based start works regardless of parity.  
+- The `<=` guard in the divisor enumeration (`(long) x * x <= n`) prevents overflow and ensures the square root is included exactly once.  
 
 ## Dry Run  
+Input: `nums = [3, 1, 2]` (`n = 3`)  
 
-**Input:** `nums = [3, 1, 2]`  
+| step | `d` (divisor) | `s` (block start) | `split` (first descent) | `start` (rotation) | comparison result | note |
+|------|--------------|-------------------|--------------------------|--------------------|-------------------|------|
+| 1    | 1            | 0                 | 0 (`3 > 1`)              | 1                  | `nums[1] != target[0]` (`1 != 1` OK) → next j fails at j=1 (`nums[2] != target[1]` → `2 != 3`) | block 0 cannot be rotated to match |
+| 2    | 3            | 0                 | 0 (`3 > 1`)              | 1                  | j=0: `nums[1]=1` vs `target[0]=1` ✔<br>j=1: `nums[2]=2` vs `target[1]=2` ✔<br>j=2: `nums[0]=3` vs `target[2]=3` ✔ | whole array matches after one left rotation |
 
-Sorted `target = [1, 2, 3]` → divisors `fac = [1, 3]`.  
-Only `d = 3` can succeed; we invoke `isRotation(nums, target, 0, 3)`.
-
-| i | c = nums[0 + i % 3] | j (matched prefix length) | note |
-|---|----------------------|---------------------------|------|
-| 0 | 3 | 0 → 0 (3 ≠ 1) | no match, stay at 0 |
-| 1 | 1 | 0 → 1 (1 = 1) | matched first element |
-| 2 | 2 | 1 → 2 (2 = 2) | matched first two |
-| 3 | 3 | 2 → 3 (3 = 3) | `j == k`, rotation found → return `true` |
-
-All blocks succeed, so `ans += 3`. Final answer `3`.
+`d = 1` is rejected, `d = 3` is accepted, so the final answer is `3`.  
 
 ## Complexity  
-- **Time:** `O(n log n + n·τ(n))`. Sorting costs `O(n log n)`. For each divisor `d`, we scan every element at most twice inside `isRotation`, so the inner work is `O(n)`. Since there are `τ(n)` divisors, the total is `O(n·τ(n))`.  
-- **Space:** `O(n)`. The cloned `target` array and the temporary prefix table `pi` of size `k ≤ n` dominate; extra output storage is excluded.
+- **Time:** `O(n log n + n * τ(n))` where `τ(n)` is the number of divisors of `n`. Sorting costs `O(n log n)`. For each divisor we scan every element exactly once (the inner `check` scans each block of size `d` once), so the total work over all divisors is `O(n * τ(n))`.  
+- **Space:** `O(n)` for the cloned `target` array and `O(τ(n))` for the divisor list; no additional structures proportional to `n` are created inside the loops.
 
 ## Solution (Java)
 
 ```java
-import java.util.*;
-
 class Solution {
     public int sortableIntegers(int[] nums) {
         int n = nums.length;
         int[] target = nums.clone();
         Arrays.sort(target);
 
-        // collect divisors of n in O(sqrt(n))
         List<Integer> fac = new ArrayList<>();
         for (int x = 1; (long) x * x <= n; x++) {
             if (n % x == 0) {
                 fac.add(x);
-                if (n / x != x) fac.add(n / x);
+                if (n / x != x)
+                    fac.add(n / x);
             }
         }
 
@@ -70,42 +64,38 @@ class Solution {
         for (int d : fac) {
             boolean canSort = true;
             for (int s = 0; s < n; s += d) {
-                if (!isRotation(nums, target, s, d)) {
+                if (!check(nums, target, s, d)) {
                     canSort = false;
                     break;
                 }
             }
-            if (canSort) ans += d;
+            if (canSort)
+                ans += d;
         }
         return ans;
     }
 
     // Does target[s..s+k) appear inside nums[s..s+k) doubled?
-    private boolean isRotation(int[] nums, int[] target, int s, int k) {
-        // prefix function of the pattern target[s..s+k)
-        int[] pi = new int[k];
-        int j = 0;
-        for (int i = 1; i < k; i++) {
-            while (j > 0 && target[s + i] != target[s + j]) j = pi[j - 1];
-            if (target[s + i] == target[s + j]) j++;
-            pi[i] = j;
+    private boolean check(int[] nums, int[] target, int s, int k) {
+        int split = -1; // -1 means "no descent", so the rotation starts at 0
+        for (int i = 0; i < k - 1; i++) {
+            if (nums[s + i] > nums[s + i + 1]) {
+                split = i;
+                break;
+            }
         }
-
-        // scan the doubled block: text[i] = nums[s + i % k]
-        j = 0;
-        for (int i = 0; i < 2 * k; i++) {
-            int c = nums[s + i % k];
-            while (j > 0 && c != target[s + j]) j = pi[j - 1];
-            if (c == target[s + j]) j++;
-            if (j == k) return true;
+        int start = split + 1;
+        for (int j = 0; j < k; j++) {
+            if (nums[s + (start + j) % k] != target[s + j])
+                return false;
         }
-        return false;
+        return true;
     }
 }
 ```
 
 ---
 
-**Runtime** 144 ms (beats 25.0%) · **Memory** 82.2 MB (beats 6.8%)
+**Runtime** 86 ms (beats 31.8%) · **Memory** 75.8 MB (beats 40.9%)
 
 <sub>Synced by AILeetHub on 2026-10-20.</sub>
