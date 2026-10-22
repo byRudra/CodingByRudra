@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**420 problems solved**
+**421 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 205  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 186  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 29
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 206  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 186  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 29
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -233,6 +233,7 @@ _Synced by AILeetHub._
 | 875 | [Koko Eating Bananas](Binary%20Search/0875-koko-eating-bananas/) | Medium | Binary Search | java |
 | 876 | [Middle of the Linked List](Two%20Pointers/0876-middle-of-the-linked-list/) | Easy | Two Pointers | Java |
 | 877 | [Stone Game](Dynamic%20Programming/0877-stone-game/) | Medium | Dynamic Programming | java |
+| 884 | [Uncommon Words from Two Sentences](Counting/0884-uncommon-words-from-two-sentences/) | Easy | Counting | Java |
 | 885 | [Spiral Matrix III](Simulation/0885-spiral-matrix-iii/) | Medium | Simulation | java |
 | 890 | [Find and Replace Pattern](Hash%20Table/0890-find-and-replace-pattern/) | Medium | Hash Table | Java |
 | 896 | [Monotonic Array](Array/0896-monotonic-array/) | Easy | Array | java |
