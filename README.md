@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**419 problems solved**
+**420 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 205  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 185  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 29
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 205  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 186  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 29
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -419,6 +419,7 @@ _Synced by AILeetHub._
 | 3761 | [Minimum Absolute Distance Between Mirror Pairs](Math/3761-minimum-absolute-distance-between-mirror-pairs/) | Medium | Math | java |
 | 3783 | [Mirror Distance of an Integer](Math/3783-mirror-distance-of-an-integer/) | Easy | Math | java |
 | 3838 | [Weighted Word Mapping](Simulation/3838-weighted-word-mapping/) | Easy | Simulation | java |
+| 3863 | [Minimum Operations to Sort a String](String/3863-minimum-operations-to-sort-a-string/) | Medium | String | Java |
 | 3867 | [Sum of GCD of Formed Pairs](Two%20Pointers/3867-sum-of-gcd-of-formed-pairs/) | Medium | Two Pointers | java |
 | 3870 | [Count Commas in Range](Math/3870-count-commas-in-range/) | Easy | Math | Java |
 | 3871 | [Count Commas in Range II](Math/3871-count-commas-in-range-ii/) | Medium | Math | Java |
