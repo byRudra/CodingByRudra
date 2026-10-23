@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**424 problems solved**
+**425 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 207  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 188  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 29
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 207  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 189  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 29
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -273,6 +273,7 @@ _Synced by AILeetHub._
 | 1290 | [Convert Binary Number in a Linked List to Integer](Math/1290-convert-binary-number-in-a-linked-list-to-integer/) | Easy | Math | Java |
 | 1291 | [Sequential Digits](Enumeration/1291-sequential-digits/) | Medium | Enumeration | java |
 | 1323 | [Maximum 69 Number](Greedy/1323-maximum-69-number/) | Easy | Greedy | java |
+| 1338 | [Reduce Array Size to The Half](Heap%20(Priority%20Queue)/1338-reduce-array-size-to-the-half/) | Medium | Heap (Priority Queue) | Java |
 | 1342 | [Number of Steps to Reduce a Number to Zero](Bit%20Manipulation/1342-number-of-steps-to-reduce-a-number-to-zero/) | Easy | Bit Manipulation | java |
 | 1344 | [Angle Between Hands of a Clock](Math/1344-angle-between-hands-of-a-clock/) | Medium | Math | java |
 | 1362 | [Closest Divisors](Math/1362-closest-divisors/) | Medium | Math | Java |
