@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**426 problems solved**
+**427 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 208  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 189  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 29
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 208  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 190  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 29
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -175,6 +175,7 @@ _Synced by AILeetHub._
 | 435 | [Non-overlapping Intervals](Dynamic%20Programming/0435-non-overlapping-intervals/) | Medium | Dynamic Programming | Java |
 | 441 | [Arranging Coins](Binary%20Search/0441-arranging-coins/) | Easy | Binary Search | Java |
 | 442 | [Find All Duplicates in an Array](Sorting/0442-find-all-duplicates-in-an-array/) | Medium | Sorting | Java |
+| 445 | [Add Two Numbers II](Math/0445-add-two-numbers-ii/) | Medium | Math | Java |
 | 448 | [Find All Numbers Disappeared in an Array](Hash%20Table/0448-find-all-numbers-disappeared-in-an-array/) | Easy | Hash Table | java |
 | 451 | [Sort Characters By Frequency](Heap%20(Priority%20Queue)/0451-sort-characters-by-frequency/) | Medium | Heap (Priority Queue) | Java |
 | 452 | [Minimum Number of Arrows to Burst Balloons](Greedy/0452-minimum-number-of-arrows-to-burst-balloons/) | Medium | Greedy | Java |
