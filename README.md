@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**422 problems solved**
+**423 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 206  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 187  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 29
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 206  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 188  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 29
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -404,6 +404,7 @@ _Synced by AILeetHub._
 | 3637 | [Trionic Array I](Array/3637-trionic-array-i/) | Easy | Array | java |
 | 3640 | [Trionic Array II](Dynamic%20Programming/3640-trionic-array-ii/) | Hard | Dynamic Programming | java |
 | 3643 | [Flip Square Submatrix Vertically](Two%20Pointers/3643-flip-square-submatrix-vertically/) | Easy | Two Pointers | python3 |
+| 3644 | [Maximum K to Sort a Permutation](Bit%20Manipulation/3644-maximum-k-to-sort-a-permutation/) | Medium | Bit Manipulation | Java |
 | 3658 | [GCD of Odd and Even Sums](Number%20Theory/3658-gcd-of-odd-and-even-sums/) | Easy | Number Theory | java |
 | 3689 | [Maximum Total Subarray Value I](Greedy/3689-maximum-total-subarray-value-i/) | Medium | Greedy | java |
 | 3702 | [Longest Subsequence With Non-Zero Bitwise XOR](Bit%20Manipulation/3702-longest-subsequence-with-non-zero-bitwise-xor/) | Medium | Bit Manipulation | java |
