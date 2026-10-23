@@ -5,39 +5,48 @@
 `Array`
 
 ## Intuition  
-The array can only be sorted if it already follows the natural cyclic order either forward (`0,1,2,…`) or backward (`…,2,1,0`). In that case every adjacent pair satisfies a simple modular relation, so a single pass can tell us which pattern (if any) we have. Once the pattern is known, the whole problem reduces to counting how many left‑rotations are needed, possibly preceded or followed by a single reversal. The naïve idea of trying all sequences of operations would be exponential; the modular adjacency check eliminates the need for any search, hash map, or extra pass.
+The permutation can only be sorted if, when we view the array as a circle, the numbers follow a single consistent step: either each element is the successor of the previous one modulo `n` (strictly increasing around the circle) or each element is the predecessor (strictly decreasing). This invariant eliminates the need for any search or simulation of operations; we only have to recognise which of the two circular orders (if any) the input already exhibits. Once the order is known, the number of required operations reduces to a simple arithmetic expression based on the position of `0`. The whole solution therefore follows the classic **two‑pattern detection** (increasing vs. decreasing) on a circular array.
 
 ## Approach  
-1. **Detect forward cyclic order** – Initialise `inc = true`. For each index `i` (0 ≤ i < n) compute `next = nums[(i+1)%n]`. If `next` is not `(nums[i] + 1) % n`, set `inc = false`.  
-2. **Detect backward cyclic order** – Initialise `dec = true`. In the same loop, if `next` is not `(nums[i] - 1 + n) % n`, set `dec = false`.  
-   *Loop invariant*: after processing the first `i` positions, `inc` (resp. `dec`) is true exactly when all examined adjacent pairs satisfy the forward (resp. backward) modular relation. The loop exits after `i = n‑1`, having examined the whole circular array.  
-3. **Handle the forward case** – If `inc` remains true, the array is a left‑rotation of the sorted permutation. Let `k = nums[0]` (the value that currently sits at index 0).  
-   * If `k == 0` the array is already sorted → 0 operations.  
-   * Otherwise we have two viable strategies:  
-     - Rotate left `n‑k` times to bring `0` to the front.  
-     - Reverse first (1 op) then rotate left `k+1` times; the extra `+1` accounts for the reversal itself, giving `k+2` total.  
-   The code stores the minimum of these two in `best`.  
-4. **Handle the backward case** – If `dec` is true, a single reversal turns the array into a forward cyclic shift. After reversal the element that will become the new first is `(nums[0] + 1) % n`; call it `k`. We then need either `k` left rotations or `n‑k` left rotations, whichever is smaller. Adding the mandatory reversal gives `1 + min(k, (n‑k)%n)`. The result is merged with any previous `best`.  
-5. **Return** – If neither pattern held, `best` stays at `Integer.MAX_VALUE` and we return `-1`; otherwise we return the computed minimum.
+1. **Initialize flags** `inc = true` and `dec = true`.  
+2. **Single pass** over the array (`i = 0 … n‑1`):  
+   - Compute `next = nums[(i + 1) % n]` to treat the array as circular.  
+   - If `next` is not the modular successor of `nums[i]` (`(nums[i] + 1) % n`), set `inc = false`.  
+   - If `next` is not the modular predecessor of `nums[i]` (`(nums[i] - 1 + n) % n`), set `dec = false`.  
+   *Invariant*: after processing index `i`, `inc` (resp. `dec`) is true iff all examined adjacent pairs so far respect the increasing (resp. decreasing) circular rule.  
+3. **Compute candidate answer for the increasing case** (`inc` true):  
+   - Let `k = nums[0]`, the offset of `0` after a left rotation.  
+   - If `k == 0` the array is already sorted → candidate `0`.  
+   - Otherwise the minimal cost is `min(n - k, k + 2)`.  
+     *Explanation*: rotating left `n‑k` times brings `0` to the front; alternatively, reverse first (cost 1) then rotate left `k` times (cost `k+1`), which simplifies to `k+2`.  
+4. **Compute candidate answer for the decreasing case** (`dec` true):  
+   - Let `k = (nums[0] + 1) % n`, the distance from the current front to the element that would become `0` after a reversal.  
+   - The cost is `1 + min(k, (n - k) % n)`.  
+     *Explanation*: we must reverse once (cost 1), then either rotate left `k` steps or rotate right `(n‑k)` steps (the latter is achieved by `n‑k` left rotations).  
+5. **Select the best** of the two candidates stored in `best`. If neither pattern held (`best` stayed `Integer.MAX_VALUE`), return `-1`.  
+
+Edge handling:  
+- Empty or single‑element arrays trivially satisfy both patterns; the formulas correctly yield `0`.  
+- The modulo arithmetic guarantees correct wrap‑around for both even and odd `n`.  
+- The `<=` vs `<` distinction never appears because equality is explicitly tested against the modular expectations.
 
 ## Dry Run  
-Input: `nums = [0,2,1]` (n = 3)
+Input: `nums = [0, 2, 1]` (`n = 3`)
 
-| i | nums[i] | next = nums[(i+1)%3] | inc? (next == (nums[i]+1)%3) | dec? (next == (nums[i]-1+3)%3) |
-|---|---------|----------------------|------------------------------|--------------------------------|
-| 0 | 0       | 2                    | false                        | false                          |
-| 1 | 2       | 1                    | false                        | true                           |
-| 2 | 1       | 0                    | false                        | true                           |
+| i | nums[i] | next | inc before | dec before | inc after | dec after |
+|---|---------|------|------------|------------|-----------|-----------|
+| 0 | 0       | 2    | true       | true       | false (2 ≠ 1) | true (2 = 2) |
+| 1 | 2       | 1    | false      | true       | false    | false (1 ≠ 1? actually predecessor check: (2‑1+3)%3=1 → true, so dec stays true) |
+| 2 | 1       | 0    | false      | true       | false    | true (0 = (1‑1+3)%3) |
 
-After the loop: `inc = false`, `dec = true`.  
-`k = (nums[0] + 1) % 3 = 1`.  
-`best = 1 + min(k, (n‑k)%n) = 1 + min(1,2) = 2`.  
-
-The algorithm returns `2`, matching the optimal sequence: reverse → rotate left.
+After the loop `inc = false`, `dec = true`.  
+- For decreasing case: `k = (nums[0] + 1) % 3 = 1`.  
+- Candidate = `1 + min(1, (3‑1)%3 = 2) = 2`.  
+No increasing candidate, so `best = 2`. The algorithm returns `2`, matching the optimal sequence (rotate left, then reverse).
 
 ## Complexity  
-- **Time:** O(n) – the single loop visits each element once; the subsequent constant‑time calculations are negligible.  
-- **Space:** O(1) – only a handful of integer and boolean variables are used, independent of `n`. (The output integer does not count toward extra space.)
+- **Time:** `O(n)` – the single loop visits each element once; the subsequent constant‑time calculations depend only on `n`.  
+- **Space:** `O(1)` – only a handful of primitive variables (`inc`, `dec`, `k`, `best`) are used, independent of input size. The output array is not counted.
 
 ## Solution (Java)
 
@@ -68,6 +77,6 @@ class Solution {
 
 ---
 
-**Runtime** 8 ms (beats 10.0%) · **Memory** 94.9 MB (beats 81.7%)
+**Runtime** 8 ms (beats 10.2%) · **Memory** 94.9 MB (beats 79.7%)
 
 <sub>Synced by AILeetHub on 2026-10-22.</sub>
