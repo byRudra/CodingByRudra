@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**427 problems solved**
+**428 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 208  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 190  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 29
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 208  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 191  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 29
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -99,6 +99,7 @@ _Synced by AILeetHub._
 | 143 | [Reorder List](Two%20Pointers/0143-reorder-list/) | Medium | Two Pointers | Java |
 | 144 | [Binary Tree Preorder Traversal](Binary%20Tree/0144-binary-tree-preorder-traversal/) | Easy | Binary Tree | java |
 | 145 | [Binary Tree Postorder Traversal](Binary%20Tree/0145-binary-tree-postorder-traversal/) | Easy | Binary Tree | java |
+| 147 | [Insertion Sort List](Sorting/0147-insertion-sort-list/) | Medium | Sorting | Java |
 | 148 | [Sort List](Divide%20and%20Conquer/0148-sort-list/) | Medium | Divide and Conquer | Java |
 | 150 | [Evaluate Reverse Polish Notation](Math/0150-evaluate-reverse-polish-notation/) | Medium | Math | java |
 | 151 | [Reverse Words in a String](Two%20Pointers/0151-reverse-words-in-a-string/) | Medium | Two Pointers | java |
