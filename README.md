@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**428 problems solved**
+**429 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 208  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 191  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 29
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 209  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 191  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 29
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -358,6 +358,7 @@ _Synced by AILeetHub._
 | 2356 | [Number of Unique Subjects Taught by Each Teacher](Database/2356-number-of-unique-subjects-taught-by-each-teacher/) | Easy | Database | mysql |
 | 2363 | [Merge Similar Items](Sorting/2363-merge-similar-items/) | Easy | Sorting | Java |
 | 2390 | [Removing Stars From a String](Simulation/2390-removing-stars-from-a-string/) | Medium | Simulation | Java |
+| 2409 | [Count Days Spent Together](Math/2409-count-days-spent-together/) | Easy | Math | Java |
 | 2452 | [Words Within Two Edits of Dictionary](Trie/2452-words-within-two-edits-of-dictionary/) | Medium | Trie | java |
 | 2472 | [Maximum Number of Non-overlapping Palindrome Substrings](Dynamic%20Programming/2472-maximum-number-of-non-overlapping-palindrome-substrings/) | Hard | Dynamic Programming | Java |
 | 2487 | [Remove Nodes From Linked List](Monotonic%20Stack/2487-remove-nodes-from-linked-list/) | Medium | Monotonic Stack | Java |
