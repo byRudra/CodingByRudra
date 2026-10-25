@@ -5,100 +5,140 @@
 `Array` · `Depth-First Search` · `Breadth-First Search` · `Union-Find` · `Matrix`
 
 ## Intuition  
-Any island that touches the outer border can never be “closed” because the border itself is water (value 1). Therefore, if we first erase every land cell (0) that is reachable from the boundary, the remaining 0‑cells form exactly the closed islands. The naïve way would be to examine each island twice—once to see if it reaches the edge and again to count it—but the boundary‑first flood‑fill removes the need for a second reachability test. This is a classic two‑phase flood‑fill (depth‑first search) pattern.
+If a land cell (0) can reach the matrix border by moving only up, down, left or right, then the whole island it belongs to is open and must not be counted. Conversely, an island is closed exactly when **every** DFS branch starting from any of its cells stays inside the grid and never steps out of bounds. The naive way would be to flood‑fill each island, then separately scan its border cells, costing an extra pass or extra bookkeeping. By letting the recursive DFS itself return a boolean that is `false` the moment it steps out of the grid, we collapse both the flood‑fill and the “is it closed?” check into a single traversal. This is the classic *two‑state DFS* pattern.
 
 ## Approach  
-1. **Initialize dimensions** – `rows = grid.length`, `cols = grid[0].length`.  
-2. **Erase boundary‑connected land** –  
-   - Loop `r = 0 … rows‑1`, `c = 0 … cols‑1`.  
-   - **Exit condition:** loop ends after the last cell.  
-   - **Invariant:** before each iteration, all previously visited boundary cells have already been turned into 1.  
-   - If the current cell lies on the outer frame (`r == 0 || c == 0 || r == rows‑1 || c == cols‑1`) **and** `grid[r][c] == 0`, invoke `dfs(grid, r, c)`.  
-   - The DFS recursively flips every reachable 0 to 1, guaranteeing that no land touching the border survives this phase.  
-   - Edge handling: the check uses `||` (inclusive) because a corner belongs to both a row and a column border; using `<` would miss the last index.  
-3. **Count remaining islands** –  
-   - Initialise `count = 0`.  
-   - Iterate again over every cell with the same double loop.  
-   - **Invariant:** at the start of each iteration, all cells belonging to previously counted islands are already 1.  
-   - When `grid[r][c] == 0`, we have discovered a new closed island: increment `count` and call `dfs(grid, r, c)` to flood‑fill it to 1, preventing double counting.  
-   - The loop naturally handles empty or single‑row/column grids because the boundary phase will turn any existing 0 into 1, leaving `count` at 0.  
-4. **Depth‑first search (`dfs`)** –  
-   - Base case returns if `(r < 0 || c < 0 || r >= rows || c >= cols || grid[r][c] != 0)`. This guards against out‑of‑bounds and stops when water or already‑visited land is hit.  
-   - Mark the current cell as water: `grid[r][c] = 1`.  
-   - Recurse in the four cardinal directions.  
-   - The recursion depth can reach the size of an island; the algorithm chooses recursion over an explicit stack for brevity.
+1. **Initialize dimensions** `rows = grid.length`, `cols = grid[0].length`.  
+2. **Iterate over every cell** (`r = 0 … rows‑1`, `c = 0 … cols‑1`).  
+   - *Exit condition*: loops finish when `r == rows` and `c == cols`.  
+   - *Invariant*: all cells with indices `< r` or (`== r` and `< c`) have already been examined and, if they were land, are recorded in `visited`.  
+   - If `grid[r][c] == 0` **and** the cell key `r*cols + c` is not in `visited`, start a DFS.  
+3. **DFS** `dfs(grid, r, c)` returns `true` iff the component reachable from `(r,c)` never leaves the matrix.  
+   - **Base cases**:  
+     * Out‑of‑bounds → return `false` (the island touches the border).  
+     * Water (`grid[r][c] == 1`) → return `true` (this direction is safely closed).  
+     * Already visited → return `true` (we have already proven this part closed).  
+   - Mark the current cell as visited: `visited.put(r*cols + c, true)`.  
+   - Recurse in the four directions, storing the results in `up`, `down`, `right`, `left`.  
+   - Return `up && down && right && left`. The logical AND guarantees that a single `false` (border contact) propagates up, marking the whole island as open.  
+4. Back in the outer loops, if `dfs(grid, r, c)` returned `true`, increment `count`.  
+5. After scanning the whole grid, return `count`.
+
+**Edge handling**:  
+- Empty grid is impossible by constraints, but the loops naturally handle a single‑cell grid.  
+- The algorithm treats even‑ and odd‑sized islands uniformly because the boolean aggregation does not depend on island size.  
+- Using a `Map<Integer, Boolean>` avoids mutating the input; the key `r*cols + c` uniquely identifies a cell.
 
 ## Dry Run  
 Input  
 
 ```
-[[1,1,1,1],
- [1,0,0,1],
- [1,1,0,1],
- [1,0,1,1]]
+[[0,1,0],
+ [0,0,1],
+ [1,1,0]]
 ```
 
-| Step | r | c | grid[r][c] before | Action                               | Note                              |
-|------|---|---|-------------------|--------------------------------------|-----------------------------------|
-| B1   | 0 | 0 | 1                 | skip (border but water)              | –                                 |
-| B2   | 1 | 0 | 1                 | skip (border water)                  | –                                 |
-| B3   | 3 | 1 | 0                 | `dfs` flips (3,1) → 1; recurses none | removes boundary‑connected land   |
-| C1   | 1 | 1 | 0                 | `count=1`; `dfs` flips (1,1),(1,2),(2,2) → 1 | first closed island discovered |
-| C2   | 1 | 2 | 1                 | skip (already water)                 |                                   |
-| C3   | 2 | 2 | 1                 | skip                                 |                                   |
+| step | r | c | visited keys after step | dfs return | note |
+|------|---|---|--------------------------|------------|------|
+| 1 | 0 | 0 | {0} | false | out‑of‑bounds reached via up → open island |
+| 2 | 0 | 2 | {0,2} | true | all recursive calls hit water → closed |
+| 3 | 1 | 0 | {0,2,3} | false | down recursion reaches border (row 2, col 0 is water, but up from (1,0) goes out) |
+| 4 | 1 | 1 | {0,2,3,4} | false | left recursion hits (1,0) already visited → true, but up goes out → false |
+| 5 | 2 | 2 | {0,2,3,4,8} | true | isolated land surrounded by water |
+| 6 | – | – | – | – | loops finish |
 
-After the loops finish, `count = 1`, which is the number of closed islands because the only remaining 0‑region was completely surrounded by 1s.
+`count` increments on steps 2 and 5, so the final answer is **2** closed islands.
 
 ## Complexity  
-- **Time:** `O(rows * cols)` – each cell is visited at most twice: once during the boundary flood‑fill and once during the counting flood‑fill.  
-- **Space:** `O(rows * cols)` in the worst case for the recursion stack (when a single island occupies the whole grid); the algorithm uses no extra data structures beyond the input grid.
+- **Time:** O(rows × cols) – each cell is visited at most once; the DFS explores each neighbor a constant number of times, and the outer loops run `rows*cols` iterations.  
+- **Space:** O(rows × cols) in the worst case for the `visited` map (the recursion stack is bounded by the size of the current island, which is ≤ rows × cols). The output integer is excluded from the space count.
 
 ## Solution (Java)
 
 ```java
+// class Solution {
+//     private int rows, cols;
+
+//     public int closedIsland(int[][] grid) {
+//         rows = grid.length;
+//         cols = grid[0].length;
+
+//         // checking if any island connects with the boundary if it does making the whole island 1 so we know it isnt the one we need to count 
+//         for (int r = 0; r < rows; r++) {
+//             for (int c = 0; c < cols; c++) {
+//                 if ((r == 0 || c == 0 || r == rows - 1 || c == cols - 1) && grid[r][c] == 0) {
+//                     dfs(grid, r, c);
+//                 }
+//             }
+//         }
+
+//         // now checking for the left overs
+//         // we start with 1 because 0 is the boundary
+//         int count = 0;
+//         for (int r = 0; r < rows; r++) {
+//             for (int c = 0; c < cols; c++) {
+//                 if (grid[r][c] == 0) {
+//                     count++;
+//                     // dfs from that point will make every 0 to a 1 and hence this will lead to conversion of the whole island that was 0 to 1
+//                     dfs(grid, r, c);
+//                 }
+//             }
+//         }
+//         return count;
+//     }
+//     public void dfs(int[][] grid, int r, int c){
+//         if(r < 0 || c < 0 || r >= rows || c >= cols || grid[r][c] != 0) return;
+//         grid[r][c] = 1;
+//         dfs(grid, r - 1, c);
+//         dfs(grid, r + 1, c);
+//         dfs(grid, r, c + 1);
+//         dfs(grid, r, c - 1);
+//     }
+// }
+
+// Now with an approach in which direct manipulation of the grid is not allowed
+
 class Solution {
     private int rows, cols;
+
+    private Map<Integer, Boolean> visited = new HashMap<>();
 
     public int closedIsland(int[][] grid) {
         rows = grid.length;
         cols = grid[0].length;
 
-        // checking if any island connects with the boundary if it does making the whole island 1 so we know it isnt the one we need to count 
-        for (int r = 0; r < rows; r++) {
-            for (int c = 0; c < cols; c++) {
-                if ((r == 0 || c == 0 || r == rows - 1 || c == cols - 1) && grid[r][c] == 0) {
-                    dfs(grid, r, c);
-                }
-            }
-        }
-
-        // now checking for the left overs
-        // we start with 1 because 0 is the boundary
         int count = 0;
         for (int r = 0; r < rows; r++) {
             for (int c = 0; c < cols; c++) {
-                if (grid[r][c] == 0) {
-                    count++;
-                    // dfs from that point will make every 0 to a 1 and hence this will lead to conversion of the whole island that was 0 to 1
-                    dfs(grid, r, c);
+                if (grid[r][c] == 0 && !visited.containsKey(r * cols + c)) {
+                    if(dfs(grid, r, c))
+                        count++;
                 }
             }
         }
         return count;
     }
-    public void dfs(int[][] grid, int r, int c){
-        if(r < 0 || c < 0 || r >= rows || c >= cols || grid[r][c] != 0) return;
-        grid[r][c] = 1;
-        dfs(grid, r - 1, c);
-        dfs(grid, r + 1, c);
-        dfs(grid, r, c + 1);
-        dfs(grid, r, c - 1);
+
+    public boolean dfs(int[][] grid, int r, int c) {
+        if (r < 0 || c < 0 || r >= rows || c >= cols)
+            return false;
+        if(grid[r][c] == 1) return true;
+        int key = r * cols + c;
+        if(visited.containsKey(key)) return true;
+        visited.put(key, true);
+
+            boolean up    = dfs(grid, r - 1, c);
+    boolean down  = dfs(grid, r + 1, c);
+    boolean right = dfs(grid, r, c + 1);
+    boolean left  = dfs(grid, r, c - 1);
+
+    return up && down && right && left;
     }
 }
 ```
 
 ---
 
-**Runtime** 2 ms (beats 99.8%) · **Memory** 45.9 MB (beats 95.9%)
+**Runtime** 7 ms (beats 5.6%) · **Memory** 47 MB (beats 6.4%)
 
 <sub>Synced by AILeetHub on 2026-10-25.</sub>
