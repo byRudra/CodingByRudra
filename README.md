@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**432 problems solved**
+**433 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 210  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 193  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 29
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 211  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 193  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 29
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -257,6 +257,7 @@ _Synced by AILeetHub._
 | 1051 | [Height Checker](Sorting/1051-height-checker/) | Easy | Sorting | java |
 | 1068 | [Product Sales Analysis I](Database/1068-product-sales-analysis-i/) | Easy | Database | pythondata |
 | 1070 | [Product Sales Analysis III](Database/1070-product-sales-analysis-iii/) | Medium | Database | mysql |
+| 1071 | [Greatest Common Divisor of Strings](Math/1071-greatest-common-divisor-of-strings/) | Easy | Math | Java |
 | 1075 | [Project Employees I](Database/1075-project-employees-i/) | Easy | Database | mysql |
 | 1092 | [Shortest Common Supersequence ](Dynamic%20Programming/1092-shortest-common-supersequence/) | Hard | Dynamic Programming | java |
 | 1096 | [Brace Expansion II](Backtracking/1096-brace-expansion-ii/) | Hard | Backtracking | Java |
