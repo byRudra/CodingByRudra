@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**433 problems solved**
+**434 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 211  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 193  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 29
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 211  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 194  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 29
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -267,6 +267,7 @@ _Synced by AILeetHub._
 | 1148 | [Article Views I](Database/1148-article-views-i/) | Easy | Database | mysql |
 | 1154 | [Day of the Year](Math/1154-day-of-the-year/) | Easy | Math | Java |
 | 1158 | [Market Analysis I](Database/1158-market-analysis-i/) | Medium | Database | mysql |
+| 1170 | [Compare Strings by Frequency of the Smallest Character](Binary%20Search/1170-compare-strings-by-frequency-of-the-smallest-character/) | Medium | Binary Search | Java |
 | 1174 | [Immediate Food Delivery II](Database/1174-immediate-food-delivery-ii/) | Medium | Database | MySQL |
 | 1179 | [Reformat Department Table](Database/1179-reformat-department-table/) | Easy | Database | MySQL |
 | 1189 | [Maximum Number of Balloons](Counting/1189-maximum-number-of-balloons/) | Easy | Counting | java |
