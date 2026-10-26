@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**431 problems solved**
+**432 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 209  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 193  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 29
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 210  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 193  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 29
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -367,6 +367,7 @@ _Synced by AILeetHub._
 | 2540 | [Minimum Common Value](Two%20Pointers/2540-minimum-common-value/) | Easy | Two Pointers | java |
 | 2558 | [Take Gifts From the Richest Pile](Heap%20(Priority%20Queue)/2558-take-gifts-from-the-richest-pile/) | Easy | Heap (Priority Queue) | Java |
 | 2574 | [Left and Right Sum Differences](Prefix%20Sum/2574-left-and-right-sum-differences/) | Easy | Prefix Sum | Java |
+| 2605 | [Form Smallest Number From Two Digit Arrays](Hash%20Table/2605-form-smallest-number-from-two-digit-arrays/) | Easy | Hash Table | Java |
 | 2706 | [Buy Two Chocolates](Greedy/2706-buy-two-chocolates/) | Easy | Greedy | Java |
 | 2778 | [Sum of Squares of Special Elements ](Array/2778-sum-of-squares-of-special-elements/) | Easy | Array | Java |
 | 2798 | [Number of Employees Who Met the Target](Array/2798-number-of-employees-who-met-the-target/) | Easy | Array | java |
