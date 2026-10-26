@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**430 problems solved**
+**431 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 209  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 192  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 29
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 209  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 193  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 29
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -405,6 +405,7 @@ _Synced by AILeetHub._
 | 3550 | [Smallest Index With Digit Sum Equal to Index](Math/3550-smallest-index-with-digit-sum-equal-to-index/) | Easy | Math | Java |
 | 3551 | [Minimum Swaps to Sort by Digit Sum](Sorting/3551-minimum-swaps-to-sort-by-digit-sum/) | Medium | Sorting | Java |
 | 3568 | [Minimum Moves to Clean the Classroom](Bit%20Manipulation/3568-minimum-moves-to-clean-the-classroom/) | Medium | Bit Manipulation | java |
+| 3619 | [Count Islands With Total Value Divisible by K](Union-Find/3619-count-islands-with-total-value-divisible-by-k/) | Medium | Union-Find | Java |
 | 3622 | [Check Divisibility by Digit Sum and Product](Math/3622-check-divisibility-by-digit-sum-and-product/) | Easy | Math | java |
 | 3633 | [Earliest Finish Time for Land and Water Rides I](Two%20Pointers/3633-earliest-finish-time-for-land-and-water-rides-i/) | Easy | Two Pointers | java |
 | 3635 | [Earliest Finish Time for Land and Water Rides II](Two%20Pointers/3635-earliest-finish-time-for-land-and-water-rides-ii/) | Medium | Two Pointers | java |
