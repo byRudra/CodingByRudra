@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**435 problems solved**
+**436 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 212  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 194  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 29
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 212  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 195  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 29
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -278,6 +278,7 @@ _Synced by AILeetHub._
 | 1280 | [Students and Examinations](Database/1280-students-and-examinations/) | Easy | Database | pythondata |
 | 1290 | [Convert Binary Number in a Linked List to Integer](Math/1290-convert-binary-number-in-a-linked-list-to-integer/) | Easy | Math | Java |
 | 1291 | [Sequential Digits](Enumeration/1291-sequential-digits/) | Medium | Enumeration | java |
+| 1296 | [Divide Array in Sets of K Consecutive Numbers](Greedy/1296-divide-array-in-sets-of-k-consecutive-numbers/) | Medium | Greedy | Java |
 | 1323 | [Maximum 69 Number](Greedy/1323-maximum-69-number/) | Easy | Greedy | java |
 | 1338 | [Reduce Array Size to The Half](Heap%20(Priority%20Queue)/1338-reduce-array-size-to-the-half/) | Medium | Heap (Priority Queue) | Java |
 | 1342 | [Number of Steps to Reduce a Number to Zero](Bit%20Manipulation/1342-number-of-steps-to-reduce-a-number-to-zero/) | Easy | Bit Manipulation | java |
