@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**436 problems solved**
+**437 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 212  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 195  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 29
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 213  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 195  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 29
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -211,6 +211,7 @@ _Synced by AILeetHub._
 | 628 | [Maximum Product of Three Numbers](Math/0628-maximum-product-of-three-numbers/) | Easy | Math | Java |
 | 633 | [Sum of Square Numbers](Two%20Pointers/0633-sum-of-square-numbers/) | Medium | Two Pointers | Java |
 | 643 | [Maximum Average Subarray I](Sliding%20Window/0643-maximum-average-subarray-i/) | Easy | Sliding Window | java |
+| 645 | [Set Mismatch](Bit%20Manipulation/0645-set-mismatch/) | Easy | Bit Manipulation | Java |
 | 657 | [Robot Return to Origin](Simulation/0657-robot-return-to-origin/) | Easy | Simulation | python |
 | 678 | [Valid Parenthesis String](Dynamic%20Programming/0678-valid-parenthesis-string/) | Medium | Dynamic Programming | Java |
 | 680 | [Valid Palindrome II](Two%20Pointers/0680-valid-palindrome-ii/) | Easy | Two Pointers | Java |
