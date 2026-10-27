@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**434 problems solved**
+**435 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 211  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 194  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 29
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 212  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 194  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 29
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -443,6 +443,7 @@ _Synced by AILeetHub._
 | 3904 | [Smallest Stable Index II](Prefix%20Sum/3904-smallest-stable-index-ii/) | Medium | Prefix Sum | Java |
 | 3925 | [Concatenate Array With Reverse](Simulation/3925-concatenate-array-with-reverse/) | Easy | Simulation | java |
 | 3942 | [Minimum Operations to Sort a Permutation](Array/3942-minimum-operations-to-sort-a-permutation/) | Medium | Array | Java |
+| 3963 | [Create Grid With Exactly One Path](Misc/3963-create-grid-with-exactly-one-path/) | Easy | Misc | Java |
 | 4038 | [Count Integers Appearing in a Single Block](Misc/4038-count-integers-appearing-in-a-single-block/) | Easy | Misc | java |
 
 <!-- AILEETHUB:END -->
