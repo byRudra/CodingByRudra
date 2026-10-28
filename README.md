@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**438 problems solved**
+**439 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 213  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 196  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 29
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 214  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 196  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 29
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -246,6 +246,7 @@ _Synced by AILeetHub._
 | 921 | [Minimum Add to Make Parentheses Valid](Greedy/0921-minimum-add-to-make-parentheses-valid/) | Medium | Greedy | Java |
 | 922 | [Sort Array By Parity II](Two%20Pointers/0922-sort-array-by-parity-ii/) | Easy | Two Pointers | Java |
 | 930 | [Binary Subarrays With Sum](Sliding%20Window/0930-binary-subarrays-with-sum/) | Medium | Sliding Window | java |
+| 933 | [Number of Recent Calls](Design/0933-number-of-recent-calls/) | Easy | Design | Java |
 | 940 | [Distinct Subsequences II](Dynamic%20Programming/0940-distinct-subsequences-ii/) | Hard | Dynamic Programming | Java |
 | 973 | [K Closest Points to Origin](Divide%20and%20Conquer/0973-k-closest-points-to-origin/) | Medium | Divide and Conquer | Java |
 | 977 | [Squares of a Sorted Array](Two%20Pointers/0977-squares-of-a-sorted-array/) | Easy | Two Pointers | Java |
