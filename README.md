@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**442 problems solved**
+**443 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 215  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 198  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 29
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 215  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 199  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 29
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -276,6 +276,7 @@ _Synced by AILeetHub._
 | 1189 | [Maximum Number of Balloons](Counting/1189-maximum-number-of-balloons/) | Easy | Counting | java |
 | 1190 | [Reverse Substrings Between Each Pair of Parentheses](Stack/1190-reverse-substrings-between-each-pair-of-parentheses/) | Medium | Stack | Java |
 | 1207 | [Unique Number of Occurrences](Hash%20Table/1207-unique-number-of-occurrences/) | Easy | Hash Table | Java |
+| 1209 | [Remove All Adjacent Duplicates in String II](Stack/1209-remove-all-adjacent-duplicates-in-string-ii/) | Medium | Stack | Java |
 | 1249 | [Minimum Remove to Make Valid Parentheses](Stack/1249-minimum-remove-to-make-valid-parentheses/) | Medium | Stack | Java |
 | 1254 | [Number of Closed Islands](Union-Find/1254-number-of-closed-islands/) | Medium | Union-Find | Java |
 | 1280 | [Students and Examinations](Database/1280-students-and-examinations/) | Easy | Database | pythondata |
