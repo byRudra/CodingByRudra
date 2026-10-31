@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**441 problems solved**
+**442 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 214  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 198  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 29
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 215  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 198  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 29
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -255,6 +255,7 @@ _Synced by AILeetHub._
 | 1011 | [Capacity To Ship Packages Within D Days](Binary%20Search/1011-capacity-to-ship-packages-within-d-days/) | Medium | Binary Search | Java |
 | 1021 | [Remove Outermost Parentheses](Stack/1021-remove-outermost-parentheses/) | Easy | Stack | Java |
 | 1046 | [Last Stone Weight](Heap%20(Priority%20Queue)/1046-last-stone-weight/) | Easy | Heap (Priority Queue) | Java |
+| 1047 | [Remove All Adjacent Duplicates In String](Stack/1047-remove-all-adjacent-duplicates-in-string/) | Easy | Stack | Java |
 | 1049 | [Last Stone Weight II](Dynamic%20Programming/1049-last-stone-weight-ii/) | Medium | Dynamic Programming | Java |
 | 1051 | [Height Checker](Sorting/1051-height-checker/) | Easy | Sorting | java |
 | 1068 | [Product Sales Analysis I](Database/1068-product-sales-analysis-i/) | Easy | Database | pythondata |
