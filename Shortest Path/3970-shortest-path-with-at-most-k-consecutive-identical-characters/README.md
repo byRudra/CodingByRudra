@@ -5,38 +5,45 @@
 `String` · `Graph Theory` · `Heap (Priority Queue)` · `Shortest Path`
 
 ## Intuition  
-The only obstacle to a classic shortest‑path search is the extra “run” constraint: we must remember how many identical labels we have seen consecutively at the current node. If we treat each pair (node, run) as a distinct state, the graph becomes a layered DAG where moving along an edge either resets the run to 1 (different label) or increments it (same label). This observation eliminates the need for a second pass, a hash‑map of visited substrings, or any exponential enumeration. The solution is therefore a standard Dijkstra on the expanded state space, i.e. the **two‑pointer (state‑augmented) shortest‑path** pattern.
+The only obstacle to a standard shortest‑path search is the *run* of identical labels: after each step we must know how many consecutive equal characters have appeared so far. If we treat “(node, current run length)” as a single state, the constraint becomes a simple feasibility check on transitions. This observation lets us reuse Dijkstra’s algorithm without any extra passes, hash maps, or sorting of the label string. The pattern is a **state‑expanded Dijkstra** (two‑dimensional distance array).
 
 ## Approach  
-1. **Build adjacency list** `adj`. For every edge `[u,v,w]` we store `{v,w}` in `adj[u]`.  
-2. **Initialize distance matrix** `dist[n][k+1]` with `INF`. `dist[u][r]` holds the smallest total weight to reach node `u` with a current run length `r`. Set `dist[0][1]=0` because we start at node 0 with a run of 1 (its own label).  
+1. **Build adjacency list** `adj`. For every edge `[u,v,w]` store `{v,w}` in `adj[u]`.  
+2. **Initialize distance matrix** `dist[n][k+1]` with `INF`. `dist[u][r]` holds the smallest total weight to reach node `u` while the current run of identical labels has length `r`. Set `dist[0][1] = 0` because we start at node 0 with a run of length 1.  
 3. **Priority queue** `pq` stores triples `{cost, node, run}` ordered by `cost`. Insert the start triple `{0,0,1}`.  
-4. **Main loop** – while `pq` is not empty:  
-   - Pop the smallest triple `cur`. Let `d, u, run` be its components.  
-   - **Skip stale entry** if `d > dist[u][run]`. This preserves Dijkstra’s invariant that the first time we pop a state we have its optimal distance.  
-   - **Early exit**: if `u == n‑1` we can return `d` immediately because any later pop would be larger.  
-   - **Relax outgoing edges**: for each `{v,w}` in `adj[u]` compute the new run `nr = (labels.charAt(v) == labels.charAt(u)) ? run+1 : 1`. If `nr > k` the edge violates the constraint and is ignored. Otherwise compute `nd = d + w`. If `nd < dist[v][nr]`, update `dist[v][nr] = nd` and push `{nd, v, nr}` into `pq`.  
-5. If the loop finishes without reaching node `n‑1`, return `-1`.
+4. **Main loop** – pop the smallest‑cost triple `cur`.  
+   - If `cur.cost` is larger than the recorded `dist[node][run]`, skip (stale entry).  
+   - If `node == n‑1`, return `cur.cost`; the first time the target is popped is optimal because Dijkstra processes states in non‑decreasing order of cost.  
+5. **Relax outgoing edges** of `node`. For each `{v,w}` in `adj[node]`:  
+   - Compute the next run length `nr`. If `labels[v] == labels[node]` then `nr = run + 1`; otherwise `nr = 1`.  
+   - If `nr > k` the transition violates the constraint → ignore.  
+   - New distance `nd = cur.cost + w`. If `nd < dist[v][nr]`, update `dist[v][nr] = nd` and push `{nd, v, nr}` into `pq`.  
+6. If the queue empties without reaching `n‑1`, return `-1`.
 
 Key invariants:  
-- At the start of each iteration, `dist[u][run]` equals the shortest known weight for that state.  
-- The priority queue always extracts the currently smallest unreached state, guaranteeing optimality when a target state is popped.  
-- The run length never exceeds `k`, so the state space is bounded by `n·(k+1)`.
+- The priority queue always contains the cheapest undiscovered state.  
+- `dist[u][r]` is the best known cost for that exact `(node,run)` pair.  
+- The loop terminates when the smallest remaining cost belongs to the target, guaranteeing optimality.
+
+Edge cases handled explicitly:  
+- Single‑node graph (`n==1`) works because `dist[0][1]=0` and the first pop returns 0.  
+- Paths that would exceed `k` are filtered by the `nr > k` guard.  
+- The run length is stored from 1 to k (inclusive); using `k+1` columns avoids off‑by‑one errors.
 
 ## Dry Run  
-Input: `n=3, edges=[[0,1,1],[1,2,1],[0,2,3]], labels="aab", k=1`
+Input: `n = 3`, `edges = [[0,1,1],[1,2,1],[0,2,3]]`, `labels = "aab"`, `k = 1`.
 
-| step | pop `(u,run,d)` | edge examined | `nr` | `nd` | action | note |
-|------|-----------------|---------------|-----|------|--------|------|
-| 1 | `(0,1,0)` | 0→1 (w=1) | `nr=2` → >k, skip | – | – | same label “a”, run would be 2 |
-|   |             | 0→2 (w=3) | `nr=1` (different) | 3 | `dist[2][1]=3`, push `(2,1,3)` | valid transition |
-| 2 | `(2,1,3)` | – | – | – | target reached (`u==2`) | return 3 |
+| step | pop (cost,node,run) | explore → (v, w) | nr | nd | dist after update | note |
+|------|---------------------|------------------|----|----|-------------------|------|
+| 1 | (0,0,1) | (1,1) → nr=2 (skip, >k) | – | – | unchanged | edge 0→1 invalid because run would be 2 |
+|   |                     | (2,3) → nr=1 | 1 | 3 | `dist[2][1]=3` | push (3,2,1) |
+| 2 | (3,2,1) | – | – | – | – | node 2 is target → return 3 |
 
-The algorithm terminates after two pops; the shortest valid path weight is 3, matching the expected answer.
+The algorithm returns `3`, matching the optimal path that uses the direct edge `0→2`.
 
 ## Complexity  
-- **Time:** `O((n·k + m) log (n·k))` – each state `(node,run)` is processed at most once; relaxing an edge costs a heap operation, and there are `m` original edges.  
-- **Space:** `O(n·k + m)` – adjacency list stores `m` edges, distance matrix stores `n·(k+1)` longs, and the priority queue holds at most the same number of states. (Output is a single integer, not counted.)
+- **Time:** `O((n·k + m·k) log (n·k))` → each state `(node,run)` is extracted at most once, and each outgoing edge is relaxed at most `k` times; the priority queue operations dominate with a logarithmic factor.  
+- **Space:** `O(n·k + m)` → the distance matrix stores `n·(k+1)` longs and the adjacency list holds `m` edges; the heap stores at most the same number of states. (The output integer does not affect the bound.)
 
 ## Solution (Java)
 
@@ -84,6 +91,6 @@ class Solution {
 
 ---
 
-**Runtime** 66 ms (beats 53.9%) · **Memory** 274.2 MB (beats 19.5%)
+**Runtime** 66 ms (beats 53.8%) · **Memory** 274.2 MB (beats 21.2%)
 
 <sub>Synced by AILeetHub on 2026-10-30.</sub>
