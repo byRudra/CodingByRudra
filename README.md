@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**443 problems solved**
+**444 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 215  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 199  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 29
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 215  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 200  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 29
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -180,6 +180,7 @@ _Synced by AILeetHub._
 | 448 | [Find All Numbers Disappeared in an Array](Hash%20Table/0448-find-all-numbers-disappeared-in-an-array/) | Easy | Hash Table | java |
 | 451 | [Sort Characters By Frequency](Heap%20(Priority%20Queue)/0451-sort-characters-by-frequency/) | Medium | Heap (Priority Queue) | Java |
 | 452 | [Minimum Number of Arrows to Burst Balloons](Greedy/0452-minimum-number-of-arrows-to-burst-balloons/) | Medium | Greedy | Java |
+| 453 | [Minimum Moves to Equal Array Elements](Math/0453-minimum-moves-to-equal-array-elements/) | Medium | Math | Java |
 | 485 | [Max Consecutive Ones](Array/0485-max-consecutive-ones/) | Easy | Array | Java |
 | 494 | [Target Sum](Dynamic%20Programming/0494-target-sum/) | Medium | Dynamic Programming | Java |
 | 496 | [Next Greater Element I](Monotonic%20Stack/0496-next-greater-element-i/) | Easy | Monotonic Stack | java |
