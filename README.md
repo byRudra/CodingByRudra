@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**444 problems solved**
+**445 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 215  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 200  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 29
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 216  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 200  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 29
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -338,6 +338,7 @@ _Synced by AILeetHub._
 | 1910 | [Remove All Occurrences of a Substring](Simulation/1910-remove-all-occurrences-of-a-substring/) | Medium | Simulation | java |
 | 1922 | [Count Good Numbers](Math/1922-count-good-numbers/) | Medium | Math | java |
 | 1927 | [Sum Game](Greedy/1927-sum-game/) | Medium | Greedy | java |
+| 1929 | [Concatenation of Array](Simulation/1929-concatenation-of-array/) | Easy | Simulation | Java |
 | 1934 | [Confirmation Rate](Database/1934-confirmation-rate/) | Medium | Database | MySQL |
 | 1978 | [Employees Whose Manager Left the Company](Database/1978-employees-whose-manager-left-the-company/) | Easy | Database | mysql |
 | 1979 | [Find Greatest Common Divisor of Array](Number%20Theory/1979-find-greatest-common-divisor-of-array/) | Easy | Number Theory | java |
