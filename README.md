@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**447 problems solved**
+**448 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 216  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 202  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 29
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 216  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 202  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 30
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -412,6 +412,7 @@ _Synced by AILeetHub._
 | 3471 | [Find the Largest Almost Missing Integer](Hash%20Table/3471-find-the-largest-almost-missing-integer/) | Easy | Hash Table | java |
 | 3483 | [Unique 3-Digit Even Numbers](Recursion/3483-unique-3-digit-even-numbers/) | Easy | Recursion | Java |
 | 3498 | [Reverse Degree of a String](Simulation/3498-reverse-degree-of-a-string/) | Easy | Simulation | Java |
+| 3505 | [Minimum Operations to Make Elements Within K Subarrays Equal](Dynamic%20Programming/3505-minimum-operations-to-make-elements-within-k-subarrays-equal/) | Hard | Dynamic Programming | Java |
 | 3524 | [Find X Value of Array I](Dynamic%20Programming/3524-find-x-value-of-array-i/) | Medium | Dynamic Programming | Java |
 | 3525 | [Find X Value of Array II](Segment%20Tree/3525-find-x-value-of-array-ii/) | Hard | Segment Tree | Java |
 | 3550 | [Smallest Index With Digit Sum Equal to Index](Math/3550-smallest-index-with-digit-sum-equal-to-index/) | Easy | Math | Java |
