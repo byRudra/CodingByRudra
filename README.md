@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**446 problems solved**
+**447 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 216  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 201  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 29
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 216  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 202  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 29
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -250,6 +250,7 @@ _Synced by AILeetHub._
 | 930 | [Binary Subarrays With Sum](Sliding%20Window/0930-binary-subarrays-with-sum/) | Medium | Sliding Window | java |
 | 933 | [Number of Recent Calls](Design/0933-number-of-recent-calls/) | Easy | Design | Java |
 | 940 | [Distinct Subsequences II](Dynamic%20Programming/0940-distinct-subsequences-ii/) | Hard | Dynamic Programming | Java |
+| 946 | [Validate Stack Sequences](Simulation/0946-validate-stack-sequences/) | Medium | Simulation | Java |
 | 973 | [K Closest Points to Origin](Divide%20and%20Conquer/0973-k-closest-points-to-origin/) | Medium | Divide and Conquer | Java |
 | 977 | [Squares of a Sorted Array](Two%20Pointers/0977-squares-of-a-sorted-array/) | Easy | Two Pointers | Java |
 | 989 | [Add to Array-Form of Integer](Math/0989-add-to-array-form-of-integer/) | Easy | Math | java |
