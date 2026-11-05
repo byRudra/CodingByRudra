@@ -5,40 +5,36 @@
 `Array` · `Hash Table`
 
 ## Intuition  
-The key observation is that for each element `x` we only need to know whether its complement `target‑x` has appeared earlier. If we store every previously seen value together with its index, the moment we encounter a number whose complement is already in the map we have both indices. A naïve double loop would examine every pair (O(n²)), but the complement‑lookup turns the second dimension into O(1) work, eliminating the extra pass. This is the classic **hash‑table (map) lookup** pattern.
+The key observation is that for any element `x` we only need to know whether its complement `target‑x` has already appeared earlier in the array. If we store each previously seen value together with its index, a single forward scan can answer the question instantly. A naïve double loop would cost O(n²) time, while sorting would lose the original indices. Maintaining a hash map of “value → index” eliminates the extra pass and preserves O(1) look‑ups. This is the classic **hash‑table lookup** pattern.
 
 ## Approach  
-1. **Create an empty hash map `needing`.** It will map a number to the index where it first appears.  
-2. **Iterate `i` from `0` to `nums.length‑1`.**  
-   - *Loop invariant:* before each iteration, `needing` contains exactly the values `nums[0..i‑1]` and their indices.  
-3. **Compute `needingVal = target - nums[i]`.** This is the value we would need to pair with `nums[i]`.  
-4. **Check `needing.containsKey(needingVal)`.**  
-   - If true, the complement was seen earlier; return `{needing.get(needingVal), i}`.  
-   - The `<=` vs `<` issue does not arise because we never compare indices, only existence in the map.  
-5. **Otherwise, store the current element:** `needing.put(nums[i], i)`.  
-   - This choice (store after the check) guarantees we never pair an element with itself, satisfying the “no reuse” rule.  
-6. **If the loop finishes without a return, fall back to `{-1, -1}`.** The problem guarantees a solution, so this line is unreachable but keeps the compiler happy.
+1. Initialise an empty `HashMap<Integer,Integer>` called `needing`.  
+2. Iterate `i` from `0` to `nums.length‑1`.  
+   - **Loop invariant:** All elements with index `< i` are already stored in `needing` mapping each value to its earliest index.  
+3. Compute `needingVal = target - nums[i]`.  
+4. Check `needing.containsKey(needingVal)`.  
+   - If true, the pair `(needing.get(needingVal), i)` satisfies the sum, so return it immediately.  
+   - The `<=` vs `<` issue does not arise because we never compare indices; we only test existence of the complement.  
+5. If the complement is absent, insert the current value with `needing.put(nums[i], i)`.  
+   - This choice stores the first occurrence, which is safe because the problem guarantees a unique solution and we never reuse the same index.  
+6. After the loop finishes (theoretically unreachable given the guarantee), return `{-1,-1}` as a fallback.
 
-Edge cases handled explicitly:  
-- Empty or single‑element arrays never enter the loop body, so the fallback is returned (though constraints forbid them).  
-- Duplicate values are fine because the first occurrence is stored; when the second identical value is processed, its complement (itself) is already in the map, yielding the correct pair.
+Edge cases: an empty or single‑element array never reaches the return inside the loop, but the constraints forbid them. Duplicate values are handled because the map keeps the earliest index; when the second duplicate arrives, its complement (the first duplicate) is already present, yielding the correct pair.
 
 ## Dry Run  
 
-**Input:** `nums = [2, 7, 11, 15]`, `target = 9`
+**Input:** `nums = [2,7,11,15]`, `target = 9`
 
-| i | nums[i] | needingVal (=9‑nums[i]) | needing (after possible put) | Action / Note |
-|---|---------|------------------------|------------------------------|----------------|
-| 0 | 2       | 7                      | {2→0}                        | 7 not in map → store 2 |
-| 1 | 7       | 2                      | {2→0, 7→1}                   | 2 found → return {0,1} |
-| 2 | 11      | -2                     | —                            | (loop ends early) |
-| 3 | 15      | -6                     | —                            | (unreached) |
+| i | nums[i] | needingVal (= target‑nums[i]) | needing (value→index) after iteration | Action |
+|---|---------|------------------------------|--------------------------------------|--------|
+| 0 | 2       | 7                            | {2→0}                                 | complement not found, insert 2 |
+| 1 | 7       | 2                            | {2→0, 7→1}                            | `2` is in map → return {0,1} |
 
-The algorithm stops at iteration 1 because `needingVal = 2` is already present, returning indices `[0,1]`, which indeed satisfy `nums[0] + nums[1] = 9`.
+The loop stops at iteration 1 because `needing.containsKey(2)` is true, and the algorithm returns indices `[0,1]`, which indeed sum to the target.
 
 ## Complexity  
-- **Time:** O(n) – the single `for` loop visits each element once, and each hash‑map operation (`containsKey`, `get`, `put`) runs in expected O(1) time.  
-- **Space:** O(n) – in the worst case we store every element of `nums` in `needing`; the output array is excluded from the space count.
+- **Time:** O(n) – the single `for` loop visits each element once, and each hash‑table operation (`containsKey`, `put`, `get`) runs in expected O(1) time.  
+- **Space:** O(n) – in the worst case we store every array element in `needing`; the output array is not counted toward extra space.
 
 ## Solution (Java)
 
@@ -59,6 +55,6 @@ class Solution {
 
 ---
 
-**Runtime** 2 ms (beats 99.4%) · **Memory** 46.9 MB (beats 73.9%)
+**Runtime** 2 ms (beats 99.4%) · **Memory** 46.9 MB (beats 55.9%)
 
 <sub>Synced by AILeetHub on 2026-05-06.</sub>
