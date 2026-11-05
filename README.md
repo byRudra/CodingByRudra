@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**448 problems solved**
+**449 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 216  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 202  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 30
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 217  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 202  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 30
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -293,6 +293,7 @@ _Synced by AILeetHub._
 | 1362 | [Closest Divisors](Math/1362-closest-divisors/) | Medium | Math | Java |
 | 1378 | [Replace Employee ID With The Unique Identifier](Database/1378-replace-employee-id-with-the-unique-identifier/) | Easy | Database | MySQL |
 | 1380 | [Lucky Numbers in a Matrix](Matrix/1380-lucky-numbers-in-a-matrix/) | Easy | Matrix | java |
+| 1385 | [Find the Distance Value Between Two Arrays](Two%20Pointers/1385-find-the-distance-value-between-two-arrays/) | Easy | Two Pointers | Java |
 | 1399 | [Count Largest Group](Math/1399-count-largest-group/) | Easy | Math | java |
 | 1401 | [Circle and Rectangle Overlapping](Geometry/1401-circle-and-rectangle-overlapping/) | Medium | Geometry | Java |
 | 1407 | [Top Travellers](Database/1407-top-travellers/) | Easy | Database | mysql |
