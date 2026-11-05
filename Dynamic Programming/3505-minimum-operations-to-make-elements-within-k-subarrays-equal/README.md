@@ -5,44 +5,57 @@
 `Array` · `Hash Table` · `Math` · `Dynamic Programming` · `Sliding Window` · `Heap (Priority Queue)`
 
 ## Intuition  
-The costly part of the problem is measuring, for every length‑`x` window, the minimum number of ±1 operations needed to make all its elements equal. That cost equals the sum of absolute deviations from the window’s median, and the median can be obtained without sorting the window if we maintain a multiset of its values. By compressing the values and using two Fenwick trees (one for frequencies, one for prefix sums) we can update the multiset in O(log m) per slide and retrieve the `target`‑th smallest element (the lower median) with binary lifting in O(log m). Once each window’s cost is known, the remaining task is to pick `k` non‑overlapping windows of size `x` with minimum total cost, which is a classic 1‑D DP over intervals. The naive approach would recompute a window’s median by sorting each time (O(x log x) per window) and then try all subsets (exponential), but the two‑pointer‑like Fenwick trick removes the extra O(x) factor, and the DP eliminates the exponential search.
+The cost to make all numbers in a fixed‑size window equal is minimized by turning every element into the window’s median; the total operations equal the sum of distances to that median. Computing the median and the sum of distances for each sliding window naïvely would require sorting every window, leading to O(n·x log x). The key observation is that, while the window slides, we can maintain the multiset of its values in a Fenwick tree (binary indexed tree) that supports O(log m) updates and prefix‑sum queries, where m is the number of distinct values after coordinate compression. With a binary‑lifting query we retrieve the target‑th smallest element (the lower median) in O(log m). After we can compute the cost of each window in O(log m), the problem reduces to picking k non‑overlapping windows of length x with minimum total cost – a classic 1‑D DP over intervals.
 
 ## Approach  
-1. **Coordinate compression** – copy `nums` to `sorted`, sort it, and build `vals` containing the distinct values. Each original element gets an index `id[i]` (1‑based) via binary search.  
-2. **Fenwick initialization** – allocate `cnt` (int) and `sum` (long) of size `m+1`, where `m` is the number of distinct values. `top` stores the highest power‑of‑two ≤ `m` for binary lifting. `target = (x+1)/2` is the position of the lower median inside a window.  
-3. **Slide the window** – for each index `i` (0‑based):  
-   - Add `nums[i]` to the Fenwick trees: `cnt[p]++`, `sum[p] += nums[i]` for all ancestors `p`.  
+1. **Coordinate compression** –  
+   *`sorted`* holds a copy of `nums` sorted.  
+   *`vals`* stores the distinct values; *`m`* is their count.  
+   *`id[i]`* is the 1‑indexed rank of `nums[i]` in `vals` (found by binary search).  
+   This lets us index Fenwick trees by value rank instead of raw magnitude.
+
+2. **Fenwick trees for counts and sums** –  
+   Arrays *`cnt`* and *`sum`* of size `m+1` store, respectively, the number of occurrences and the total of original values for each prefix of ranks.  
+   *`top`* is the highest power of two ≤ `m` (used for binary lifting).  
+   *`target = (x+1)/2`* is the position of the lower median inside a window of size `x`.
+
+3. **Slide the window** –  
+   For each index `i` from 0 to `n‑1`:
+   - Insert `nums[i]` into both Fenwick trees (`cnt` ++, `sum` += `nums[i]`).  
    - Add `nums[i]` to `windowSum`.  
-   - If the window exceeded length `x`, remove the element at `old = i‑x` by decrementing the same Fenwick entries and subtracting from `windowSum`.  
-   The loop invariant: after processing `i`, the Fenwick trees represent exactly the multiset of the current window `nums[max(0,i‑x+1)…i]`, and `windowSum` equals its total sum.  
-4. **Extract the median** – when the window is full (`i ≥ x‑1`):  
-   - Perform binary lifting on `cnt` to locate the smallest index `pos` such that the cumulative count reaches `target`. `below` accumulates the sum of all values strictly smaller than the median.  
-   - `med = vals[pos]`.  
-   - `leftSum = below + rem * med` gives the sum of the `target` smallest elements, where `rem` is the remaining count needed at `pos`.  
-   - `rightSum = windowSum - leftSum`.  
-5. **Compute window cost** – using the median formula:  
-   `cost[start] = med*target - leftSum + rightSum - med*(x‑target)`.  
-   This stores the minimal operations for the window beginning at `start = i‑x+1`.  
-6. **Dynamic programming over windows** – `dp[j][i]` = minimal operations to select `j` windows within the prefix `nums[0…i‑1]`. Transition:  
-   - Skip position `i`: `dp[j][i] = dp[j][i‑1]`.  
-   - Take a window ending at `i‑1` (requires `i ≥ x`): `dp[j][i] = min(dp[j][i], dp[j‑1][i‑x] + cost[i‑x])`.  
-   The DP respects the non‑overlap constraint because a taken window consumes exactly `x` positions.  
+   - If the window exceeds length `x`, remove the element at `old = i‑x` from the trees and subtract it from `windowSum`.  
+   - When the window first reaches size `x` (`i >= x‑1`), compute the median:
+     *Binary lifting* walks down the tree using `pw = top, pw>>=1` to find the smallest rank `pos` whose cumulative count ≥ `target`.  
+     `med = vals[pos]`.  
+     `below` accumulates the sum of all values strictly smaller than the median; `rem` is how many median copies are needed to reach the exact `target`.  
+     `leftSum = below + rem * med` (sum of the `target` smallest numbers).  
+     `rightSum = windowSum - leftSum`.  
+     Finally, `cost[i‑x+1] = med*target - leftSum + rightSum - med*(x‑target)`, which is the minimal operations for this window.
+
+4. **Dynamic programming over windows** –  
+   `dp[j][i]` = minimum operations to place `j` non‑overlapping windows within the first `i` elements.  
+   Initialise `dp[0][*] = 0` and fill the rest with `INF`.  
+   Transition for each `j` (1 .. k) and `i` (1 .. n):
+   - Skip position `i`: `dp[j][i] = dp[j][i‑1]`.  
+   - Take a window ending at `i‑1` (i.e., starting at `i‑x`): if `i >= x` and `dp[j‑1][i‑x]` is feasible, update  
+     `dp[j][i] = min(dp[j][i], dp[j‑1][i‑x] + cost[i‑x])`.  
+   The answer is `dp[k][n]`.
 
 ## Dry Run  
-**Input:** `nums = [1, 2, 3, 4]`, `x = 2`, `k = 1`  
+Input: `nums = [5, -2, 1, 3]`, `x = 2`, `k = 1`.
 
-| i | added value | window (size 2) | median `med` | `cost[i‑x+1]` | note |
-|---|-------------|----------------|--------------|--------------|------|
-|0|+1|[1]| – | – | only one element, window not full |
-|1|+2|[1,2]|1 (target=1) | `1*1‑1 + (3‑1)‑1*1 = 1` | first full window, cost = 1 |
-|2|+3, remove 1|[2,3]|2| `2*1‑2 + (5‑2)‑2*1 = 1`| second window |
-|3|+4, remove 2|[3,4]|3| `3*1‑3 + (7‑3)‑3*1 = 1`| third window |
+| i | window (i‑x+1 … i) | median (`med`) | `windowSum` | `cost[i‑x+1]` | note |
+|---|--------------------|----------------|-------------|---------------|------|
+| 0 | –                  | –              | 5           | –             | insert 5 |
+| 1 | [5, -2]            | -2 (target=1)  | 3           | 7             | median -2, ops = (5‑(-2)) = 7 |
+| 2 | [-2, 1]            | -2 (target=1)  | -1          | 3             | slide: remove 5, add 1 |
+| 3 | [1, 3]             | 1 (target=1)   | 4           | 2             | slide: remove -2, add 3 |
 
-The DP picks the cheapest single window, which is `1`. Hence the answer is `1`.
+After processing, `cost = [7,3,2]`. DP chooses the cheapest single window, `dp[1][4] = 2`, which corresponds to making subarray `[1,3]` equal to `1` with 2 operations.
 
 ## Complexity  
-- **Time:** O(n log m) for the sliding‑window updates and median extraction (each update touches O(log m) Fenwick nodes, binary lifting is O(log m)), plus O(k·n) for the DP, so overall **O(n log n + k·n)** because `m ≤ n`.  
-- **Space:** O(n + m + k·n) for the `cost` array (`n‑x+1`), the two Fenwick trees (`m+1`), and the DP table (`(k+1)·(n+1)`). The output itself is a single `long`, so the extra space is **O(k·n)**.
+- **Time:** O(n log n) – sorting for compression O(n log n), each of the n iterations performs a constant number of Fenwick updates and a binary‑lifting query, both O(log m) ≤ O(log n); DP runs O(k·n) with k ≤ 15, dominated by the previous step.  
+- **Space:** O(n) – the compressed value array, two Fenwick trees of size m ≤ n, the `cost` array of length n‑x+1, and a DP table of size (k+1)·(n+1); output storage is excluded.
 
 ## Solution (Java)
 
@@ -126,6 +139,6 @@ class Solution {
 
 ---
 
-**Runtime** 261 ms (beats 100.0%) · **Memory** 135.7 MB (beats 86.8%)
+**Runtime** 261 ms (beats 100.0%) · **Memory** 135.7 MB (beats 86.5%)
 
 <sub>Synced by AILeetHub on 2026-11-04.</sub>
