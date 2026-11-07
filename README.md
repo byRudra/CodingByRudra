@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**449 problems solved**
+**450 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 217  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 202  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 30
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 217  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 203  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 30
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -334,6 +334,7 @@ _Synced by AILeetHub._
 | 1864 | [Minimum Number of Swaps to Make the Binary String Alternating](Greedy/1864-minimum-number-of-swaps-to-make-the-binary-string-alternating/) | Medium | Greedy | Java |
 | 1871 | [Jump Game VII](Dynamic%20Programming/1871-jump-game-vii/) | Medium | Dynamic Programming | java |
 | 1872 | [Stone Game VIII](Dynamic%20Programming/1872-stone-game-viii/) | Hard | Dynamic Programming | java |
+| 1882 | [Process Tasks Using Servers](Heap%20(Priority%20Queue)/1882-process-tasks-using-servers/) | Medium | Heap (Priority Queue) | Java |
 | 1886 | [Determine Whether Matrix Can Be Obtained By Rotation](Matrix/1886-determine-whether-matrix-can-be-obtained-by-rotation/) | Easy | Matrix | java |
 | 1890 | [The Latest Login in 2020](Database/1890-the-latest-login-in-2020/) | Easy | Database | mysql |
 | 1901 | [Find a Peak Element II](Binary%20Search/1901-find-a-peak-element-ii/) | Medium | Binary Search | java |
