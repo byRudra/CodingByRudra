@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**450 problems solved**
+**451 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 217  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 203  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 30
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 217  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 204  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 30
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -392,6 +392,7 @@ _Synced by AILeetHub._
 | 2897 | [Apply Operations on Array to Maximize Sum of Squares](Greedy/2897-apply-operations-on-array-to-maximize-sum-of-squares/) | Hard | Greedy | Java |
 | 2904 | [Shortest and Lexicographically Smallest Beautiful String](Sliding%20Window/2904-shortest-and-lexicographically-smallest-beautiful-string/) | Medium | Sliding Window | java |
 | 2913 | [Subarrays Distinct Element Sum of Squares I](Segment%20Tree/2913-subarrays-distinct-element-sum-of-squares-i/) | Easy | Segment Tree | Java |
+| 2914 | [Minimum Number of Changes to Make Binary String Beautiful](String/2914-minimum-number-of-changes-to-make-binary-string-beautiful/) | Medium | String | Java |
 | 2916 | [Subarrays Distinct Element Sum of Squares II](Segment%20Tree/2916-subarrays-distinct-element-sum-of-squares-ii/) | Hard | Segment Tree | Java |
 | 2946 | [Matrix Similarity After Cyclic Shifts](Math/2946-matrix-similarity-after-cyclic-shifts/) | Easy | Math | python3 |
 | 2948 | [Make Lexicographically Smallest Array by Swapping Elements](Union-Find/2948-make-lexicographically-smallest-array-by-swapping-elements/) | Medium | Union-Find | java |
