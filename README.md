@@ -4,9 +4,9 @@ _Synced by AILeetHub._
 
 <!-- AILEETHUB:START -->
 
-**451 problems solved**
+**452 problems solved**
 
-![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 217  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 204  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 30
+![Easy](https://img.shields.io/badge/Difficulty-Easy-00b8a3?style=flat-square) 218  ![Medium](https://img.shields.io/badge/Difficulty-Medium-ffc01e?style=flat-square) 204  ![Hard](https://img.shields.io/badge/Difficulty-Hard-ff375f?style=flat-square) 30
 
 | # | Problem | Difficulty | Topic | Language |
 | --- | --- | --- | --- | --- |
@@ -171,6 +171,7 @@ _Synced by AILeetHub._
 | 394 | [Decode String](Recursion/0394-decode-string/) | Medium | Recursion | java |
 | 396 | [Rotate Function](Dynamic%20Programming/0396-rotate-function/) | Medium | Dynamic Programming | java |
 | 409 | [Longest Palindrome](Greedy/0409-longest-palindrome/) | Easy | Greedy | Java |
+| 415 | [Add Strings](Math/0415-add-strings/) | Easy | Math | Java |
 | 416 | [Partition Equal Subset Sum](Dynamic%20Programming/0416-partition-equal-subset-sum/) | Medium | Dynamic Programming | Java |
 | 430 | [Flatten a Multilevel Doubly Linked List](Linked%20List/0430-flatten-a-multilevel-doubly-linked-list/) | Medium | Linked List | Java |
 | 435 | [Non-overlapping Intervals](Dynamic%20Programming/0435-non-overlapping-intervals/) | Medium | Dynamic Programming | Java |
