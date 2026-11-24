@@ -5,37 +5,33 @@
 `Math` · `String` · `Simulation`
 
 ## Intuition  
-When two decimal numbers are added, each column (least‑significant digit first) contributes a digit to the answer and possibly a carry to the next column. The key observation is that we can simulate this column‑wise process directly on the character arrays of the strings: after *k* iterations the algorithm has processed the last *k* digits of both inputs, and the variable `carry` always holds the exact overflow that must be added to the next more‑significant column. This eliminates the need for a second pass, a hash map, or any big‑integer library; we only need a single linear scan from right to left.
+When we add two decimal numbers digit by digit from right to left, each step only needs the two current digits and a possible carry from the previous step. The key observation is that **the carry after processing the k‑th least‑significant position never depends on any more significant digits**; it is fully determined by the already‑processed suffixes. Therefore a single linear scan from the ends of the strings suffices, eliminating the need for a second pass, a hash map, or any big‑integer library.
 
 ## Approach  
-1. **Initialize pointers** `i = num1.length() - 1` and `j = num2.length() - 1` so they point to the least‑significant characters of each string. Set `carry = 0` and create an empty `StringBuilder result`.  
-2. **Loop condition** `while (i >= 0 || j >= 0 || carry > 0)`. The invariant: before each iteration `carry` equals the overflow from the previously processed column, and all digits to the right of `i` and `j` have already been appended (in reverse order) to `result`.  
-3. **Compute column sum** `int sum = carry`. If `i >= 0`, add `num1.charAt(i--) - '0'` to `sum`; similarly for `j`. The post‑decrement moves the pointers leftward after the digit is consumed.  
-4. **Extract digit and new carry**: `result.append(sum % 10)` stores the current column’s digit (still reversed). `carry = sum / 10` captures any overflow for the next iteration.  
-5. **Exit** when both pointers have moved past the first character and no carry remains; at this point `result` holds the answer backwards.  
-6. **Reverse** the builder (`result.reverse()`) and convert to `String`. The reversal restores the correct most‑significant‑first order.
-
-Edge‑case handling:  
-- Empty strings never occur because of the constraints, but the loop also works if one string is shorter; the corresponding `if` simply skips adding a digit.  
-- When both inputs are `"0"` the loop runs once because `carry` is initially `0` but the condition `i >= 0 || j >= 0` is true, producing `"0"` after reversal.  
-- The `carry > 0` clause ensures an extra digit is emitted for sums like `9 + 1 = 10`.
+1. **Initialize pointers** `i = num1.length() - 1` and `j = num2.length() - 1` so they point to the least‑significant characters, and set `carry = 0`.  
+2. **Loop while** `i >= 0 || j >= 0 || carry > 0`.  
+   - *Invariant*: before each iteration, `result` (still reversed) contains the sum of the already‑processed suffixes, and `carry` equals the overflow that must be added to the next more‑significant digit.  
+3. **Compute `sum`** starting from `carry`. If `i >= 0`, add `num1.charAt(i--) - '0'`; similarly for `j`. The post‑decrement guarantees the pointer moves left after the digit is consumed, handling both even and odd length inputs uniformly.  
+4. **Append the current digit** `sum % 10` to `result`. This stores the digit in reverse order, which is convenient because we are moving from least to most significant.  
+5. **Update `carry`** to `sum / 10`. Since `sum` is at most `9 + 9 + 1 = 19`, `carry` is either `0` or `1`, so overflow is bounded and no overflow guard is needed.  
+6. **After the loop**, reverse `result` to obtain the correct order and return it as a string.  
+Edge cases such as a single‑character input or both strings being `"0"` are naturally covered: the loop runs once, `sum` becomes `0`, and the final reversal yields `"0"`.
 
 ## Dry Run  
+Input: `num1 = "456", num2 = "77"`  
 
-**Input:** `num1 = "456"`, `num2 = "77"`  
+| Iter | i (after) | j (after) | carry (in) | sum | result (reversed) | Note |
+|------|-----------|-----------|------------|-----|-------------------|------|
+| 1    | 1         | 0         | 0          | 6+7=13 | "3"               | digit 3, carry 1 |
+| 2    | 0         | -1        | 1          | 5+1=6  | "33"              | digit 3, carry 0 |
+| 3    | -1        | -1        | 0          | 4     | "333"             | digit 4, carry 0 |
+| 4    | -1        | -1        | 0          | loop ends | – | no more digits, carry 0 |
 
-| Iter | i (after) | j (after) | carry (before) | sum (calc) | result (reversed) | Note |
-|------|-----------|-----------|----------------|-----------|-------------------|------|
-| 1    | 1         | 1         | 0              | 6+7+0=13  | "3"               | digit 3, carry 1 |
-| 2    | 0         | 0         | 1              | 5+7+1=13  | "33"              | digit 3, carry 1 |
-| 3    | -1        | -1        | 1              | 4+0+1=5   | "335"             | digit 5, carry 0 |
-| 4    | -1        | -1        | 0              | loop ends |               | reverse → "533" |
-
-After reversal the builder contains `"533"`, which is the correct sum.
+After reversing `"333"` we obtain `"534"`, which is the correct sum of 456 + 77.
 
 ## Complexity  
-- **Time:** O(n + m) – the loop advances at most one step for each character of `num1` and `num2`, plus a possible final iteration for a leftover carry.  
-- **Space:** O(max(n, m)) – the `StringBuilder` stores exactly the number of digits of the result, which is at most one more than the longer input; auxiliary variables use O(1) extra space.
+- **Time:** `O(max(n, m))` – the while‑loop iterates once per digit of the longer string plus at most one extra iteration for a final carry.  
+- **Space:** `O(max(n, m))` – `result` stores one character per processed digit (the output itself); no additional data structures are used.
 
 ## Solution (Java)
 
@@ -61,6 +57,6 @@ class Solution {
 
 ---
 
-**Runtime** 2 ms (beats 97.3%) · **Memory** 43.3 MB (beats 85.4%)
+**Runtime** 2 ms (beats 98.1%) · **Memory** 43.5 MB (beats 52.5%)
 
-<sub>Synced by AILeetHub on 2026-11-20.</sub>
+<sub>Synced by AILeetHub on 2026-11-24.</sub>
